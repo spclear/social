@@ -26,6 +26,9 @@ body {
 .header {
   grid-area: header;
   background-color: #999;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .header__logo {
@@ -43,6 +46,11 @@ body {
 .nav {
   grid-area: nav;
   background-color: #aeaeae;
+  padding: 10px;
+}
+
+.nav-list__item {
+  margin: 10px 0;
 }
 
 .main {
