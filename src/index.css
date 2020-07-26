@@ -135,3 +135,9 @@ body {
   font-weight: bold;
   font-size: 1.3rem;
 }
+
+.lul {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
