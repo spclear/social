@@ -17,8 +17,9 @@ body {
   display: grid;
   grid-template-areas: 
   "header header"
-  "nav main";
-  grid-template-rows: 100px 1fr;
+  "nav main"
+  "footer footer";
+  grid-template-rows: 100px 1fr 100px;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
@@ -118,4 +119,25 @@ body {
   text-align: center;
   margin-left: auto;
   max-width: 300px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: footer;
+  padding: 25px;
+}
+
+.footer__info {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.lul {
+  color: #aeaeae;
+  text-decoration: underline;
+  cursor: pointer;
 }
