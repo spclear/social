@@ -40,13 +40,20 @@ body {
   display: block;
   width: 40px;
   height: 40px;
-  border: 2px solid #aeaeae;
   border-radius: 50%;
   background-color: #fff;
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png);
+  background-image: url(https://www.goodfreephotos.com/albums/vector-images/black-cat-with-big-head-vector-clipart.png);
+}
+
+.header__title {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #3d3d3d;
+  margin-left: 8px;
+  margin-top: 5px;
 }
 
 .nav {
@@ -70,12 +77,17 @@ body {
 .profile {
   padding: 25px;
 }
+
+
 .profile__avatar {
   display: block;
   width: 120px;
   height: 120px;
   margin-right: 25px;
+  margin-top: 5px;
   border-radius: 5px;
+  border: 3px solid #fff;
+  outline: 3px solid #aeaeae;
   background-image: url(https://media.philstar.com/photos/2019/10/26/orange-cat_2019-10-26_14-12-40.jpg);
   background-position: center center;
   background-size: cover;
@@ -99,21 +111,31 @@ body {
   padding: 25px;
 }
 
+.create-post:before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin: 20px auto 40px;
+  width: 50%;
+  background-color: #eaeaea;
+}
+
 .create-post__new-text {
   max-height: 200px;
+  min-height: 70px;
   margin: 20px 0 10px;
   word-wrap: wrap;
   overflow-y: auto;
   overflow-x: hidden;
   border-radius: 5px;
   padding: 10px;
-  background-color: #dcdde1;
+  background-color: #e7e8ec;
 }
 
 .create-post__create-button {
   display: block;
   height: 50px;
-  background-color: orangered;
+  background-color: #e7e8ec;
   padding: 10px 30px;
   border-radius: 5px;
   text-align: center;
