@@ -3,11 +3,14 @@ import React from 'react';
 const Profile = () => {
   return (
     <main className='main'>
-      <div className='main__intro-img' />
       <div className='main__profile-info profile'>
-        <a className='profile__avatar'></a>
+        <a className='profile__avatar' href='/'></a>
         <div className='profile__details'>
-          <h3 className='profile__name'>Sasha P.</h3>
+          <h3 className='profile__name'>
+            <a className='profile__link' href="/">
+              Sasha P.
+            </a>
+          </h3>
           <ul className='profile__info-list'>
             <li className='profile__info-item'>
               Date of Birth:
