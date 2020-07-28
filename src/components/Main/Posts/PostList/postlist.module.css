@@ -2,6 +2,23 @@
   padding: 25px;
 }
 
+.title {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 3rem;
+  text-align: center;
+  color: #353b48;
+}
+
+.title:after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 15px auto 55px;
+  width: 50%;
+  background-color: #eaeaea;
+}
+
 .postItem {
   padding: 25px 25px;
   background-color: #eaeaea;

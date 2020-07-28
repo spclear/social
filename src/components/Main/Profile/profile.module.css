@@ -1,12 +1,22 @@
 .profile {
   padding: 25px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.profile:after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 80px auto 55px;
+  width: 50%;
+  background-color: #eaeaea;
 }
 
 .avatar {
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 220px;
+  height: 220px;
   margin-right: 25px;
   margin-top: 5px;
   border-radius: 5px;
@@ -17,6 +27,12 @@
 .userName {
   margin-bottom: 30px;
 }
+
+.userName > a {
+  color: #353b48;
+}
+
 .details {
-  outline: none;
+  flex-grow: 1;
+  color: #353b48;
 }

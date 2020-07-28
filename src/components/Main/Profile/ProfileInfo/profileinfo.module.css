@@ -1,13 +1,14 @@
 .infoList {
-  outline: none;
+  margin-top: 50px;
 }
 
 .item {
-  height: 30px;
+  padding: 5px 0;
   font-weight: bold;
 }
 
 .data {
   margin-left: 10px;
   font-weight: normal;
+  color: #353b48;
 }

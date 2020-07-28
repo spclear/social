@@ -1,11 +1,11 @@
 import React from 'react';
 import profileInfo from './profileinfo.module.css'
 
-const InfoItem = () => {
+const InfoItem = (props) => {
   return (
     <li className={profileInfo.item}>
-      Date of Birth:
-      <span className={profileInfo.data}>April 11th</span>
+      {props.info}
+      <span className={profileInfo.data}>{props.data}</span>
     </li>
   )
 }
@@ -13,10 +13,10 @@ const InfoItem = () => {
 const ProfileInfo = () => {
   return (
     <ul className={profileInfo.infoList}>
-      <InfoItem />
-      <InfoItem />
-      <InfoItem />
-      <InfoItem />
+      <InfoItem info='Date of birth: ' data='April 11th' />
+      <InfoItem info='City: ' data='Kherson' />
+      <InfoItem info='Education: ' data='no information given' />
+      <InfoItem info='Web Site: ' data='no information given' />
     </ul>
   );
 }

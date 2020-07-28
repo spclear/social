@@ -1,34 +1,32 @@
 import React from 'react';
 import nav from './nav.module.css';
 
-const NavLink = () => {
+const NavLink = (props) => {
   return (
     <a className={nav.link} href='#'>
-      Profile
+      {props.name}
     </a>
   );
 }
 
-const NavItem = () => {
+const NavItem = (props) => {
   return (
     <li className={nav.item}>
-      <NavLink />
+      <NavLink name={props.linkname} />
     </li>
-  )
+  );
 }
 
 const Nav = () => {
   return (
     <nav className={nav.nav}>
       <ul className={nav.list}>
-        <NavItem />
-        <NavItem />
-        <NavItem />
-        <NavItem />
+        <NavItem linkname="Profile" />
+        <NavItem linkname="Messages" />
+        <NavItem linkname="News" />
+        <NavItem linkname="Music" />
+        <NavItem linkname="Settings" />
       </ul>
-      <div className={nav.settings}>
-        <NavLink />
-      </div>
     </nav>
   );
 }
