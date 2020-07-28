@@ -13,19 +13,19 @@ const Profile = () => {
             </a>
           </h3>
           <ul className={mainSt.infoList}>
-            <li className={mainSt.ite}>
+            <li className={mainSt.item}>
               Date of Birth:
                 <span className={mainSt.data}>April 11th</span>
             </li>
-            <li className={mainSt.ite}>
+            <li className={mainSt.item}>
               City:
                 <span className={mainSt.data}>Kherson</span>
             </li>
-            <li className={mainSt.ite}>
+            <li className={mainSt.item}>
               Education:
               <span className={mainSt.data}>no information given</span>
             </li>
-            <li className={mainSt.ite}>
+            <li className={mainSt.item}>
               Web Site:
                 <span className={mainSt.data}>no information given</span>
             </li>
