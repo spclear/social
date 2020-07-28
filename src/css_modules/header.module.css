@@ -1,0 +1,27 @@
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.46);
+}
+
+.logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(https://www.goodfreephotos.com/albums/vector-images/black-cat-with-big-head-vector-clipart.png);
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #3d3d3d;
+  margin-left: 8px;
+  margin-top: 5px;
+}

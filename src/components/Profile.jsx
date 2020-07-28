@@ -1,45 +1,46 @@
 import React from 'react';
+import mainSt from '../css_modules/main.module.css';
 
 const Profile = () => {
   return (
-    <main className='main'>
-      <div className='main__profile-info profile'>
-        <a className='profile__avatar' href='/'></a>
-        <div className='profile__details'>
-          <h3 className='profile__name'>
-            <a className='profile__link' href="/">
+    <main className={mainSt.main}>
+      <div className={`${mainSt.profile} ${mainSt.profileInfo}`}>
+        <a className={mainSt.avatar} href='/'></a>
+        <div className={mainSt.details}>
+          <h3 className={mainSt.name}>
+            <a className={mainSt.link} href="/">
               Sasha P.
             </a>
           </h3>
-          <ul className='profile__info-list'>
-            <li className='profile__info-item'>
+          <ul className={mainSt.infoList}>
+            <li className={mainSt.ite}>
               Date of Birth:
-                <span className='profile__info-data'>April 11th</span>
+                <span className={mainSt.data}>April 11th</span>
             </li>
-            <li className='profile__info-item'>
+            <li className={mainSt.ite}>
               City:
-                <span className='profile__info-data'>Kherson</span>
+                <span className={mainSt.data}>Kherson</span>
             </li>
-            <li className='profile__info-item'>
+            <li className={mainSt.ite}>
               Education:
-                <span className='profile__info-data'>no information given</span>
+              <span className={mainSt.data}>no information given</span>
             </li>
-            <li className='profile__info-item'>
+            <li className={mainSt.ite}>
               Web Site:
-                <span className='profile__info-data'>no information given</span>
+                <span className={mainSt.data}>no information given</span>
             </li>
           </ul>
         </div>
       </div>
-      <div className='main__create-post create-post'>
-        <h2 className='create-post__title'>What's new?</h2>
-        <p contentEditable='true' className='create-post__new-text'></p>
-        <button className='create-post__create-button'>Send</button>
+      <div className={mainSt.createPost}>
+        <h2 className={mainSt.title}>What's new?</h2>
+        <p contentEditable='true' className={mainSt.newText}></p>
+        <button className={mainSt.createButton}>Send</button>
       </div>
-      <div className='main__posts-section posts'>
-        <div className='posts__posts-item'></div>
-        <div className='posts__posts-item'></div>
-        <div className='posts__posts-item'></div>
+      <div className={mainSt.posts}>
+        <div className={mainSt.postItem}></div>
+        <div className={mainSt.postItem}></div>
+        <div className={mainSt.postItem}></div>
       </div>
     </main>
   );
