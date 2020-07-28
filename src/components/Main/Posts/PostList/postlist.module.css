@@ -1,0 +1,35 @@
+.posts {
+  padding: 25px;
+}
+
+.postItem {
+  padding: 25px 25px;
+  background-color: #eaeaea;
+  margin: 30px 0;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.authorAvatar {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.time {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #718093;
+}
+
+.body {
+  color: #353b48;
+  font-style: italic;
+}

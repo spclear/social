@@ -1,0 +1,13 @@
+.infoList {
+  outline: none;
+}
+
+.item {
+  height: 30px;
+  font-weight: bold;
+}
+
+.data {
+  margin-left: 10px;
+  font-weight: normal;
+}

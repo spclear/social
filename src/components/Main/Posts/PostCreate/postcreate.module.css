@@ -1,0 +1,37 @@
+.createPost {
+  padding: 25px;
+}
+
+.createPost:before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin: 20px auto 40px;
+  width: 50%;
+  background-color: #eaeaea;
+}
+
+.newText {
+  max-height: 200px;
+  min-height: 70px;
+  margin: 20px 0 10px;
+  word-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #e7e8ec;
+}
+
+.createButton {
+  display: block;
+  height: 50px;
+  background-color: #e7e8ec;
+  padding: 10px 30px;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: auto;
+  max-width: 300px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
