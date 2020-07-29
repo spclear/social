@@ -1,0 +1,17 @@
+.dialogs {
+  flex-grow: 1;
+  padding: 15px;
+  display: grid;
+  grid-template-areas: 
+    "dialogs messages"
+    "settings settings";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 40px;
+  grid-gap: 10px;
+}
+
+/* delete after creating inner components */
+.dialogs > * {
+  border: 1px solid black;
+}
+/* ↑ */
