@@ -19,7 +19,9 @@
 }
 
 .itemLink {
-  transition: padding-left .4s;
+  transition: color .4s, padding-left .3s;
+  color: #192a56;
+  font-weight: 600;
 }
 
 .itemLink:hover:not(.active) {
@@ -28,5 +30,5 @@
 
 .itemLink.active {
   padding-left: 5px;
-  font-weight: bold;
+  color: black;
 }
