@@ -53,7 +53,7 @@ const PostList = () => {
   return (
     <div className={postlist.posts}>
       <h2 className={postlist.title}>current posts</h2>
-      <PostItem avatar={avatars.one} text={posts.one} time="35 mintes ago" authorName='Sasha' />
+      <PostItem avatar={avatars.one}text={posts.one} time="35 mintes ago" authorName='Sasha' />
       <PostItem avatar={avatars.three} text={posts.two} time="1 hour ago" authorName='Ann' />
       <PostItem avatar={avatars.two} text={posts.three} time="8 hours ago" authorName='Vitaliy' />
       <PostItem avatar={avatars.one} text={posts.four} time="yesterday" authorName='Sasha' />
