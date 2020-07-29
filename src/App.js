@@ -11,7 +11,7 @@ const App = () => {
       <Nav />
       <Main />
       <Footer />
-   </div> 
+    </div>
   );
 }
 
