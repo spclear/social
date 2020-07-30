@@ -6,6 +6,7 @@
   max-height: 700px;
   border-left: 1px solid #eaeaea;
   padding-left: 15px;
+  position: relative;
 }
 .title {
   margin-bottom: 40px;
@@ -32,13 +33,16 @@
   font-size: 1rem;
   border-radius: 5px;
   background-color: #dadada;
+  /* flex-grow: 1; */
   max-width: 40%;
   word-wrap: break-word;
   margin: 0.5rem 1.3rem;
+  align-self: start;
 }
 
 .item:nth-child(2),
-.item:nth-child(3) {
+.item:nth-child(3),
+.item:nth-child(6) {
   align-self: flex-end;
 }
 
