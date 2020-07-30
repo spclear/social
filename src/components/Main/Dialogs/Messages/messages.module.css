@@ -1,3 +1,75 @@
 .messages {
   grid-area: messages;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-height: 700px;
+  border-left: 1px solid #eaeaea;
+  padding-left: 15px;
+}
+.title {
+  margin-bottom: 40px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.title:after {
+  content: '';
+  width: 2rem;
+  display: block;
+  margin: 20px auto;
+  background-color: #aeaeae;
+  height: 1px;
+}
+
+.messagesList {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+.item {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #dadada;
+  max-width: 40%;
+  word-wrap: break-word;
+  margin: 0.5rem 1.3rem;
+}
+
+.item:nth-child(2),
+.item:nth-child(3) {
+  align-self: flex-end;
+}
+
+.newMessage {
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px 10px 10px;
+  border-top: 1px solid #eaeaea;
+}
+
+.typeMessage {
+  font-size: 1rem;
+  background-color: #eaeaea;
+  padding: 15px 20px;
+  max-height: 100px;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.send {
+  align-self: flex-end;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.button {
+  height: 30px;
+  padding: 5px 15px;
+  max-width: 200px;
+  font-weight: bold;
+  margin-top: .6rem;
 }

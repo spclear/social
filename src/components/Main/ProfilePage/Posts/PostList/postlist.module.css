@@ -49,5 +49,7 @@
 
 .body {
   color: #353b48;
-  font-style: italic;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.7rem;
 }

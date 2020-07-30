@@ -8,8 +8,7 @@ const Dialogs = () => {
   return (
     <div className={styles.dialogs}>
       <DialogsList />
-      <Messages />
-      <SettingsBar />
+      <Messages userName='Victoriagi'/>
     </div>
   )
 }

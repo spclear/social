@@ -21,15 +21,9 @@
   background-color: #dcdde1;
 }
 
-.createButton {
-  display: block;
+.button {
   height: 50px;
-  background-color: #dcdde1;
   padding: 10px 30px;
-  border-radius: 5px;
-  text-align: center;
-  margin-left: auto;
-  max-width: 300px;
   font-weight: 900;
-  text-transform: uppercase;
+
 }

@@ -3,7 +3,7 @@
 *, *:focus {margin: 0; padding: 0; box-sizing: border-box;outline:none}
 html {font-size: 16px; margin-left: calc(100vw - 100%);}
 ul, ol, li {list-style: none;}
-a{text-decoration: none;color:black}
+a{text-decoration: none;color:#353b48}
 button, button:focus {border:none; outline:none; cursor: pointer;}
 
 body {
@@ -11,6 +11,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   overflow-y: overlay;
+  color: #353b48;
 }
 
 .header, .main, .nav, .footer {background-color: #fff;}
