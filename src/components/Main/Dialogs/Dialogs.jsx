@@ -5,12 +5,14 @@ import DialogsList from './DialogsList/DialogsList';
 import Messages from './Messages/Messages';
 import SettingsBar from './SettingsBar/SettingsBar';
 
-const Dialogs = () => {
+const Dialogs = (props) => {
   return (
     <div className={styles.dialogs}>
-      <DialogsList />
+      <DialogsList dialogs={props.dialogsData.dialogs} />
       <Route path="/dialogs/messages" component={() => (
-        <Messages userName="Victoria" />
+        <Messages
+          userName='Victoria'
+          messages={props.dialogsData.dialogs} />
       )}>
       </Route>
     </div>

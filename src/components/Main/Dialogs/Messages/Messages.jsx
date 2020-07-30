@@ -3,16 +3,6 @@ import { Route } from 'react-router-dom';
 import styles from './messages.module.css';
 import Button from '../../../Button/Button';
 
-const messagesData = [
-  { id: 1, text: "Hello there" },
-  { id: 2, text: "hi" },
-  { id: 3, text: "Obi wan kenobi?" },
-  { id: 4, text: "ahahahahahh" },
-  { id: 5, text: "Ye, sure. Cool meme tho" },
-  { id: 6, text: "yesss" },
-  { id: 7, text: "Anyway. We need to talk" },
-  { id: 8, text: "Do you have time right now? If yes, call me please" },
-];
 
 const MessageItem = (props) => {
   return (
@@ -21,7 +11,7 @@ const MessageItem = (props) => {
 }
 
 const Messages = (props) => {
-  let messagesList = messagesData.map((message) => (
+  let messagesList = props.messages[0].messagesList.map((message) => (
     <MessageItem
       text={message.text}
       key={message.id}

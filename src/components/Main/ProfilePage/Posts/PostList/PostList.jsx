@@ -1,6 +1,5 @@
 import React from "react";
 import postlist from "./postlist.module.css";
-import postData from "./postlistData";
 
 
 const PostItem = (props) => {
@@ -22,8 +21,8 @@ const PostItem = (props) => {
   );
 };
 
-const PostList = () => {
-  const postsList = postData.map((post) => (
+const PostList = (props) => {
+  const postsList = props.postsData.map((post) => (
     <PostItem
       key={post.postId}
       avatar={post.authorAvatar}

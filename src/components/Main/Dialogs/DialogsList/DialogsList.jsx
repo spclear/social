@@ -1,15 +1,21 @@
 import React from 'react';
 import styles from './dialogslist.module.css';
 import DialogsItem from './DialogsItem/DialogsItem';
-import dialogsData from './dialogsdata';
 
-const DialogsList = () => {
-  let dialogs = dialogsData.map(dialog => (
+function returnLastMessage(obj) {
+  let lastMsg = obj.messagesList[obj.messagesList.length - 1].text;
+
+  if (lastMsg.length > 35) return lastMsg.slice(0, 35) + '...'
+  return lastMsg.slice(0, 35);
+}
+
+const DialogsList = (props) => {
+  let dialogs = props.dialogs.map(dialog => (
     <DialogsItem key={dialog.userId}
-        userName={dialog.userName}
-        lastMessage={dialog.lastMessage}
-        avatar={dialog.avatar}
-        dialogId={dialog.userId}
+      userName={dialog.userName}
+      lastMessage={returnLastMessage(props.dialogs[2])}
+      avatar={dialog.avatar}
+      dialogId={dialog.userId}
     />
   ))
 

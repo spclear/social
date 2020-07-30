@@ -1,6 +1,6 @@
-import avatar1 from "../../Profile/avatar1.jpg";
-import avatar2 from "../../Profile/avatar2.jpg";
-import avatar3 from "../../Profile/avatar3.jpg";
+import avatar1 from "./avatar1.jpg";
+import avatar2 from "./avatar2.jpg";
+import avatar3 from "./avatar3.jpg";
 
 const postData = [{
     text: "What's up guys?",

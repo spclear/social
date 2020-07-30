@@ -4,12 +4,12 @@ import Profile from './Profile/Profile';
 import PostCreate from './Posts/PostCreate/PostCreate';
 import PostList from './Posts/PostList/PostList';
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
   return (
     <div className="profilepage">
       <Profile />
       <PostCreate />
-      <PostList />
+      <PostList postsData={props.postsData} />
     </div>
   )
 }
