@@ -10,13 +10,15 @@ import Settings from './Settings/Settings';
 const Main = (props) => {
   return (
     <main className={main.main}>
-      <Route path='/profile' component={() => (
-        <ProfilePage postsData={props.postsData} />
-      )}
+      <Route path='/profile'
+        render={() => (
+          <ProfilePage postsData={props.state.postsData} />
+        )}
       />
-      <Route path='/dialogs' component={() => (
-        <Dialogs dialogsData={props.dialogsData} />
-      )}
+      <Route path='/dialogs'
+        render={() => (
+          <Dialogs dialogsData={props.state.dialogsData} />
+        )}
       />
       <Route path='/news' component={News}/>
       <Route path='/music' component={Music}/>

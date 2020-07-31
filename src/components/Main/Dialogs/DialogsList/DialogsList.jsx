@@ -13,7 +13,7 @@ const DialogsList = (props) => {
   let dialogs = props.dialogs.map(dialog => (
     <DialogsItem key={dialog.userId}
       userName={dialog.userName}
-      lastMessage={returnLastMessage(props.dialogs[2])}
+      lastMessage={returnLastMessage(props.dialogs[0])}
       avatar={dialog.avatar}
       dialogId={dialog.userId}
     />

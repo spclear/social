@@ -3,21 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import postData from './Data/PostListData/postlistData';
-import dialogsData from './Data/DialogsData/dialogsData';
-import messagesData from './Data/MessagesData/messagesData';
+import state from './redux/state'
 
-const dialogs = {
-  dialogs: dialogsData,
-  messages: messagesData,
-}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App
-      postsData={postData}
-      dialogsData={dialogs}
-    />
+    <App state={state}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

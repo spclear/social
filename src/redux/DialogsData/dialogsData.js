@@ -15,7 +15,7 @@ const dialogsData = [{
       { id: 6, text: "yesss" },
       { id: 7, text: "Anyway. We need to talk" },
       { id: 8, text: "Do you have time right now? If yes, call me please" },
-      { id: 8, text: "Stop ignoring me PLEAASSSSEEEEEEEEEEEEEEEE" },
+      { id: 9, text: "Stop ignoring me PLEAASSSSEEEEEEEEEEEEEEEE" },
     ],
   },
   {
@@ -32,7 +32,7 @@ const dialogsData = [{
       { id: 6, text: "yesss" },
       { id: 7, text: "Anyway. We need to talk" },
       { id: 8, text: "Do you have time right now? If yes, call me please" },
-      { id: 8, text: "I've read what u told me to.." },
+      { id: 9, text: "I've read what u told me to.." },
     ],
   },
   {
@@ -49,7 +49,7 @@ const dialogsData = [{
       { id: 6, text: "yesss" },
       { id: 7, text: "Anyway. We need to talk" },
       { id: 8, text: "Do you have time right now? If yes, call me please" },
-      { id: 8, text: "That was nice, for sure!" },
+      { id: 9, text: "That was nice, for sure!" },
     ],
   },
 ];

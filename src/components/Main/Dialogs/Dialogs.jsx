@@ -8,11 +8,11 @@ import SettingsBar from './SettingsBar/SettingsBar';
 const Dialogs = (props) => {
   return (
     <div className={styles.dialogs}>
-      <DialogsList dialogs={props.dialogsData.dialogs} />
+      <DialogsList dialogs={props.dialogsData} />
       <Route path="/dialogs/messages" component={() => (
         <Messages
           userName='Victoria'
-          messages={props.dialogsData.dialogs} />
+          messages={props.dialogsData} />
       )}>
       </Route>
     </div>
