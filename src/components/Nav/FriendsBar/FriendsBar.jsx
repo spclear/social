@@ -7,7 +7,7 @@ const FriendItem = (props) => {
       <div className={styles.avatar}>
         <img src={props.image}/>
       </div>
-      <div className="name">
+      <div className={styles.name}>
         {props.name}
       </div>
     </a>
