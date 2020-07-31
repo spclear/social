@@ -14,9 +14,6 @@ body {
   color: #353b48;
 }
 
-.main *::-webkit-scrollbar {
-  display: none;
-}
 
 .header, .main, .footer {background-color: #fff;}
 

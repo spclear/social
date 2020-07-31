@@ -6,4 +6,6 @@
   border-radius: 5px;
   background-color: #fff;
 }
-
+.main *::-webkit-scrollbar {
+  display:none;
+}
