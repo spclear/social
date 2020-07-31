@@ -1,11 +1,15 @@
-import postData from './PostListData/postlistData';
+import postsData from './PostListData/postlistData';
 import dialogsData from './DialogsData/dialogsData';
-import messagesData from './MessagesData/messagesData';
+import friends from './FriendsList/friendsData'
 
 let state = {
-  postsData: postData,
-  dialogsData: dialogsData,
-  messagesData: messagesData,
+  profilePage: {
+    postsData: postsData,
+  },
+  dialogsPage: {
+    dialogsData: dialogsData,
+  },
+  friends: friends,
 }
 
 export default state;

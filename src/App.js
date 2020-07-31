@@ -10,7 +10,7 @@ const App = (props) => {
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Nav />
+        <Nav friendsData={props.state.friends} />
         <Main state={props.state} />
         <Footer />
       </div>

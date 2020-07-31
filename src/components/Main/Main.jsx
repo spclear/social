@@ -12,12 +12,12 @@ const Main = (props) => {
     <main className={main.main}>
       <Route path='/profile'
         render={() => (
-          <ProfilePage postsData={props.state.postsData} />
+          <ProfilePage postsData={props.state.profilePage} />
         )}
       />
       <Route path='/dialogs'
         render={() => (
-          <Dialogs dialogsData={props.state.dialogsData} />
+          <Dialogs dialogsData={props.state.dialogsPage} />
         )}
       />
       <Route path='/news' component={News}/>

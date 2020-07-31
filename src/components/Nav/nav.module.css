@@ -1,9 +1,10 @@
 .nav {
   grid-area: nav;
   align-self: start;
-  padding: 25px;
+  padding: 25px 0;
   min-height: 400px;
   box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.46);
+  background-color: #fff;
 }
 
 .list {
@@ -13,9 +14,12 @@
 }
 
 .item {
-  margin: 8px 0;
-  width: auto;
-  
+  padding: 8px 25px;
+  width: 100%;
+}
+
+.item:hover {
+  background-color: #fff;
 }
 
 .itemLink {
@@ -29,6 +33,6 @@
 }
 
 .itemLink.active {
-  padding-left: 5px;
+  padding-left: 10px;
   color: black;
 }

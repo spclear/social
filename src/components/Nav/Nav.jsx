@@ -1,6 +1,7 @@
 import React from 'react';
 import nav from './nav.module.css';
 import { NavLink } from 'react-router-dom';
+import FriendsBar from './FriendsBar/FriendsBar';
 
 const NavItem = (props) => {
   return (
@@ -12,7 +13,7 @@ const NavItem = (props) => {
   );
 }
 
-const Nav = () => {
+const Nav = (props) => {
   return (
       <nav className={nav.nav}>
         <ul className={nav.list}>
@@ -21,7 +22,8 @@ const Nav = () => {
           <NavItem to="/news" linkname="News" />
           <NavItem to="/music" linkname="Music" />
           <NavItem to="/settings" linkname="Settings" />
-        </ul>
+      </ul>
+      <FriendsBar friends={props.friendsData}/>
       </nav>
   );
 }
