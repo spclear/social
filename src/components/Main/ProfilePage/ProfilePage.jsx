@@ -7,9 +7,11 @@ import PostList from './Posts/PostList/PostList';
 const ProfilePage = (props) => {
   return (
     <div className="profilepage">
-      <Profile />
+      <Profile profile={props.profile} />
       <PostCreate />
-      <PostList postsData={props.postsData.postsData} />
+      <PostList
+        posts={props.posts}
+      />
     </div>
   )
 }

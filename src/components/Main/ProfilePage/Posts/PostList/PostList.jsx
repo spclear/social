@@ -22,13 +22,13 @@ const PostItem = (props) => {
 };
 
 const PostList = (props) => {
-  const postsList = props.postsData.map((post) => (
+  const postsList = props.posts.map((post) => (
     <PostItem
       key={post.postId}
-      avatar={post.authorAvatar}
+      avatar={post.avatar}
       text={post.text}
       time={post.time}
-      authorName={post.authorName}
+      authorName={post.name}
     />
   ));
   

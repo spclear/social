@@ -26,11 +26,12 @@ const MessageItem = (props) => {
 };
 
 const MessagesBody = (props) => {
-  let messagesList = props.messages[0].messagesList.map((message) => (
+  let currAvatar = props.dialog[1].avatar;
+  let messagesList = props.dialog[1].messagesHistory.map((message) => (
     <MessageItem
-      avatar={props.messages[0].avatar}
+      avatar={currAvatar}
       text={message.text}
-      key={message.id}
+      key={message.time}
     />
   ));
   return (
@@ -47,7 +48,7 @@ const Messages = (props) => {
   return (
     <div className={styles.messages}>
       <h4 className={styles.title}>{props.userName}</h4>
-      <MessagesBody messages={props.messages} />
+      <MessagesBody messages={props.messages} dialog={props.dialog}/>
       <CreateMessage />
     </div>
   );

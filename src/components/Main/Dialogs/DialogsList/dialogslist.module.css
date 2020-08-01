@@ -9,7 +9,7 @@
 
 .title:after {
   content: '';
-  width: 2rem;
+  width: 1rem;
   display: block;
   margin: 20px auto;
   background-color: #aeaeae;

@@ -1,14 +1,12 @@
-import postsData from './PostListData/postlistData';
-import dialogsData from './DialogsData/dialogsData';
-import friends from './FriendsList/friendsData'
+import usersList from './Data/usersList';
+import usersDialogs from './Data/usersDialogs';
+import postsList from './Data/usersPosts';
+import friends from './Data/friendsData'
 
-let state = {
-  profilePage: {
-    postsData: postsData,
-  },
-  dialogsPage: {
-    dialogsData: dialogsData,
-  },
+const state = {
+  usersList: usersList,
+  usersDialogs: usersDialogs,
+  postsList: postsList,
   friends: friends,
 }
 

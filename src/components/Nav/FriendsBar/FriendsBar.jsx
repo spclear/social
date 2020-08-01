@@ -15,7 +15,6 @@ const FriendItem = (props) => {
 }
 
 const FriendsBar = (props) => {
-  console.log(props.friends)
   return (
     <div className={styles.friendsBar}>
       <h3 className={styles.title}>Friends</h3>
