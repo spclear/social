@@ -21,7 +21,7 @@ const FriendsBar = (props) => {
       <div className={styles.items}>
         {
           props.friends
-            .slice(props.friends.length - 3, props.friends.length)
+            .reverse()
             .map(item => (
               <FriendItem
                 image={item.avatar}

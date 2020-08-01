@@ -4,10 +4,17 @@ import styles from './messages.module.css';
 import Button from '../../../Button/Button';
 
 const CreateMessage = () => {
+  let newMessage = React.createRef();
+
+  let alertMessageTest = () => {
+    let msgText = newMessage.current.textContent;
+    alert(msgText);
+  }
+
   return (
     <div className={styles.newMessage}>
-      <p className={styles.typeMessage} contentEditable="true"></p>
-      <Button addClass={styles.button} btnName='Send' />
+      <p ref={newMessage} className={styles.typeMessage} contentEditable="true"></p>
+      <Button onClick={alertMessageTest} addClass={styles.button} btnName='Send' />
     </div>
   )
 };

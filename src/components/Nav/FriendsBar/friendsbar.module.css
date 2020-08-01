@@ -29,11 +29,14 @@
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
+  height: 200px;
+  max-height: 200px;
+  overflow: hidden;
 }
 
 .item {
   width: 50%;
-  margin-bottom: 20px;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
