@@ -15,6 +15,7 @@ const Main = (props) => {
           <ProfilePage
             posts={props.state.postsList}
             profile={props.state.usersList}
+            addPost={props.addPost}
           />
         )}
       />

@@ -8,7 +8,7 @@ const ProfilePage = (props) => {
   return (
     <div className="profilepage">
       <Profile profile={props.profile} />
-      <PostCreate />
+      <PostCreate addPost={props.addPost}/>
       <PostList
         posts={props.posts}
       />

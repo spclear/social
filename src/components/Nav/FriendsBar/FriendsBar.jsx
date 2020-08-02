@@ -15,19 +15,18 @@ const FriendItem = (props) => {
 }
 
 const FriendsBar = (props) => {
+  let friendList = props.friends;
   return (
     <div className={styles.friendsBar}>
       <h3 className={styles.title}>Friends</h3>
       <div className={styles.items}>
         {
-          props.friends
-            .reverse()
-            .map(item => (
-              <FriendItem
-                image={item.avatar}
-                name={item.name}
-              />
-            ))
+          friendList.map(item => (
+            <FriendItem
+              image={item.avatar}
+              name={item.name}
+            />
+          ))
         }
       </div>
     </div>
