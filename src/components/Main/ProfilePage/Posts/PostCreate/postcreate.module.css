@@ -10,12 +10,11 @@
 }
 
 .newText {
-  max-height: 200px;
-  min-height: 70px;
+  height: 100px;
+  resize: none;
+  width: 100%;
   margin: 20px 0 10px;
-  word-wrap: wrap;
-  overflow-y: auto;
-  overflow-x: hidden;
+  text-align: justify;
   border-radius: 5px;
   padding: 10px;
   background-color: #dcdde1;
@@ -25,5 +24,4 @@
   height: 50px;
   padding: 10px 30px;
   font-weight: 900;
-
 }

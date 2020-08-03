@@ -16,6 +16,8 @@ const Main = (props) => {
             posts={props.state.postsList}
             profile={props.state.usersList}
             addPost={props.addPost}
+            updInput={props.updInput}
+            currText={props.state.currentFieldText}
           />
         )}
       />

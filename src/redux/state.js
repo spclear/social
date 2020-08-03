@@ -8,6 +8,7 @@ const state = {
   usersList: usersList,
   usersDialogs: usersDialogs,
   postsList: postsList,
+  currentFieldText: 'wow',
   friends: friends,
 }
 
@@ -26,9 +27,14 @@ export const addPost = (postMessage) => {
       break;
     }
   }
-  console.log(state);
-  console.log(newPost);
+
   state.postsList.unshift(newPost);
+  renderApp(state);
+  state.currentFieldText = '';
+}
+
+export const updateCurrPostInput = text => {
+  state.currentFieldText = text;
   renderApp(state);
 }
 

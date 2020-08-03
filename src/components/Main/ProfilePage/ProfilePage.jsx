@@ -8,7 +8,11 @@ const ProfilePage = (props) => {
   return (
     <div className="profilepage">
       <Profile profile={props.profile} />
-      <PostCreate addPost={props.addPost}/>
+      <PostCreate
+        addPost={props.addPost}
+        updInput={props.updInput}
+        currText={props.currText}
+      />  
       <PostList
         posts={props.posts}
       />

@@ -5,15 +5,18 @@ html {font-size: 16px; margin-left: calc(100vw - 100%);}
 ul, ol, li {list-style: none;}
 a{text-decoration: none;color:#353b48}
 button, button:focus {border:none; outline:none; cursor: pointer;}
+textarea {border:none; outline:none}
 
 body {
   background-color: #f5f6fa;
+  overflow-y: overlay;
+}
+body,
+textarea {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
-  overflow-y: overlay;
   color: #353b48;
 }
-
 
 .header, .main, .footer {background-color: #fff;}
 
