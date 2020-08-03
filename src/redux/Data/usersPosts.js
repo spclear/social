@@ -44,7 +44,7 @@ let postsList = [
 
 const posts = postsList.forEach(item => {
   for (let i = 0; i < usersList.length; i++) {
-    if (item.authorId == usersList[i].ID) {
+    if (item.authorId === usersList[i].ID) {
       item.avatar = usersList[i].avatar;
       item.name = usersList[i].firstName;
       break;

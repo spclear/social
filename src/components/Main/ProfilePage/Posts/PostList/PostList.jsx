@@ -14,9 +14,9 @@ const PostItem = (props) => {
           <p className={postlist.time}>{props.time}</p>
         </div>
       </div>
-      <p className={postlist.body}>
+      <div className={postlist.body}>
         <p>{props.text}</p>
-      </p>
+      </div>
     </div>
   );
 };

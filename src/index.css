@@ -12,7 +12,8 @@ body {
   overflow-y: overlay;
 }
 body,
-textarea {
+textarea,
+textarea:focus {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   color: #353b48;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import styles from './messages.module.css';
 import Button from '../../../Button/Button';
 
@@ -24,7 +23,7 @@ const MessageItem = (props) => {
     <div className={styles.message}>
       <div className={styles.avatar}>
         <a href='#'>
-          <img src={props.avatar} />
+          <img src={props.avatar} alt='' />
           </a>
       </div>
       <p className={styles.item}>{props.text}</p>

@@ -10,7 +10,7 @@ const DialogsItem = (props) => {
       className={styles.item}
     >
       <div className={styles.user}>
-        <img className={styles.userAvatar} src={props.avatar}/>
+        <img className={styles.userAvatar} src={props.avatar} alt=''/>
       </div>
       <h4 className={styles.userName}>{props.userName}</h4>
       <p className={styles.lastMessage}>{props.lastMessage}</p>

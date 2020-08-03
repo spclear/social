@@ -7,7 +7,7 @@ const Profile = (props) => {
   let avatar, userName;
 
   for (let i = 0; i < props.profile.length; i++) {
-    if (currentUserId == props.profile[i].ID) {
+    if (currentUserId === props.profile[i].ID) {
       avatar = props.profile[i].avatar;
       userName = props.profile[i].firstName + ' ' + props.profile[i].lastName;
     }
@@ -16,7 +16,7 @@ const Profile = (props) => {
   return (
     <div className={profile.profile}>
       <a className={profile.avatar} href="/">
-        <img className="avatar" src={avatar} />
+        <img className="avatar" src={avatar} alt='' />
       </a>
       <div className={profile.details}>
         <h3 className={profile.userName}>

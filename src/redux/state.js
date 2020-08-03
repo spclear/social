@@ -2,15 +2,16 @@ import usersList from './Data/usersList';
 import usersDialogs from './Data/usersDialogs';
 import postsList from './Data/usersPosts';
 import friends from './Data/friendsData';
-import { renderApp } from './render';
 
 const state = {
   usersList: usersList,
   usersDialogs: usersDialogs,
   postsList: postsList,
-  currentFieldText: 'wow',
+  currentFieldText: '. . .',
   friends: friends,
 }
+
+let renderApp = () => { };
 
 export const addPost = (postMessage) => {
   let newPost = {}
@@ -21,7 +22,7 @@ export const addPost = (postMessage) => {
   newPost.text = postMessage;
 
   for (let i = 0; i < state.usersList.length; i++) {
-    if (newPost.authorId == state.usersList[i].ID) {
+    if (newPost.authorId === state.usersList[i].ID) {
       newPost.avatar = state.usersList[i].avatar;
       newPost.name = state.usersList[i].firstName;
       break;
@@ -29,14 +30,15 @@ export const addPost = (postMessage) => {
   }
 
   state.postsList.unshift(newPost);
-  renderApp(state);
+  renderApp();
   state.currentFieldText = '';
 }
 
 export const updateCurrPostInput = text => {
   state.currentFieldText = text;
-  renderApp(state);
+  renderApp();
 }
 
+export const subscribe = handler => renderApp = handler;
 
 export default state;

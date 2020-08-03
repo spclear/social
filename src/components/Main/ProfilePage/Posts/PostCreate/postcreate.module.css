@@ -9,7 +9,7 @@
   color: #353b48;
 }
 
-.newText {
+.newText, .newText:focus {
   height: 100px;
   resize: none;
   width: 100%;
