@@ -5,7 +5,7 @@ import friends from './Data/friendsData';
 
 
 const store = {
-  state: {
+  _state: {
     usersList: usersList,
     usersDialogs: usersDialogs,
     postsList: postsList,
@@ -13,8 +13,12 @@ const store = {
     friends: friends,
   },
 
+  getState() {
+    return this._state;
+  },
+
   getAvatar(id) {
-    const users = this.state.usersList;
+    const users = this._state.usersList;
     
     for (let i = 0; i < users.length; i++) {
       if (id === users[i].ID) {
@@ -24,7 +28,7 @@ const store = {
   },
 
   getName(id) {
-    const users = this.state.usersList;
+    const users = this._state.usersList;
     
     for (let i = 0; i < users.length; i++) {
       if (id === users[i].ID) {
@@ -34,7 +38,7 @@ const store = {
   },
 
   getFullName(id) {
-    const users = this.state.usersList;
+    const users = this._state.usersList;
 
     for (let i = 0; i < users.length; i++) {
       if (id === users[i].ID) {
@@ -43,17 +47,17 @@ const store = {
     }
   },
 
-  _subscriber() {
+  _callSubscriber() {
     console.log('There are no subscribers (observers) for now.')
   },
 
   subscribe(observer) {
-    this._subscriber = observer;
+    this._callSubscriber = observer;
   },
 
   addPost(message) {
     let newPost = {}
-    let posts = this.state.postsList;
+    let posts = this._state.postsList;
 
     newPost.postId = posts.length + 1;
     newPost.authorId = "641006348";
@@ -64,13 +68,13 @@ const store = {
     newPost.avatar = this.getAvatar(newPost.authorId);
 
     posts.unshift(newPost);
-    this._subscriber();
-    this.state.currentFieldText = '';
+    this._callSubscriber();
+    this._state.currentFieldText = '';
   },
 
   updateCurrPostInput (text) {
-    this.state.currentFieldText = text;
-    this._subscriber();
+    this._state.currentFieldText = text;
+    this._callSubscriber();
   }
 }
 

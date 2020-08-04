@@ -8,12 +8,12 @@ const Dialogs = (props) => {
   return (
     <div className={styles.dialogs}>
       <DialogsList
-        dialogs={props.store.state.usersDialogs}
+        dialogs={props.store.getState().usersDialogs}
       />
       <Route path="/dialogs/messages" component={() => (
         <Messages
           userName='Ann'
-          dialog={props.store.state.usersDialogs}
+          dialog={props.store.getState().usersDialogs}
         />
       )}>
       </Route>

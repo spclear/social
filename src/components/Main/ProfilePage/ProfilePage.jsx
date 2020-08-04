@@ -9,7 +9,7 @@ const ProfilePage = (props) => {
       <Profile store={props.store} />
       <PostCreate store={props.store} />  
       <PostList
-        posts={props.store.state.postsList}
+        posts={props.store.getState().postsList}
       />
     </div>
   )

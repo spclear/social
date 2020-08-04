@@ -20,7 +20,7 @@ const PostCreate = (props) => {
         ref={postField}
         className={create.newText}
         onChange={updateInput}
-        value={props.store.state.currentFieldText}
+        value={props.store.getState().currentFieldText}
       />
       <Button
         addClass={create.button}

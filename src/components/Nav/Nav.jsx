@@ -27,7 +27,7 @@ const Nav = (props) => {
           <NavItem to="/music" linkname="Music" />
           <NavItem to="/settings" linkname="Settings" />
       </ul>
-      <FriendsBar friends={props.store.state.friends}/>
+      <FriendsBar friends={props.store.getState().friends}/>
       </nav>
   );
 }
