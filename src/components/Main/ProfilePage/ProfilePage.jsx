@@ -6,14 +6,10 @@ import PostList from './Posts/PostList/PostList';
 const ProfilePage = (props) => {
   return (
     <div className="profilepage">
-      <Profile profile={props.profile} />
-      <PostCreate
-        addPost={props.addPost}
-        updInput={props.updInput}
-        currText={props.currText}
-      />  
+      <Profile store={props.store} />
+      <PostCreate store={props.store} />  
       <PostList
-        posts={props.posts}
+        posts={props.store.state.postsList}
       />
     </div>
   )

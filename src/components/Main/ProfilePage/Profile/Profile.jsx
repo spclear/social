@@ -4,14 +4,9 @@ import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 const Profile = (props) => {
   const currentUserId = "641006348";
-  let avatar, userName;
-
-  for (let i = 0; i < props.profile.length; i++) {
-    if (currentUserId === props.profile[i].ID) {
-      avatar = props.profile[i].avatar;
-      userName = props.profile[i].firstName + ' ' + props.profile[i].lastName;
-    }
-  }
+  
+  let avatar = props.store.getAvatar(currentUserId);
+  let userName = props.store.getFullName(currentUserId);
 
   return (
     <div className={profile.profile}>

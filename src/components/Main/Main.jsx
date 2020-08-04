@@ -1,31 +1,23 @@
 import React from 'react';
-import {Route } from "react-router-dom";
-import main from './main.module.css';
+import { Route } from "react-router-dom";
 import Dialogs from './Dialogs/Dialogs';
 import ProfilePage from './ProfilePage/ProfilePage';
 import Music from './Music/Music';
 import News from './News/News';
 import Settings from './Settings/Settings';
+import main from './main.module.css';
 
 const Main = (props) => {
   return (
     <main className={main.main}>
       <Route path='/profile'
         render={() => (
-          <ProfilePage
-            posts={props.state.postsList}
-            profile={props.state.usersList}
-            addPost={props.addPost}
-            updInput={props.updInput}
-            currText={props.state.currentFieldText}
-          />
+          <ProfilePage store={props.store} />
         )}
       />
       <Route path='/dialogs'
         render={() => (
-          <Dialogs
-            dialogs={props.state.usersDialogs}
-          />
+          <Dialogs store={props.store} />
         )}
       />
       <Route path='/news' component={News}/>

@@ -6,14 +6,12 @@ const PostCreate = (props) => {
   let postField = React.createRef();
   
   const addNewPost = () => {
-    props.addPost(postField.current.value);
+    props.store.addPost(postField.current.value);
   }
 
   const updateInput = () => {
-    props.updInput(postField.current.value);
+    props.store.updateCurrPostInput(postField.current.value);
   }
-
-
 
   return (
     <div className={create.createPost}>
@@ -22,8 +20,8 @@ const PostCreate = (props) => {
         ref={postField}
         className={create.newText}
         onChange={updateInput}
-        value={props.currText}
-      />  
+        value={props.store.state.currentFieldText}
+      />
       <Button
         addClass={create.button}
         onClick={addNewPost}

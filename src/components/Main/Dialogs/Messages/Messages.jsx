@@ -32,8 +32,9 @@ const MessageItem = (props) => {
 };
 
 const MessagesBody = (props) => {
-  let currAvatar = props.dialog[1].avatar;
-  let messagesList = props.dialog[1].messagesHistory.map((message) => (
+  const currItem = props.dialog[1]
+  let currAvatar = currItem.avatar;
+  let messagesList = currItem.messagesHistory.map((message) => (
     <MessageItem
       avatar={currAvatar}
       text={message.text}

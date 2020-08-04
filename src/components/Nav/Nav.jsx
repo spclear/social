@@ -6,7 +6,11 @@ import FriendsBar from './FriendsBar/FriendsBar';
 const NavItem = (props) => {
   return (
     <li className={nav.item}>
-      <NavLink to={props.to} className={nav.itemLink} activeClassName={nav.active}>
+      <NavLink
+        to={props.to}
+        className={nav.itemLink}
+        activeClassName={nav.active}
+      >
         {props.linkname}
       </NavLink>
     </li>
@@ -23,7 +27,7 @@ const Nav = (props) => {
           <NavItem to="/music" linkname="Music" />
           <NavItem to="/settings" linkname="Settings" />
       </ul>
-      <FriendsBar friends={props.friendsData}/>
+      <FriendsBar friends={props.store.state.friends}/>
       </nav>
   );
 }
