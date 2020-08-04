@@ -1,18 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
 *, *:focus {margin: 0; padding: 0; box-sizing: border-box;outline:none}
-html {font-size: 16px;}
+html {font-size: 16px; margin-left: calc(100vw - 100%);}
 ul, ol, li {list-style: none;}
-a{text-decoration: none;color:black}
+a{text-decoration: none;color:#353b48}
 button, button:focus {border:none; outline:none; cursor: pointer;}
+textarea {border:none; outline:none}
 
 body {
   background-color: #f5f6fa;
+  overflow-y: overlay;
+}
+body,
+textarea,
+textarea:focus {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
+  color: #353b48;
 }
 
-.header, .main, .nav, .footer {background-color: #fff;}
+.header, .main, .footer {background-color: #fff;}
 
 .avatar {width: 100%;height: 100%;}
 
@@ -25,7 +32,7 @@ body {
   "header header"
   "nav main"
   "footer footer";
-  grid-template-rows: 70px 1fr 70px;
+  grid-template-rows: 70px auto 70px;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }

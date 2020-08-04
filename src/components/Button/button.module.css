@@ -1,0 +1,9 @@
+.createButton {
+  display: block;
+  background-color: #dcdde1;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: auto;
+  text-transform: uppercase;
+  color: #353b48;
+}

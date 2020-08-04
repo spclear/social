@@ -1,0 +1,17 @@
+.dialogs {
+  grid-area: dialogs;
+}
+.title {
+  margin-bottom: 40px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.title:after {
+  content: '';
+  width: 1rem;
+  display: block;
+  margin: 20px auto;
+  background-color: #aeaeae;
+  height: 1px;
+}

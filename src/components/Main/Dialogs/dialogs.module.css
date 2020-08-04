@@ -1,0 +1,10 @@
+.dialogs {
+  flex-grow: 1;
+  padding: 35px 25px;
+  display: grid;
+  grid-template-areas: 
+    "dialogs messages";
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 20px;
+}
+

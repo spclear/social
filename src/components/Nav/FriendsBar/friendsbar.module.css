@@ -1,0 +1,61 @@
+.friendsBar {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px auto 0;
+  border-radius: 5px;
+  font-size: .9rem;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.2rem;
+}
+
+.title:after {
+  display: block;
+  content: '';
+  height: 1px;
+  width: 1rem;
+  margin: 5px auto 10px;
+  background-color: #aeaeae;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  height: 200px;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.item {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar img {
+  height: 100%;
+  width: 100%;
+}
+
+.name {
+  padding: 5px;
+  font-weight: bold;
+}

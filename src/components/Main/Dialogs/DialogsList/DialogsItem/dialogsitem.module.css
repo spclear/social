@@ -1,0 +1,53 @@
+.item {
+  width: 100%;
+  display: grid;
+  padding: 20px 15px 20px 25px;
+  border-left: 2px solid transparent;
+  grid-template-areas: 
+    "avatar name"
+    "avatar message";
+  grid-template-columns: 1fr 10fr;
+  transition: background-color .2s;
+}
+.item:hover,
+.active {
+  background-color: #eaeaea;
+}
+
+.item:not(:last-of-type) {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.active {
+  border-left: 2px solid #666666;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+
+.user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  grid-area: avatar;
+  align-self: center;
+  margin-right: 15px;
+}
+
+.userAvatar {
+  width: 100%;
+  height: 100%;
+}
+.userName {
+  font-size: 1.1rem;
+}
+
+.lastMessage {
+  max-width: 100%;
+  grid-area: message;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: .9rem;
+  text-align: justify;
+}

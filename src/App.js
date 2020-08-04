@@ -4,14 +4,18 @@ import Nav from './components/Nav/Nav';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer'
 
-const App = () => {
+const App = (props) => {
   return (
     <div className='app-wrapper'>
       <Header />
-      <Nav />
-      <Main />
+      <Nav friendsData={props.state.friends} />
+      <Main
+        state={props.state}
+        addPost={props.addPost}
+        updInput={props.updInput}
+      />
       <Footer />
-   </div> 
+    </div>
   );
 }
 
