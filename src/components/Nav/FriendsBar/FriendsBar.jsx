@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './friendsbar.module.css';
+import { getStateActionCreator } from '../../../redux/store';
 
 const FriendItem = (props) => {
   return (
@@ -15,7 +16,7 @@ const FriendItem = (props) => {
 }
 
 const FriendsBar = (props) => {
-  let friendList = props.dispatch({type: "GET-STATE"}).friends;
+  let friendList = props.dispatch(getStateActionCreator()).friends;
   return (
     <div className={styles.friendsBar}>
       <h3 className={styles.title}>Friends</h3>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './messages.module.css';
 import Button from '../../../Button/Button';
+import { getStateActionCreator } from '../../../../redux/store';
 
 const CreateMessage = () => {
   let newMessage = React.createRef();
@@ -52,7 +53,7 @@ const MessagesBody = (props) => {
 
 
 const Messages = (props) => {
-  let dialogs = props.dispatch({ type: "GET-STATE" }).usersDialogs;
+  let dialogs = props.dispatch(getStateActionCreator()).usersDialogs;
 
   return (
     <div className={styles.messages}>

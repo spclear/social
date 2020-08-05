@@ -1,26 +1,18 @@
 import React from 'react';
 import create from './postcreate.module.css';
 import Button from '../../../../Button/Button';
+import { addPostActionCreator, updateInputActionCreator, getStateActionCreator }
+  from '../../../../../redux/store';
 
 const PostCreate = (props) => {
   let postField = React.createRef();
   
   const addNewPost = () => {
-    props.dispatch(
-      {
-        type: "ADD-POST",
-        message: postField.current.value,
-      }
-    );
+    props.dispatch(addPostActionCreator(postField.current.value));
   }
 
   const updateInput = () => {
-    props.dispatch(
-      {
-        type: "UPDATE-CURRENT-POST-INPUT",
-        text: postField.current.value,
-      }
-    );
+    props.dispatch(updateInputActionCreator(postField.current.value));
   }
 
   return (
@@ -30,7 +22,7 @@ const PostCreate = (props) => {
         ref={postField}
         className={create.newText}
         onChange={updateInput}
-        value={props.dispatch({ type: "GET-STATE" }).currentFieldText}
+        value={props.dispatch(getStateActionCreator()).currentFieldText}
       />
       <Button
         addClass={create.button}

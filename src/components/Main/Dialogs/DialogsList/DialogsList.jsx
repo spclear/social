@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './dialogslist.module.css';
 import DialogsItem from './DialogsItem/DialogsItem';
+import { getStateActionCreator } from '../../../../redux/store';
 
 function returnLastMessage(obj) {
   let lastMsg = obj.messagesHistory[obj.messagesHistory.length - 1].text;
@@ -10,7 +11,7 @@ function returnLastMessage(obj) {
 }
 
 const DialogsList = (props) => {
-  let dialogsList = props.dispatch({ type: "GET-STATE" }).usersDialogs;
+  let dialogsList = props.dispatch(getStateActionCreator()).usersDialogs;
   
   let dialogs = dialogsList.map(dialog => (
     <DialogsItem key={dialog.userId}

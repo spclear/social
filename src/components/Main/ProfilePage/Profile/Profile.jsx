@@ -1,22 +1,14 @@
 import React from 'react';
 import profile from './profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo'
+import { getAvatarActionCreator, getFullNameActionCreator }
+  from '../../../../redux/store';
 
 const Profile = (props) => {
   const currentUserId = "641006348";
   
-  let avatar = props.dispatch(
-    {
-      type: "GET-AVATAR",
-      id: currentUserId,
-    }
-  );
-  let userName = props.dispatch(
-    {
-      type: "GET-FULL-NAME",
-      id: currentUserId,
-    }
-  );
+  let avatar = props.dispatch(getAvatarActionCreator(currentUserId));
+  let userName = props.dispatch(getFullNameActionCreator(currentUserId));
   return (
     <div className={profile.profile}>
       <a className={profile.avatar} href="/">

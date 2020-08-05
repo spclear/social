@@ -1,5 +1,6 @@
 import React from "react";
 import postlist from "./postlist.module.css";
+import { getStateActionCreator } from "../../../../../redux/store";
 
 
 const PostItem = (props) => {
@@ -22,7 +23,7 @@ const PostItem = (props) => {
 };
 
 const PostList = (props) => {
-  const posts = props.dispatch({ type: "GET-STATE" }).postsList;
+  const posts = props.dispatch(getStateActionCreator()).postsList;
   
   const postsList = posts.map((post) => (
     <PostItem

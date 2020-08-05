@@ -3,6 +3,12 @@ import usersDialogs from './Data/usersDialogs';
 import postsList from './Data/usersPosts';
 import friends from './Data/friendsData';
 
+const GET_STATE = "GET-STATE";
+const GET_AVATAR = "GET-AVATAR";
+const GET_NAME = "GET-NAME";
+const GET_FULL_NAME = "GET-FULL-NAME";
+const UPDATE_CURRENT_POST_INPUT = "UPDATE-CURRENT-POST-INPUT";
+const ADD_POST = "ADD-POST";
 
 const store = {
   _state: {
@@ -43,10 +49,10 @@ const store = {
 
   dispatch(action) {
     switch (action.type) {
-      case "GET-STATE":
+      case GET_STATE:
         return this._state;
   
-      case "GET-AVATAR": {
+      case GET_AVATAR: {
           const users = this._state.usersList;
           for (let i = 0; i < users.length; i++) {
             if (action.id === users[i].ID) {
@@ -55,7 +61,7 @@ const store = {
           }
       }
 
-      case "GET-NAME": {
+      case GET_NAME: {
           const users = this._state.usersList;
           for (let i = 0; i < users.length; i++) {
             if (action.id === users[i].ID) {
@@ -64,7 +70,7 @@ const store = {
           }
       }
         
-      case "GET-FULL-NAME": {
+      case GET_FULL_NAME: {
           const users = this._state.usersList;
           for (let i = 0; i < users.length; i++) {
             if (action.id === users[i].ID) {
@@ -73,13 +79,13 @@ const store = {
           }
       }
         
-      case "UPDATE-CURRENT-POST-INPUT": {
+      case UPDATE_CURRENT_POST_INPUT: {
           this._state.currentFieldText = action.text;
           this._callSubscriber();
           return;
       }
       
-      case "ADD-POST": {
+      case ADD_POST: {
           let newPost = {}
           let posts = this._state.postsList;
 
@@ -98,6 +104,47 @@ const store = {
       }  
     }
   },
+}
+
+export const getNameActionCreator = (id) => {
+  return {
+    type: GET_NAME,
+    id: id,
+  }
+}
+
+export const getFullNameActionCreator = (id) => {
+  return {
+    type: GET_FULL_NAME,
+    id: id,
+  }
+}
+
+export const getAvatarActionCreator = (id) => {
+  return {
+    type: GET_AVATAR,
+    id: id,
+  }
+}
+
+export const getStateActionCreator = () => {
+  return {
+    type: GET_STATE,
+  }
+}
+
+export const updateInputActionCreator = (text) => {
+  return {
+    type: UPDATE_CURRENT_POST_INPUT,
+    text: text,
+  }
+}
+
+export const addPostActionCreator = (message) => {
+  return {
+    type: ADD_POST,
+    message: message
+  }
 }
 
 export default store;
