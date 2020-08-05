@@ -8,8 +8,8 @@ const App = (props) => {
   return (
     <div className='app-wrapper'>
       <Header />
-      <Nav store={props.store} />
-      <Main store={props.store} />
+      <Nav dispatch={props.dispatch}/>
+      <Main dispatch={props.dispatch}/>
       <Footer />
     </div>
   );

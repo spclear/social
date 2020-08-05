@@ -22,7 +22,9 @@ const PostItem = (props) => {
 };
 
 const PostList = (props) => {
-  const postsList = props.posts.map((post) => (
+  const posts = props.dispatch({ type: "GET-STATE" }).postsList;
+  
+  const postsList = posts.map((post) => (
     <PostItem
       key={post.postId}
       avatar={post.avatar}

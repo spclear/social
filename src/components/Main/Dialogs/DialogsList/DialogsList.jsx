@@ -10,7 +10,9 @@ function returnLastMessage(obj) {
 }
 
 const DialogsList = (props) => {
-  let dialogs = props.dialogs.map(dialog => (
+  let dialogsList = props.dispatch({ type: "GET-STATE" }).usersDialogs;
+  
+  let dialogs = dialogsList.map(dialog => (
     <DialogsItem key={dialog.userId}
       userName={dialog.name}
       lastMessage={returnLastMessage(dialog)}

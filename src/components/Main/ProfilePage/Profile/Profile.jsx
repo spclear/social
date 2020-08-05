@@ -5,9 +5,18 @@ import ProfileInfo from './ProfileInfo/ProfileInfo'
 const Profile = (props) => {
   const currentUserId = "641006348";
   
-  let avatar = props.store.getAvatar(currentUserId);
-  let userName = props.store.getFullName(currentUserId);
-
+  let avatar = props.dispatch(
+    {
+      type: "GET-AVATAR",
+      id: currentUserId,
+    }
+  );
+  let userName = props.dispatch(
+    {
+      type: "GET-FULL-NAME",
+      id: currentUserId,
+    }
+  );
   return (
     <div className={profile.profile}>
       <a className={profile.avatar} href="/">

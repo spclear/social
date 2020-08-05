@@ -6,11 +6,21 @@ const PostCreate = (props) => {
   let postField = React.createRef();
   
   const addNewPost = () => {
-    props.store.addPost(postField.current.value);
+    props.dispatch(
+      {
+        type: "ADD-POST",
+        message: postField.current.value,
+      }
+    );
   }
 
   const updateInput = () => {
-    props.store.updateCurrPostInput(postField.current.value);
+    props.dispatch(
+      {
+        type: "UPDATE-CURRENT-POST-INPUT",
+        text: postField.current.value,
+      }
+    );
   }
 
   return (
@@ -20,7 +30,7 @@ const PostCreate = (props) => {
         ref={postField}
         className={create.newText}
         onChange={updateInput}
-        value={props.store.getState().currentFieldText}
+        value={props.dispatch({ type: "GET-STATE" }).currentFieldText}
       />
       <Button
         addClass={create.button}

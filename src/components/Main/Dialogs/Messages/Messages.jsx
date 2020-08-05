@@ -32,7 +32,7 @@ const MessageItem = (props) => {
 };
 
 const MessagesBody = (props) => {
-  const currItem = props.dialog[1]
+  const currItem = props.dialogs[1]
   let currAvatar = currItem.avatar;
   let messagesList = currItem.messagesHistory.map((message) => (
     <MessageItem
@@ -52,10 +52,12 @@ const MessagesBody = (props) => {
 
 
 const Messages = (props) => {
+  let dialogs = props.dispatch({ type: "GET-STATE" }).usersDialogs;
+
   return (
     <div className={styles.messages}>
       <h4 className={styles.title}>{props.userName}</h4>
-      <MessagesBody messages={props.messages} dialog={props.dialog}/>
+      <MessagesBody dialogs={dialogs}/>
       <CreateMessage />
     </div>
   );

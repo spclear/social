@@ -13,11 +13,7 @@ const store = {
     friends: friends,
   },
 
-  getState() {
-    return this._state;
-  },
-
-  getAvatar(id) {
+  _getAvatar(id) {
     const users = this._state.usersList;
     
     for (let i = 0; i < users.length; i++) {
@@ -27,22 +23,12 @@ const store = {
     }
   },
 
-  getName(id) {
+  _getName(id) {
     const users = this._state.usersList;
     
     for (let i = 0; i < users.length; i++) {
       if (id === users[i].ID) {
         return users[i].firstName;
-      }
-    }
-  },
-
-  getFullName(id) {
-    const users = this._state.usersList;
-
-    for (let i = 0; i < users.length; i++) {
-      if (id === users[i].ID) {
-        return `${users[i].firstName} ${users[i].lastName}`;
       }
     }
   },
@@ -55,27 +41,63 @@ const store = {
     this._callSubscriber = observer;
   },
 
-  addPost(message) {
-    let newPost = {}
-    let posts = this._state.postsList;
+  dispatch(action) {
+    switch (action.type) {
+      case "GET-STATE":
+        return this._state;
+  
+      case "GET-AVATAR": {
+          const users = this._state.usersList;
+          for (let i = 0; i < users.length; i++) {
+            if (action.id === users[i].ID) {
+              return users[i].avatar;
+            }
+          }
+      }
 
-    newPost.postId = posts.length + 1;
-    newPost.authorId = "641006348";
-    newPost.time = "just now";
-    newPost.text = message;
+      case "GET-NAME": {
+          const users = this._state.usersList;
+          for (let i = 0; i < users.length; i++) {
+            if (action.id === users[i].ID) {
+              return users[i].firstName;
+            }
+          }
+      }
+        
+      case "GET-FULL-NAME": {
+          const users = this._state.usersList;
+          for (let i = 0; i < users.length; i++) {
+            if (action.id === users[i].ID) {
+              return `${users[i].firstName} ${users[i].lastName}`;
+            }
+          }
+      }
+        
+      case "UPDATE-CURRENT-POST-INPUT": {
+          this._state.currentFieldText = action.text;
+          this._callSubscriber();
+          return;
+      }
+      
+      case "ADD-POST": {
+          let newPost = {}
+          let posts = this._state.postsList;
 
-    newPost.name = this.getName(newPost.authorId);
-    newPost.avatar = this.getAvatar(newPost.authorId);
+          newPost.postId = posts.length + 1;
+          newPost.authorId = "641006348";
+          newPost.time = "just now";
+          newPost.text = action.message;
 
-    posts.unshift(newPost);
-    this._callSubscriber();
-    this._state.currentFieldText = '';
+          newPost.name = this._getName(newPost.authorId);
+          newPost.avatar = this._getAvatar(newPost.authorId);
+
+          posts.unshift(newPost);
+          this._callSubscriber();
+          this._state.currentFieldText = '';
+          return;
+      }  
+    }
   },
-
-  updateCurrPostInput (text) {
-    this._state.currentFieldText = text;
-    this._callSubscriber();
-  }
 }
 
 export default store;

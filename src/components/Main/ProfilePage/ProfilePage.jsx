@@ -6,10 +6,14 @@ import PostList from './Posts/PostList/PostList';
 const ProfilePage = (props) => {
   return (
     <div className="profilepage">
-      <Profile store={props.store} />
-      <PostCreate store={props.store} />  
+      <Profile
+        dispatch={props.dispatch}
+      />
+      <PostCreate
+        dispatch={props.dispatch}
+      />  
       <PostList
-        posts={props.store.getState().postsList}
+        dispatch={props.dispatch}
       />
     </div>
   )

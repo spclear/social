@@ -15,7 +15,7 @@ const FriendItem = (props) => {
 }
 
 const FriendsBar = (props) => {
-  let friendList = props.friends;
+  let friendList = props.dispatch({type: "GET-STATE"}).friends;
   return (
     <div className={styles.friendsBar}>
       <h3 className={styles.title}>Friends</h3>
