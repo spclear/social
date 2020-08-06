@@ -4,7 +4,7 @@ import DialogsItem from './DialogsItem/DialogsItem';
 import { getStateActionCreator } from '../../../../redux/store';
 
 function returnLastMessage(obj) {
-  let lastMsg = obj.messagesHistory[obj.messagesHistory.length - 1].text;
+  let lastMsg = obj.messagesHistory[0].text;
 
   if (lastMsg.length > 35) return lastMsg.slice(0, 35) + '...'
   return lastMsg.slice(0, 35);

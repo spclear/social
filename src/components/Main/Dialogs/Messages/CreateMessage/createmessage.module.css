@@ -1,0 +1,26 @@
+.newMessage {
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px 10px 10px;
+  border-top: 1px solid #eaeaea;
+}
+
+.typeMessage, .typeMessage:focus {
+  font-size: 1rem;
+  background-color: #eaeaea;
+  padding: 15px 20px;
+  height: 100px;
+  overflow: auto;
+  border-radius: 5px;
+  resize: none;
+}
+
+.button {
+  height: 40px;
+  padding: 5px 15px;
+  width: 100px;
+  font-weight: bold;
+  margin-top: .3rem;
+}

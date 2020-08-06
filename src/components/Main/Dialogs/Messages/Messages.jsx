@@ -1,65 +1,25 @@
 import React from 'react';
 import styles from './messages.module.css';
-import Button from '../../../Button/Button';
-import { getStateActionCreator } from '../../../../redux/store';
-
-const CreateMessage = () => {
-  let newMessage = React.createRef();
-
-  let alertMessageTest = () => {
-    let msgText = newMessage.current.textContent;
-    alert(msgText);
-  }
-
-  return (
-    <div className={styles.newMessage}>
-      <p ref={newMessage} className={styles.typeMessage} contentEditable="true"></p>
-      <Button onClick={alertMessageTest} addClass={styles.button} btnName='Send' />
-    </div>
-  )
-};
-
-const MessageItem = (props) => {
-  return (
-    <div className={styles.message}>
-      <div className={styles.avatar}>
-        <a href='#'>
-          <img src={props.avatar} alt='' />
-          </a>
-      </div>
-      <p className={styles.item}>{props.text}</p>
-    </div>
-  )
-};
-
-const MessagesBody = (props) => {
-  const currItem = props.dialogs[1]
-  let currAvatar = currItem.avatar;
-  let messagesList = currItem.messagesHistory.map((message) => (
-    <MessageItem
-      avatar={currAvatar}
-      text={message.text}
-      key={message.time}
-    />
-  ));
-  return (
-    <div className={styles.messagesBody}>
-      <div className={styles.messagesList}>
-        {messagesList}
-      </div>
-    </div>
-  )
-};
-
+import CreateMessage from './CreateMessage/CreateMessage';
+import MessagesBody from './MessagesBody/MessagesBody';
+import { getNameActionCreator } from '../../../../redux/store';
 
 const Messages = (props) => {
-  let dialogs = props.dispatch(getStateActionCreator()).usersDialogs;
-
+  
   return (
     <div className={styles.messages}>
-      <h4 className={styles.title}>{props.userName}</h4>
-      <MessagesBody dialogs={dialogs}/>
-      <CreateMessage />
+      <h4 className={styles.title}>
+        {props.userName}
+      </h4>
+      <MessagesBody
+        dispatch={props.dispatch}
+        userId={props.userId}
+      />
+      <CreateMessage
+        dispatch={props.dispatch}
+        userId={props.userId}
+        idSelf={props.idSelf}
+      />
     </div>
   );
 }

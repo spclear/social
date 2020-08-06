@@ -7,15 +7,19 @@ const GET_STATE = "GET-STATE";
 const GET_AVATAR = "GET-AVATAR";
 const GET_NAME = "GET-NAME";
 const GET_FULL_NAME = "GET-FULL-NAME";
+const GET_DIALOG = "GET-DIALOG";
 const UPDATE_CURRENT_POST_INPUT = "UPDATE-CURRENT-POST-INPUT";
+const UPDATE_CURRENT_MESSAGE_INPUT = "UPDATE-CURRENT-MESSAGE-INPUT";
 const ADD_POST = "ADD-POST";
+const SEND_MESSAGE = "SEND-MESSAGE";
 
 const store = {
   _state: {
     usersList: usersList,
     usersDialogs: usersDialogs,
     postsList: postsList,
-    currentFieldText: '. . .',
+    currentFieldPost: '',
+    currentFieldMessage: '',
     friends: friends,
   },
 
@@ -53,55 +57,92 @@ const store = {
         return this._state;
   
       case GET_AVATAR: {
-          const users = this._state.usersList;
-          for (let i = 0; i < users.length; i++) {
-            if (action.id === users[i].ID) {
-              return users[i].avatar;
-            }
-          }
+         const users = this._state.usersList;
+         for (let i = 0; i < users.length; i++) {
+           if (action.id === users[i].ID) {
+             return users[i].avatar;
+           }
+         }
       }
 
       case GET_NAME: {
-          const users = this._state.usersList;
-          for (let i = 0; i < users.length; i++) {
-            if (action.id === users[i].ID) {
-              return users[i].firstName;
-            }
+        const users = this._state.usersList;
+        for (let i = 0; i < users.length; i++) {
+          if (action.id === users[i].ID) {
+            return users[i].firstName;
           }
+        }
       }
         
       case GET_FULL_NAME: {
-          const users = this._state.usersList;
-          for (let i = 0; i < users.length; i++) {
-            if (action.id === users[i].ID) {
-              return `${users[i].firstName} ${users[i].lastName}`;
-            }
+        const users = this._state.usersList;
+        for (let i = 0; i < users.length; i++) {
+          if (action.id === users[i].ID) {
+            return `${users[i].firstName} ${users[i].lastName}`;
           }
+        }
       }
         
       case UPDATE_CURRENT_POST_INPUT: {
-          this._state.currentFieldText = action.text;
-          this._callSubscriber();
-          return;
+        this._state.currentFieldPost = action.text;
+        this._callSubscriber();
+        return;
+      }
+        
+      case UPDATE_CURRENT_MESSAGE_INPUT: {
+        this._state.currentFieldMessage = action.text;
+        this._callSubscriber();
+        return;
       }
       
       case ADD_POST: {
-          let newPost = {}
-          let posts = this._state.postsList;
+        let newPost = {};
+        let posts = this._state.postsList;
 
-          newPost.postId = posts.length + 1;
-          newPost.authorId = "641006348";
-          newPost.time = "just now";
-          newPost.text = action.message;
+        newPost.postId = posts.length + 1;
+        newPost.authorId = "641006348";
+        newPost.time = "just now";
+        newPost.text = action.message;
+        newPost.name = this._getName(newPost.authorId);
+        newPost.avatar = this._getAvatar(newPost.authorId);
 
-          newPost.name = this._getName(newPost.authorId);
-          newPost.avatar = this._getAvatar(newPost.authorId);
+        posts.unshift(newPost);
+        this._callSubscriber();
+        this._state.currentFieldPost = '';
+        return;
+      }
+      
+      case SEND_MESSAGE: {
+        let newMessage = {};
+        let dialogs = this._state.usersDialogs;
 
-          posts.unshift(newPost);
-          this._callSubscriber();
-          this._state.currentFieldText = '';
-          return;
-      }  
+        newMessage.id = action.myId;
+        newMessage.text = this._state.currentFieldMessage;
+
+        for (let i = 0; i < dialogs.length; i++) {
+          console.log(dialogs);
+          if (action.userId === dialogs[i].userId) {
+            console.log('uwu')
+            newMessage.time = dialogs[i].length + 1;
+            dialogs[i].messagesHistory.unshift(newMessage);
+            console.log('uwu', dialogs[i]);
+            break;
+          }
+        }
+
+        this._callSubscriber();
+        this._state.currentFieldMessage = '';
+        return;
+      }
+        
+      case GET_DIALOG: {
+        const dialogs = this._state.usersDialogs;
+        for (let i = 0; i < dialogs.length; i++) {
+          if (action.id === dialogs[i].userId) {
+            return dialogs[i];
+          }
+        }
+      }
     }
   },
 }
@@ -127,6 +168,13 @@ export const getAvatarActionCreator = (id) => {
   }
 }
 
+export const getDialogActionCreator = (id) => {
+  return {
+    type: GET_DIALOG,
+    id: id,
+  }
+}
+
 export const getStateActionCreator = () => {
   return {
     type: GET_STATE,
@@ -140,10 +188,25 @@ export const updateInputActionCreator = (text) => {
   }
 }
 
+export const updateMessageInputActionCreator = (text) => {
+  return {
+    type: UPDATE_CURRENT_MESSAGE_INPUT,
+    text: text,
+  }
+}
+
 export const addPostActionCreator = (message) => {
   return {
     type: ADD_POST,
-    message: message
+    message: message,
+  }
+}
+
+export const sendMessageActionCreator = (id, idSelf) => {
+  return {
+    type: SEND_MESSAGE,
+    userId: id,
+    myId: idSelf,
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import create from './postcreate.module.css';
+import styles from './postcreate.module.css';
 import Button from '../../../../Button/Button';
 import { addPostActionCreator, updateInputActionCreator, getStateActionCreator }
   from '../../../../../redux/store';
@@ -11,23 +11,23 @@ const PostCreate = (props) => {
     props.dispatch(addPostActionCreator(postField.current.value));
   }
 
-  const updateInput = () => {
+  const update = () => {
     props.dispatch(updateInputActionCreator(postField.current.value));
   }
-
   return (
-    <div className={create.createPost}>
-      <h2 className={create.title}>What's new?</h2>
+    <div className={styles.createPost}>
+      <h2 className={styles.title}>What's new?</h2>
       <textarea
+        placeholder='Share what you want...'
         ref={postField}
-        className={create.newText}
-        onChange={updateInput}
-        value={props.dispatch(getStateActionCreator()).currentFieldText}
+        className={styles.newText}
+        onChange={update}
+        value={props.dispatch(getStateActionCreator()).currentFieldPost}
       />
       <Button
-        addClass={create.button}
+        addClass={styles.button}
         onClick={addNewPost}
-        btnName='Post'
+        buttonName='Post'
       />
     </div>
   )
