@@ -34,7 +34,7 @@ textarea:focus {
   "nav main"
   "footer footer";
   grid-template-rows: 70px auto 70px;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 2fr minmax(10fr, 10fr);
   grid-gap: 10px;
 }
 

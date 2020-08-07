@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './messages.module.css';
 import CreateMessage from './CreateMessage/CreateMessage';
 import MessagesBody from './MessagesBody/MessagesBody';
-import { getNameActionCreator } from '../../../../redux/store';
 
 const Messages = (props) => {
   
