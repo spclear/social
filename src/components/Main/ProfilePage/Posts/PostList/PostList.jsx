@@ -1,6 +1,7 @@
 import React from "react";
 import postlist from "./postlist.module.css";
-import { getStateActionCreator } from "../../../../../redux/store";
+import { getStateActionCreator, getAvatarActionCreator, getNameActionCreator }
+  from "../../../../../redux/store";
 
 
 const PostItem = (props) => {
@@ -8,7 +9,7 @@ const PostItem = (props) => {
     <div className={postlist.postItem}>
       <div className={postlist.author}>
         <div className={postlist.authorAvatar}>
-          <img className="avatar" src={props.avatar} alt="user avatar" />
+          <img className="avatar" src={props.authorAvatar} alt="user avatar" />
         </div>
         <div className={postlist.details}>
           <h3 className={postlist.name}>{props.authorName}</h3>
@@ -28,10 +29,10 @@ const PostList = (props) => {
   const postsList = posts.map((post) => (
     <PostItem
       key={post.postId}
-      avatar={post.avatar}
-      text={post.text}
+      authorName={props.dispatch(getNameActionCreator(post.authorId))}
+      authorAvatar={props.dispatch(getAvatarActionCreator(post.authorId))}
       time={post.time}
-      authorName={post.name}
+      text={post.text}
     />
   ));
   

@@ -102,10 +102,8 @@ const store = {
         newPost.postId = posts.length + 1;
         newPost.authorId = "641006348";
         newPost.time = "just now";
-        newPost.text = action.message;
-        newPost.name = this._getName(newPost.authorId);
-        newPost.avatar = this._getAvatar(newPost.authorId);
-
+        newPost.text = this._state.currentFieldPost;
+        
         posts.unshift(newPost);
         this._callSubscriber();
         this._state.currentFieldPost = '';
@@ -120,12 +118,9 @@ const store = {
         newMessage.text = this._state.currentFieldMessage;
 
         for (let i = 0; i < dialogs.length; i++) {
-          console.log(dialogs);
           if (action.userId === dialogs[i].userId) {
-            console.log('uwu')
             newMessage.time = dialogs[i].length + 1;
             dialogs[i].messagesHistory.unshift(newMessage);
-            console.log('uwu', dialogs[i]);
             break;
           }
         }
@@ -195,10 +190,9 @@ export const updateMessageInputActionCreator = (text) => {
   }
 }
 
-export const addPostActionCreator = (message) => {
+export const addPostActionCreator = () => {
   return {
     type: ADD_POST,
-    message: message,
   }
 }
 

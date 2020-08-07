@@ -1,5 +1,3 @@
-import usersList from './usersList';
-
 let usersDialogs = [
   {
     userId: "184760497",
@@ -103,15 +101,6 @@ let usersDialogs = [
   },
 ];
 
-const dialogs = usersDialogs.forEach(item => {
-  for (let i = 0; i < usersList.length; i++) {
-    if (item.userId == usersList[i].ID) {
-      item.avatar = usersList[i].avatar;
-      item.name = usersList[i].firstName;
-      break;
-    }
-  }
-});
 
 
 export default usersDialogs;

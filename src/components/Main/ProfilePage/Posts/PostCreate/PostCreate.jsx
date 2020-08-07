@@ -8,7 +8,7 @@ const PostCreate = (props) => {
   let postField = React.createRef();
   
   const addNewPost = () => {
-    props.dispatch(addPostActionCreator(postField.current.value));
+    props.dispatch(addPostActionCreator());
   }
 
   const update = () => {

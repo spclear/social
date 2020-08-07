@@ -1,5 +1,3 @@
-import usersList from './usersList';
-
 let postsList = [
   {
     postId: "5",
@@ -41,15 +39,5 @@ let postsList = [
     text: "I'm new here. This website looks prefect!",
   },
 ];
-
-const posts = postsList.forEach(item => {
-  for (let i = 0; i < usersList.length; i++) {
-    if (item.authorId === usersList[i].ID) {
-      item.avatar = usersList[i].avatar;
-      item.name = usersList[i].firstName;
-      break;
-    }
-  }
-});
 
 export default postsList;

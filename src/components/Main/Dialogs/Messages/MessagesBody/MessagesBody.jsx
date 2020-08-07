@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './messagesbody.module.css';
 import MessageItem from './MessageItem/MessageItem';
-import { getAvatarActionCreator, getStateActionCreator, getDialogActionCreator }
+import { getAvatarActionCreator, getDialogActionCreator }
   from '../../../../../redux/store';
 import ScrollToBottom from 'react-scroll-to-bottom';
 
