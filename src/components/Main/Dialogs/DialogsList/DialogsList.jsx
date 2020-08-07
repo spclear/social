@@ -12,7 +12,8 @@ function returnLastMessage(obj) {
 }
 
 const DialogsList = (props) => {
-  let dialogsList = props.dispatch(getStateActionCreator()).usersDialogs;
+  let dialogsList =
+    props.dispatch(getStateActionCreator()).messagesPage.usersDialogs;
   
   let dialogs = dialogsList.map(dialog => (
     <DialogsItem

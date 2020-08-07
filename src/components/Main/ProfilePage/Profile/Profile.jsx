@@ -9,6 +9,7 @@ const Profile = (props) => {
   
   let avatar = props.dispatch(getAvatarActionCreator(currentUserId));
   let userName = props.dispatch(getFullNameActionCreator(currentUserId));
+  
   return (
     <div className={profile.profile}>
       <a className={profile.avatar} href="/">

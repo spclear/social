@@ -22,7 +22,7 @@ const PostCreate = (props) => {
         ref={postField}
         className={styles.newText}
         onChange={update}
-        value={props.dispatch(getStateActionCreator()).currentFieldPost}
+        value={props.dispatch(getStateActionCreator()).profilePage.currentPostField}
       />
       <Button
         addClass={styles.button}

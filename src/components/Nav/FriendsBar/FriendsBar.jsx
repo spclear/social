@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './friendsbar.module.css';
-import { getStateActionCreator } from '../../../redux/store';
+import { getAvatarActionCreator, getNameActionCreator, getStateActionCreator }
+  from '../../../redux/store';
 
 const FriendItem = (props) => {
   return (
@@ -16,7 +17,7 @@ const FriendItem = (props) => {
 }
 
 const FriendsBar = (props) => {
-  let friendList = props.dispatch(getStateActionCreator()).friends;
+  let friendList = props.dispatch(getStateActionCreator()).profilePage.friends;
   return (
     <div className={styles.friendsBar}>
       <h3 className={styles.title}>Friends</h3>
@@ -24,8 +25,8 @@ const FriendsBar = (props) => {
         {
           friendList.map(item => (
             <FriendItem
-              image={item.avatar}
-              name={item.name}
+              image={props.dispatch(getAvatarActionCreator(item.userId))}
+              name={props.dispatch(getNameActionCreator(item.userId))}
             />
           ))
         }

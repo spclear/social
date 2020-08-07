@@ -25,7 +25,7 @@ const CreateMessage = (props) => {
         onChange={update}
         ref={newMessage}
         className={styles.typeMessage}
-        value={props.dispatch(getStateActionCreator()).currentFieldMessage}
+        value={props.dispatch(getStateActionCreator()).messagesPage.currentMessageField}
       />
       <Button
         onClick={sendMessage}

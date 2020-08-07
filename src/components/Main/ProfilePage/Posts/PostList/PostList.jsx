@@ -24,7 +24,7 @@ const PostItem = (props) => {
 };
 
 const PostList = (props) => {
-  const posts = props.dispatch(getStateActionCreator()).postsList;
+  const posts = props.dispatch(getStateActionCreator()).profilePage.postsList;
   
   const postsList = posts.map((post) => (
     <PostItem
