@@ -1,7 +1,7 @@
-import avatar1 from '../Avatars/avatar1.jpg';
-import avatar2 from '../Avatars/avatar2.jpg';
-import avatar3 from '../Avatars/avatar3.jpg';
-import avatar4 from '../Avatars/avatar4.jpg';
+import avatar1 from './Avatars/avatar1.jpg';
+import avatar2 from './Avatars/avatar2.jpg';
+import avatar3 from './Avatars/avatar3.jpg';
+import avatar4 from './Avatars/avatar4.jpg';
 
 const usersList = [
   {

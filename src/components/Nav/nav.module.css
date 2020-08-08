@@ -12,27 +12,3 @@
   flex-direction: column;
   align-items: start;
 }
-
-.item {
-  padding: 8px 25px;
-  width: 100%;
-}
-
-.item:hover {
-  background-color: #fff;
-}
-
-.itemLink {
-  transition: color .4s, padding-left .3s;
-  color: #192a56;
-  font-weight: 600;
-}
-
-.itemLink:hover:not(.active) {
-  padding-left: 5px;
-}
-
-.itemLink.active {
-  padding-left: 10px;
-  color: black;
-}

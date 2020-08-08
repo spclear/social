@@ -20,7 +20,7 @@ let messagesPageReducer = (state = initialState, action) => {
 
       newMessage.id = action.myId;
       newMessage.text = newState.currentMessageField;
-
+      
       for (let i = 0; i < dialogs.length; i++) {
         if (action.userId === dialogs[i].userId) {
           newMessage.time = dialogs[i].length + 1;
@@ -28,7 +28,6 @@ let messagesPageReducer = (state = initialState, action) => {
           break;
         }
       }
-  
       newState.currentMessageField = '';
       return newState;
     case UPDATE_CURRENT_MESSAGE_INPUT:

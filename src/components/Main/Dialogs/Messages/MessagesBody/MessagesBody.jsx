@@ -1,29 +1,21 @@
 import React from 'react';
 import styles from './messagesbody.module.css';
 import MessageItem from './MessageItem/MessageItem';
-import { getAvatarActionCreator, getDialogActionCreator }
-  from '../../../../../redux/store';
 import ScrollToBottom from 'react-scroll-to-bottom';
 
 const MessagesBody = (props) => {
-  const idSelf = "641006348";
-  let dialogs = props.dispatch(getDialogActionCreator(props.userId));
+  const dialog = props.dialogs[1];
+  const isSelfMessage = (id, idSelf) => (id === idSelf) ? styles.selfMessage : false;
 
-  const selfMessage = (id) => {
-    if (id === idSelf) {
-      return styles.selfMessage;
-    }
-  }
-
-
-  let messagesList = dialogs.messagesHistory.map((message) => (
+  let messagesList = dialog.messagesHistory.map((message) => (
     <MessageItem
-      selfMessage={selfMessage(message.id)}
-      avatar={props.dispatch(getAvatarActionCreator(message.id))}
-      text={message.text}
       key={message.time}
+      text={message.text}
+      avatar={props.getAvatar(message.id)}
+      isSelfMessage={isSelfMessage(message.id, props.idSelf)}
     />
   ));
+
   return (
     <ScrollToBottom className={styles.messagesBody}>
       <div className={styles.messagesList}>

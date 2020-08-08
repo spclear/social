@@ -1,28 +1,21 @@
 import React from 'react';
-import profile from './profile.module.css';
-import ProfileInfo from './ProfileInfo/ProfileInfo'
-import { getAvatarActionCreator, getFullNameActionCreator }
-  from '../../../../redux/store';
+import styles from './profile.module.css';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
-  const currentUserId = "641006348";
-  
-  let avatar = props.dispatch(getAvatarActionCreator(currentUserId));
-  let userName = props.dispatch(getFullNameActionCreator(currentUserId));
-  
   return (
-    <div className={profile.profile}>
-      <a className={profile.avatar} href="/">
-        <img className="avatar" src={avatar} alt='' />
+    <div className={styles.profile}>
+      <a className={styles.avatar} href="/">
+        <img className="avatar" src={props.avatar} alt='avatar' />
       </a>
-      <div className={profile.details}>
-        <h3 className={profile.userName}>
-          <a href="/">{userName}</a>
+      <div className={styles.details}>
+        <h3 className={styles.userName}>
+          <a href="/">{props.name}</a>
         </h3>
         <ProfileInfo />
       </div>
     </div>
-  );
+  )
 }
 
 export default Profile;

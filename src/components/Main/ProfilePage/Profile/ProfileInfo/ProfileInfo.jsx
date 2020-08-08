@@ -18,7 +18,7 @@ const ProfileInfo = () => {
       <InfoItem info='Education: ' data='no information given' />
       <InfoItem info='Web Site: ' data='no information given' />
     </ul>
-  );
+  )
 }
 
 export default ProfileInfo;

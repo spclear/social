@@ -9,14 +9,14 @@ import store from './redux/store';
 const renderApp = () => {
   ReactDOM.render(
     <BrowserRouter>
-      <App dispatch={store.dispatch.bind(store)}/>
+      <App store={store}/>
     </BrowserRouter>,
     document.getElementById('root')
-  );
+  )
 }
 
+window.store = store;
 renderApp();
-
 store.subscribe(renderApp);
 
 // If you want your app to work offline and load faster, you can change

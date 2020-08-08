@@ -5,7 +5,7 @@ const MessageItem = (props) => {
   let messageItem = React.createRef(); 
 
   return (
-    <div ref={messageItem} className={`${styles.message} ${props.selfMessage}`}>
+    <div ref={messageItem} className={`${styles.message} ${props.isSelfMessage}`}>
       <div className={styles.avatar}>
         <a href='#'>
           <img src={props.avatar} alt='' />
