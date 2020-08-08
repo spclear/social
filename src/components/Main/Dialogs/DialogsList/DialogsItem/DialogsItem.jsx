@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './dialogsitem.module.css';
 import { NavLink } from 'react-router-dom';
+import styles from './dialogsitem.module.css';
 
 const DialogsItem = (props) => {
   return (
@@ -10,12 +10,19 @@ const DialogsItem = (props) => {
       className={styles.item}
     >
       <div className={styles.user}>
-        <img className={styles.userAvatar} src={props.avatar} alt=''/>
+        <img
+          className={styles.userAvatar}
+          src={props.avatar} alt=''
+        />
       </div>
-      <h4 className={styles.userName}>{props.userName}</h4>
-      <p className={styles.lastMessage}>{props.lastMessage}</p>
+      <h4 className={styles.userName}>
+        {props.name}
+      </h4>
+      <p className={styles.lastMessage}>
+        {props.lastMessage}
+      </p>
     </NavLink>
-  );
+  )
 }
 
 export default DialogsItem;

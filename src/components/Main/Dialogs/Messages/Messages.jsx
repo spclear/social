@@ -1,23 +1,24 @@
 import React from 'react';
 import styles from './messages.module.css';
-import CreateMessage from './CreateMessage/CreateMessage';
-import MessagesBody from './MessagesBody/MessagesBody';
+import MessagesBodyContainer from './MessagesBody/MessagesBodyContainer';
+import CreateMessageContainer from './CreateMessage/CreateMessageContainer';
 
 const Messages = (props) => {
-  
+  const userId = '084926135';
+  const userName = props.store.getName(userId);
+
   return (
     <div className={styles.messages}>
       <h4 className={styles.title}>
-        {props.userName}
+        {userName}
       </h4>
-      <MessagesBody
-        dispatch={props.dispatch}
-        userId={props.userId}
+      <MessagesBodyContainer
+        store={props.store}
+        userId={userId}
       />
-      <CreateMessage
-        dispatch={props.dispatch}
-        userId={props.userId}
-        idSelf={props.idSelf}
+      <CreateMessageContainer
+        store={props.store}
+        userId={userId}
       />
     </div>
   );

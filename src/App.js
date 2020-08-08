@@ -8,11 +8,11 @@ const App = (props) => {
   return (
     <div className='app-wrapper'>
       <Header />
-      <Nav dispatch={props.dispatch}/>
-      <Main dispatch={props.dispatch}/>
+      <Nav store={props.store} />
+      <Main store={props.store} />
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

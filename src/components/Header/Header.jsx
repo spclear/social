@@ -1,14 +1,14 @@
 import React from 'react';
-import header from './header.module.css';
+import styles from './header.module.css';
 
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <header className={header.header}>
-      <a href='/' className={header.logo}></a>
-      <a href='/' className={header.title}>SociaL C.</a>
+    <header className={styles.header}>
+      <a href='/' className={styles.logo}></a>
+      <a href='/' className={styles.title}>SociaL C.</a>
     </header>
-  );
+  )
 }
 
 export default Header;
