@@ -24,7 +24,7 @@ let profilePageReducer = (state = initialState, action) => {
       newPost.authorId = "641006348";
       newPost.time = "just now";
       newPost.text = newState.currentPostField;
-      posts.unshift(newPost);
+      posts.push(newPost);
 
       newState.currentPostField = '';
 

@@ -3,10 +3,11 @@ import styles from './dialogslist.module.css';
 import DialogsItem from './DialogsItem/DialogsItem';
 
 function returnLastMessage(obj) {
-  let lastMsg = obj.messagesHistory[0].text;
-  return (lastMsg.length > 35)
-    ? lastMsg.slice(0, 35) + '...'
-    : lastMsg;
+  const messages = obj.messagesHistory;
+  let lastMessage = messages[messages.length - 1].text;
+  return (lastMessage.length > 35)
+    ? lastMessage.slice(0, 35) + '...'
+    : lastMessage;
 }
 
 const DialogsList = (props) => {

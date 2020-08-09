@@ -3,8 +3,9 @@ import styles from "./postlist.module.css";
 import PostItem from "./PostItem/PostItem";
 
 const PostList = (props) => {
-  
-  const postsList = props.posts.map((post) => (
+  const posts = [...props.posts].reverse();
+
+  const postsList = posts.map((post) => (
     <PostItem
       key={post.postId}
       authorName={props.getName(post.authorId)}
