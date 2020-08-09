@@ -23,7 +23,7 @@ let messagesPageReducer = (state = initialState, action) => {
       
       for (let i = 0; i < dialogs.length; i++) {
         if (action.userId === dialogs[i].userId) {
-          newMessage.time = dialogs[i].length + 1;
+          newMessage.time = dialogs[i].messagesHistory.length + 1;
           dialogs[i].messagesHistory.push(newMessage);
           break;
         }

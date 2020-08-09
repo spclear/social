@@ -1,7 +1,7 @@
 import React from 'react';
 import PostCreate from './PostCreate';
 import { addPostActionCreator, updatePostInputActionCreator }
-  from '../../../../../redux/store';
+  from '../../../../../redux/redux-store';
 
 const PostCreateContainer = (props) => {
   const state = props.store.getState();

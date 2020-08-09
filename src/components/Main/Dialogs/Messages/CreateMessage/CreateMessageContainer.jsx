@@ -1,7 +1,7 @@
 import React from 'react';
 import CreateMessage from './CreateMessage';
 import { updateMessageInputActionCreator, sendMessageActionCreator }
-  from '../../../../../redux/store';
+  from '../../../../../redux/redux-store';
 
 const CreateMessageContainer = (props) => {
   const state = props.store.getState();

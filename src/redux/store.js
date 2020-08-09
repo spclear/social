@@ -87,29 +87,29 @@ const store = {
   },
 }
 
-export const updatePostInputActionCreator = (text) => {
-  return {
-    type: UPDATE_CURRENT_POST_INPUT,
-    text: text,
-  }
-}
-export const updateMessageInputActionCreator = (text) => {
-  return {
-    type: UPDATE_CURRENT_MESSAGE_INPUT,
-    text: text,
-  }
-}
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST,
-  }
-}
-export const sendMessageActionCreator = (id, idSelf) => {
-  return {
-    type: SEND_MESSAGE,
-    userId: id,
-    myId: idSelf,
-  }
-}
+// export const updatePostInputActionCreator = (text) => {
+//   return {
+//     type: UPDATE_CURRENT_POST_INPUT,
+//     text: text,
+//   }
+// }
+// export const updateMessageInputActionCreator = (text) => {
+//   return {
+//     type: UPDATE_CURRENT_MESSAGE_INPUT,
+//     text: text,
+//   }
+// }
+// export const addPostActionCreator = () => {
+//   return {
+//     type: ADD_POST,
+//   }
+// }
+// export const sendMessageActionCreator = (id, idSelf) => {
+//   return {
+//     type: SEND_MESSAGE,
+//     userId: id,
+//     myId: idSelf,
+//   }
+// }
 
 export default store;
