@@ -5,7 +5,7 @@ import DialogsItem from './DialogsItem/DialogsItem';
 function returnLastMessage(obj) {
   const messages = obj.messagesHistory;
   let lastMessage = messages[messages.length - 1].text;
-  console.log(messages, lastMessage);
+  
   return (lastMessage.length > 32)
     ? lastMessage.slice(0, 32) + '...'
     : lastMessage;

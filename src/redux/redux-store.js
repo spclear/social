@@ -23,39 +23,27 @@ let reducers = combineReducers({
 let store = createStore(reducers);
 
 store.getAvatar = (id) => {
-    const users = store.getState().profilePage.usersList;
-    for (let i = 0; i < users.length; i++) {
-      if (id === users[i].ID) {
-        return users[i].avatar;
-      }
-    }
+  const users = store.getState().profilePage.usersList;
+  const user = users.find(item => item.id == id);
+  return user.avatar;
 }
 
 store.getName = (id) => {
   const users = store.getState().profilePage.usersList;
-  for (let i = 0; i < users.length; i++) {
-    if (id === users[i].ID) {
-      return users[i].firstName;
-    }
-  }
+  const user = users.find(item => item.id == id);
+  return user.firstName;
 }
 
 store.getFullName = (id) => {
   const users = store.getState().profilePage.usersList;
-  for (let i = 0; i < users.length; i++) {
-    if (id === users[i].ID) {
-      return `${users[i].firstName} ${users[i].lastName}`;
-    }
-  }
+  const user = users.find(item => item.id == id);
+  return `${user.firstName} ${user.lastName}`
 }
 
 store.getDialog = (id) => {
   const dialogs = store.getState().messagesPage.usersDialogs;
-  for (let i = 0; i < dialogs.length; i++) {
-    if (id === dialogs[i].userId) {
-      return dialogs[i];
-    }
-  }
+  const dialog = dialogs.find(item => item.userId == id);
+  return dialog;
 }
 
 export const updatePostInputActionCreator = (text) => {

@@ -9,10 +9,8 @@ const PostCreateContainer = (props) => {
 
   const update = (value) => {
     props.store.dispatch(updatePostInputActionCreator(value));
-    console.log(value);
   }
   const addPost = () => {
-    console.log(value);
     props.store.dispatch(addPostActionCreator());
   }
 

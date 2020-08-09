@@ -5,25 +5,25 @@ import avatar4 from './Avatars/avatar4.jpg';
 
 const usersList = [
   {
-    ID: "641006348",
+    id: "641006348",
     firstName: "Sasha",
     lastName: "Plotnikov",
     avatar: avatar1,
   },
   {
-    ID: "184760497",
+    id: "184760497",
     firstName: "Vitaliy",
     lastName: "Boom",
     avatar: avatar2,
   },
   {
-    ID: "084926135",
+    id: "084926135",
     firstName: "Ann",
     lastName: "Melnik",
     avatar: avatar3,
   },
   {
-    ID: "987343516",
+    id: "987343516",
     firstName: "Victoria",
     lastName: "Kupisheva",
     avatar: avatar4,
