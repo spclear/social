@@ -24,25 +24,25 @@ let store = createStore(reducers);
 
 store.getAvatar = (id) => {
   const users = store.getState().profilePage.usersList;
-  const user = users.find(item => item.id == id);
+  const user = users.find(item => item.id === id);
   return user.avatar;
 }
 
 store.getName = (id) => {
   const users = store.getState().profilePage.usersList;
-  const user = users.find(item => item.id == id);
+  const user = users.find(item => item.id === id);
   return user.firstName;
 }
 
 store.getFullName = (id) => {
   const users = store.getState().profilePage.usersList;
-  const user = users.find(item => item.id == id);
+  const user = users.find(item => item.id === id);
   return `${user.firstName} ${user.lastName}`
 }
 
 store.getDialog = (id) => {
   const dialogs = store.getState().messagesPage.usersDialogs;
-  const dialog = dialogs.find(item => item.userId == id);
+  const dialog = dialogs.find(item => item.userId === id);
   return dialog;
 }
 
