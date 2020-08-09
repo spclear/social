@@ -1,5 +1,3 @@
-import usersList from './usersList';
-
 let usersDialogs = [
   {
     userId: "184760497",
@@ -23,7 +21,7 @@ let usersDialogs = [
         id: "184760497",
         time: 4,
         text: 'Wow, the last from Vitaliy. He\'s da best!!',
-      }
+      },
     ]
   },
   {
@@ -32,23 +30,43 @@ let usersDialogs = [
       {
         id: "084926135",
         time: 1,
-        text: 'Message112',
+        text: 'Message one by Ann',
       },
       {
         id: "641006348",
         time: 2,
-        text: 'Message223',
+        text: 'Firs message by me',
       },
       {
         id: "641006348",
         time: 3,
-        text: 'Message334',
+        text: 'Another message by me',
       },
       {
         id: "084926135",
         time: 4,
+        text: 'This one is not the last from Ann..',
+      },
+      {
+        id: "084926135",
+        time: 5,
+        text: 'and one more message by Ann',
+      },
+      {
+        id: "641006348",
+        time: 6,
+        text: 'look, it\'s my message again',
+      },
+      {
+        id: "641006348",
+        time: 7,
+        text: 'and this one is also sent by me, not by Ann',
+      },
+      {
+        id: "084926135",
+        time: 8,
         text: 'This one is the last from Ann. Actually truth',
-      }
+      },
     ]
   },
   {
@@ -73,20 +91,11 @@ let usersDialogs = [
         id: "987343516",
         time: 4,
         text: 'Last message from Victoria!',
-      }
+      },
     ]
   },
 ];
 
-const dialogs = usersDialogs.forEach(item => {
-  for (let i = 0; i < usersList.length; i++) {
-    if (item.userId == usersList[i].ID) {
-      item.avatar = usersList[i].avatar;
-      item.name = usersList[i].firstName;
-      break;
-    }
-  }
-});
 
 
 export default usersDialogs;

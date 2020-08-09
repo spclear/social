@@ -8,15 +8,11 @@ const App = (props) => {
   return (
     <div className='app-wrapper'>
       <Header />
-      <Nav friendsData={props.state.friends} />
-      <Main
-        state={props.state}
-        addPost={props.addPost}
-        updInput={props.updInput}
-      />
+      <Nav store={props.store} />
+      <Main store={props.store} />
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

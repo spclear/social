@@ -1,23 +1,18 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import styles from './dialogs.module.css'
-import DialogsList from './DialogsList/DialogsList';
+import DialogsListContainer from './DialogsList/DialogsListContainer';
 import Messages from './Messages/Messages';
 
 const Dialogs = (props) => {
   return (
     <div className={styles.dialogs}>
-      <DialogsList
-        dialogs={props.dialogs}
+      <DialogsListContainer store={props.store} />
+      <Route
+        path="/dialogs/messages"
+        render={() => <Messages store={props.store} />}
       />
-      <Route path="/dialogs/messages" component={() => (
-        <Messages
-          userName='Ann'
-          dialog={props.dialogs}
-        />
-      )}>
-      </Route>
     </div>
-  );
+  )
 }
 export default Dialogs;

@@ -3,19 +3,23 @@ import styles from './dialogslist.module.css';
 import DialogsItem from './DialogsItem/DialogsItem';
 
 function returnLastMessage(obj) {
-  let lastMsg = obj.messagesHistory[obj.messagesHistory.length - 1].text;
-
-  if (lastMsg.length > 35) return lastMsg.slice(0, 35) + '...'
-  return lastMsg.slice(0, 35);
+  const messages = obj.messagesHistory;
+  let lastMessage = messages[messages.length - 1].text;
+  return (lastMessage.length > 35)
+    ? lastMessage.slice(0, 35) + '...'
+    : lastMessage;
 }
 
 const DialogsList = (props) => {
-  let dialogs = props.dialogs.map(dialog => (
-    <DialogsItem key={dialog.userId}
-      userName={dialog.name}
-      lastMessage={returnLastMessage(dialog)}
-      avatar={dialog.avatar}
+  let dialogsList = props.dialogs;
+  
+  let dialogs = dialogsList.map(dialog => (
+    <DialogsItem
+      key={dialog.userId}
       userId={dialog.userId}
+      name={props.getName(dialog.userId)}
+      avatar={props.getAvatar(dialog.userId)}
+      lastMessage={returnLastMessage(dialog)}
     />
   ))
 
@@ -24,7 +28,7 @@ const DialogsList = (props) => {
       <h3 className={styles.title}>Recent dialogs</h3>
       {dialogs}
     </div>
-  );
+  )
 }
 
 export default DialogsList;

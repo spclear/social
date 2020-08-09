@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
-*, *:focus {margin: 0; padding: 0; box-sizing: border-box;outline:none}
+* {margin: 0; padding: 0; box-sizing: border-box;outline:none}
 html {font-size: 16px; margin-left: calc(100vw - 100%);}
 ul, ol, li {list-style: none;}
 a{text-decoration: none;color:#353b48}
 button, button:focus {border:none; outline:none; cursor: pointer;}
 textarea {border:none; outline:none}
+textarea:focus::placeholder{color: transparent}
 
 body {
   background-color: #f5f6fa;

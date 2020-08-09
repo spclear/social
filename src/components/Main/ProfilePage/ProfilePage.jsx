@@ -1,20 +1,14 @@
 import React from 'react';
-import Profile from './Profile/Profile';
-import PostCreate from './Posts/PostCreate/PostCreate';
-import PostList from './Posts/PostList/PostList';
+import ProfileContainer from './Profile/ProfileContainer';
+import PostCreateContainer from './Posts/PostCreate/PostCreateContainer'
+import PostListContainer from './Posts/PostList/PostListContainer';
 
 const ProfilePage = (props) => {
   return (
     <div className="profilepage">
-      <Profile profile={props.profile} />
-      <PostCreate
-        addPost={props.addPost}
-        updInput={props.updInput}
-        currText={props.currText}
-      />  
-      <PostList
-        posts={props.posts}
-      />
+      <ProfileContainer store={props.store} />
+      <PostCreateContainer store={props.store} />  
+      <PostListContainer store={props.store} />
     </div>
   )
 }
