@@ -5,8 +5,8 @@ const FriendsBarContainer = (props) => {
   const state = props.store.getState();
   const friendsList = state.navBar.friends;
 
-  const getName = props.store.getName.bind(props.store);
-  const getAvatar = props.store.getAvatar.bind(props.store);
+  const getName = state.profilePage.getName.bind(state.profilePage);
+  const getAvatar = state.profilePage.getAvatar.bind(state.profilePage);
 
   return (
     <FriendsBar

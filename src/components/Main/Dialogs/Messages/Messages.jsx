@@ -5,7 +5,7 @@ import CreateMessageContainer from './CreateMessage/CreateMessageContainer';
 
 const Messages = (props) => {
   const userId = '084926135';
-  const userName = props.store.getName(userId);
+  const userName = props.store.getState().profilePage.getName(userId);
 
   return (
     <div className={styles.messages}>

@@ -10,6 +10,21 @@ let initialState = {
   friends: friends,
   postsList: postsList,
   currentPostField: '',
+  getName(id) {
+    const users = this.usersList;
+    const user = users.find(item => item.id === id);
+    return user.firstName;
+  },
+  getAvatar(id) {
+    const users = this.usersList;
+    const user = users.find(item => item.id === id);
+    return user.avatar;
+  },
+  getFullName(id) {
+    const users = this.usersList;
+    const user = users.find(item => item.id === id);
+    return `${user.firstName} ${user.lastName}`;
+  },
 };
 
 let profilePageReducer = (state = initialState, action) => {

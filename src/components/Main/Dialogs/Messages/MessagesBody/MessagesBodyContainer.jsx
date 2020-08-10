@@ -2,11 +2,11 @@ import React from 'react';
 import MessagesBody from './MessagesBody';
 
 const MessagesBodyContainer = (props) => {
-  const state = props.store.getState();
-  
   const idSelf = "641006348";
+  
+  const state = props.store.getState();
   const dialogs = state.messagesPage.usersDialogs;
-  const getAvatar = props.store.getAvatar.bind(props.store);
+  const getAvatar = state.profilePage.getAvatar.bind(state.profilePage);
 
   return (
     <MessagesBody
