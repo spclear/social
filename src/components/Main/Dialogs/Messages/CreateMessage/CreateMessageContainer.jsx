@@ -7,7 +7,7 @@ const idSelf = "641006348";
 
 let mapStateToProps = (state) => {
   return {
-    value: state.messagesPage.currentmessageField,
+    value: state.messagesPage.currentMessageField,
   }
 }
 
