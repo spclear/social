@@ -28,25 +28,25 @@ let initialState = {
 };
 
 let profilePageReducer = (state = initialState, action) => {
-  const newState = Object.assign({}, state);
-
   switch (action.type) {
     case ADD_POST:
       let newPost = {};
-      let posts = newState.postsList;
 
-      newPost.postId = posts.length + 1;
+      newPost.postId = state.postsList.length + 1;
       newPost.authorId = "641006348";
       newPost.time = "just now";
-      newPost.text = newState.currentPostField;
-      posts.push(newPost);
+      newPost.text = state.currentPostField;
 
-      newState.currentPostField = '';
-
-      return newState;
+      return {
+        ...state,
+        postsList: [...state.postsList, newPost],
+        currentPostField: '',
+      }
     case UPDATE_CURRENT_POST_INPUT:
-      newState.currentPostField = action.text;
-      return newState;
+      return {
+        ...state,
+        currentPostField: action.text,
+      }
     default:
       return state;
   }

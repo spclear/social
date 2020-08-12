@@ -11,10 +11,10 @@ let initialState = {
 };
 
 let messagesPageReducer = (state = initialState, action) => {
-  const newState = Object.assign({}, state);
-
   switch (action.type) {
     case SEND_MESSAGE: 
+      let newState = Object.assign({}, state);
+
       let newMessage = {};
       let dialogs = newState.usersDialogs;
 
@@ -31,8 +31,10 @@ let messagesPageReducer = (state = initialState, action) => {
       newState.currentMessageField = '';
       return newState;
     case UPDATE_CURRENT_MESSAGE_INPUT:
-      newState.currentMessageField = action.text;
-      return newState;
+      return {
+        ...state,
+        currentMessageField: action.text,
+      }
     default:
       return state;
   }
