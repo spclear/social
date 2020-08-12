@@ -11,7 +11,7 @@ let initialState = {
 };
 
 let messagesPageReducer = (state = initialState, action) => {
-  let newState = state;
+  const newState = Object.assign({}, state);
 
   switch (action.type) {
     case SEND_MESSAGE: 

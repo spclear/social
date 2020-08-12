@@ -1,20 +1,16 @@
-import React from 'react';
+import { connect } from 'react-redux';
 import MessagesBody from './MessagesBody';
 
-const MessagesBodyContainer = (props) => {
-  const idSelf = "641006348";
-  
-  const state = props.store.getState();
-  const dialogs = state.messagesPage.usersDialogs;
-  const getAvatar = state.profilePage.getAvatar.bind(state.profilePage);
+const idSelf = "641006348";
 
-  return (
-    <MessagesBody
-      idSelf={idSelf}
-      dialogs={dialogs}
-      getAvatar={getAvatar}
-    />
-  )
+let mapStateToProps = (state) => {
+  return {
+    dialogs: state.messagesPage.usersDialogs,
+    idSelf: idSelf,
+    getAvatar: id => state.profilePage.getAvatar(id),
+  }
 }
+
+const MessagesBodyContainer = connect(mapStateToProps)(MessagesBody);
 
 export default MessagesBodyContainer;

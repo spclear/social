@@ -5,9 +5,9 @@ let initialState = {
 };
 
 const navBarReducer = (state = initialState, action) => {
-  let newState = state;
+  const newState = Object.assign({}, state);
 
-  return newState;
+  return state;
 }
 
 export default navBarReducer;

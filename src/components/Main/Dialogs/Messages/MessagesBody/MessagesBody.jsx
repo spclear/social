@@ -6,7 +6,6 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 const MessagesBody = (props) => {
   const dialog = props.dialogs[1];
   const messagesHistory = [...dialog.messagesHistory].reverse();
-  
 
   const isSelfMessage = (id, idSelf) => (id === idSelf) ? styles.selfMessage : false;
 

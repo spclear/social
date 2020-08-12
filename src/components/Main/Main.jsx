@@ -7,16 +7,16 @@ import Music from './Music/Music';
 import News from './News/News';
 import Settings from './Settings/Settings';
 
-const Main = (props) => {
+const Main = () => {
   return (
     <main className={styles.main}>
       <Route
         path='/profile'
-        render={() => <ProfilePage store={props.store} />}
+        render={() => <ProfilePage />}
       />
       <Route
         path='/dialogs'
-        render={() => <Dialogs store={props.store} />} 
+        render={() => <Dialogs />} 
       />
       <Route
         path='/news'

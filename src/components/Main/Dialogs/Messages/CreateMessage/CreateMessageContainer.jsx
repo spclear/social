@@ -1,28 +1,28 @@
-import React from 'react';
+import { connect } from 'react-redux';
 import CreateMessage from './CreateMessage';
 import { updateMessageInputActionCreator, sendMessageActionCreator }
-  from '../../../../../redux/redux-store';
+  from '../../../../../redux/actionCreators';
 
-const CreateMessageContainer = (props) => {
-  const state = props.store.getState();
-  
-  const value = state.messagesPage.currentMessageField;
-  const idSelf = "641006348";
+const idSelf = "641006348";
 
-  const update = (value) => {
-    props.store.dispatch(updateMessageInputActionCreator(value));
+let mapStateToProps = (state) => {
+  return {
+    value: state.messagesPage.currentmessageField,
   }
-  const sendMessage = () => {
-    props.store.dispatch(sendMessageActionCreator(props.userId, idSelf));
-  }
-
-  return (
-    <CreateMessage
-      value={value}
-      update={update}
-      sendMessage={sendMessage}
-    />
-  )
 }
+
+let mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    update: (value) => {
+      dispatch(updateMessageInputActionCreator(value));
+    },
+    sendMessage: () => {
+      dispatch(sendMessageActionCreator(ownProps.userId, idSelf))
+    }
+  }
+}
+
+const CreateMessageContainer =
+  connect(mapStateToProps, mapDispatchToProps)(CreateMessage);
 
 export default CreateMessageContainer;

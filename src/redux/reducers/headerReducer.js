@@ -1,9 +1,9 @@
 let initialState = {};
 
 const headerReducer = (state = initialState, action) => {
-  let newState = state;
+  const newState = Object.assign({}, state);
 
-  return newState;
+  return state;
 }
 
 export default headerReducer;
