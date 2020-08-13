@@ -7,7 +7,7 @@ let mapStateToProps = (state) => {
   return {
     dialogs: state.messagesPage.usersDialogs,
     idSelf: idSelf,
-    getAvatar: id => state.profilePage.getAvatar(id),
+    getAvatar: id => state.usersPage.getAvatar(id),
   }
 }
 

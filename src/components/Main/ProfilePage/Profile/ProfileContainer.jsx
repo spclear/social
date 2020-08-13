@@ -5,8 +5,8 @@ let currentUserId = "641006348";
 
 let mapStateToProps = (state) => {
   return {
-    name: state.profilePage.getFullName(currentUserId),
-    avatar: state.profilePage.getAvatar(currentUserId),
+    name: state.usersPage.getFullName(currentUserId),
+    avatar: state.usersPage.getAvatar(currentUserId),
   }
 }
 

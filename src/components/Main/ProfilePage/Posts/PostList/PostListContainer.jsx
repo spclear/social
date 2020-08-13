@@ -4,12 +4,8 @@ import PostList from "./PostList";
 let mapStateToProps = (state) => {
   return {
     posts: state.profilePage.postsList,
-    getName: (id) => {
-      return state.profilePage.getName(id);
-    },
-    getAvatar: (id) => {
-      return state.profilePage.getAvatar(id);
-    },
+    getName: id => state.usersPage.getName(id),
+    getAvatar: id => state.usersPage.getAvatar(id),
   }
 }
 

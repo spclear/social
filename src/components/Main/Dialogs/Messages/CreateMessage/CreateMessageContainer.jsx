@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CreateMessage from './CreateMessage';
-import { updateMessageInputActionCreator, sendMessageActionCreator }
+import { updateMessageInputAC, sendMessageAC }
   from '../../../../../redux/actionCreators';
 
 const idSelf = "641006348";
@@ -14,10 +14,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch, ownProps) => {
   return {
     update: (value) => {
-      dispatch(updateMessageInputActionCreator(value));
+      dispatch(updateMessageInputAC(value));
     },
     sendMessage: () => {
-      dispatch(sendMessageActionCreator(ownProps.userId, idSelf))
+      dispatch(sendMessageAC(ownProps.userId, idSelf))
     }
   }
 }

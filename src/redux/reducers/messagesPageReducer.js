@@ -5,7 +5,7 @@ const SEND_MESSAGE = "SEND-MESSAGE";
 const UPDATE_CURRENT_MESSAGE_INPUT = "UPDATE-CURRENT-MESSAGE-INPUT";
 
 let initialState = {
-  usersList: usersList,
+  // usersList: usersList,
   usersDialogs: usersDialogs,
   currentMessageField: '',
 };

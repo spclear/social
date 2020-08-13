@@ -5,12 +5,8 @@ import DialogsList from './DialogsList';
 let mapStateToProps = (state) => {
   return {
     dialogs: state.messagesPage.usersDialogs,
-    getName: (id) => {
-      return state.profilePage.getName(id);
-    },
-    getAvatar: (id) => {
-      return state.profilePage.getAvatar(id);
-    }
+    getName: id => state.usersPage.getName(id),
+    getAvatar: id => state.usersPage.getAvatar(id),
   }
 }
 

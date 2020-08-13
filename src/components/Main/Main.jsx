@@ -6,6 +6,7 @@ import ProfilePage from './ProfilePage/ProfilePage';
 import Music from './Music/Music';
 import News from './News/News';
 import Settings from './Settings/Settings';
+import UsersContainer from './Users/UsersContainer';
 
 const Main = () => {
   return (
@@ -17,6 +18,10 @@ const Main = () => {
       <Route
         path='/dialogs'
         render={() => <Dialogs />} 
+      />
+      <Route
+        path='/users'
+        render={() => <UsersContainer />} 
       />
       <Route
         path='/news'

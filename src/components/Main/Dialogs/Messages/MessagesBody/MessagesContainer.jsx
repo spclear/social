@@ -5,7 +5,7 @@ const userId = '084926135';
 
 let mapStateToProps = (state) => {
   return {
-    userName: state.profilePage.getName(userId),
+    userName: state.usersPage.getName(userId),
     userId: userId,
   }
 }

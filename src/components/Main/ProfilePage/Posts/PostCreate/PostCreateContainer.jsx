@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PostCreate from './PostCreate';
-import { addPostActionCreator, updatePostInputActionCreator }
+import { addPostAC, updatePostInputAC }
   from '../../../../../redux/actionCreators';
 
 let mapStateToProps = (state) => {
@@ -12,10 +12,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     update: (value) => {
-      dispatch(updatePostInputActionCreator(value));
+      dispatch(updatePostInputAC(value));
     },
     addPost: () => {
-      dispatch(addPostActionCreator());
+      dispatch(addPostAC());
     }
   }
 }
