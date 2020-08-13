@@ -1,37 +1,31 @@
 import React from 'react';
-
-
-const UserItem = (props) => {
-  return (
-    <div>
-      <div>{props.fullName}</div>
-      <div>{props.id}</div>
-      <div>{props.city}</div>
-      <div>{props.country}</div>
-      <div>{props.followed}</div>
-      <div>{props.status}</div>
-    </div>
-  )
-}
+import UserItem from './UserItem/UserItem';
+import styles from './users.module.css';
 
 const Users = (props) => {
-  let users = props.users.map(item => {
+  const users = props.users.map(item => {
     return (
       <UserItem
-        fullName={props.getFullName(item.id)}
+        key={item.id}
+        fullName={`${item.firstName} ${item.lastName}`}
         id={item.id}
-        city={item.location.city}
-        country={item.location.country}
-        followed={String(item.followed)}
+        avatar={props.getAvatar(item.id)}
+        city={item.location.cityName}
+        country={item.location.countryName}
+        followed={item.followed}
         status={item.status}
+        toggleFollow={() => props.toggleFollow(item.id)}
       />
     )    
   })
   return (
-    <div>Users:
-     <div>{users}</div>
+    <div className={styles.users}>
+      <h2 className={styles.title}>users</h2>
+      <div className={styles.usersList}>
+        {users}
+      </div>
     </div>
   )
 }
 
-export default Users
+export default Users;

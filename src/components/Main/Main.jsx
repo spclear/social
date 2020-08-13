@@ -25,15 +25,15 @@ const Main = () => {
       />
       <Route
         path='/news'
-        render={News}
+        render={() => <News />}
       />
       <Route
         path='/music'
-        render={Music}
+        render={() => <Music/>}
       />
       <Route
         path='/settings'
-        render={Settings}
+        render={() => <Settings/>}
       />
     </main>
   )

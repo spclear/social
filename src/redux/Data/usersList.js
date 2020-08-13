@@ -10,8 +10,8 @@ const usersList = [
     lastName: "Plotnikov",
     avatar: avatar1,
     location: {
-      country: "Ukraine",
-      city: "Kyiv"
+      countryName: "Ukraine",
+      cityName: "Kyiv"
     },
     followed: false,
     status: 'I want to be a good person...',
@@ -22,8 +22,8 @@ const usersList = [
     lastName: "Boom",
     avatar: avatar2,
     location: {
-      country: "Russia",
-      city: "Moscow"
+      countryName: "Russia",
+      cityName: "Moscow"
     },
     followed: true,
     status: 'Professionals have standarts.',
@@ -34,8 +34,8 @@ const usersList = [
     lastName: "Melnik",
     avatar: avatar3,
     location: {
-      country: "Great Britain",
-      city: "London"
+      countryName: "Great Britain",
+      cityName: "London"
     },
     followed: true,
     status: 'Does anyone what to hang out?',
@@ -46,8 +46,8 @@ const usersList = [
     lastName: "Kupisheva",
     avatar: avatar4,
     location: {
-      country: "Belarus",
-      city: "Minsk"
+      countryName: "Belarus",
+      cityName: "Minsk"
     },
     followed: false,
     status: 'Skeletons everywhere #.#',

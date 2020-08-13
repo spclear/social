@@ -1,6 +1,8 @@
 import usersList from '../Data/usersList';
 
 const TOGGLE_FOLLOW = "TOGGLE-FOLLOW";
+const SET_USERS = "SET-USERS";
+const ADD_USERS = "ADD-USERS";
 
 let initialState = { 
   usersList: usersList,
@@ -25,17 +27,26 @@ let initialState = {
 let usersPageReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_FOLLOW: 
+      console.log('works');
       return {
         ...state,
-        usersList: state.usersList
-          .map(item => {
-            return (item.id === action.id)
-              ? item
-              : {
-                ...item,
-                followed: !item.followed,
-              }
-          })
+        usersList: state.usersList.map(item => {
+          if (item.id === action.id) {
+            console.log(item.id, action.id)
+            return { ...item, followed: !item.followed }
+          }
+          return item
+        })
+      }
+    case SET_USERS: 
+      return {
+        ...state,
+        usersList: action.users,
+      }
+    case ADD_USERS: 
+      return {
+        ...state,
+        usersList: [...state.usersList, ...action.users]
       }
     default:
       return state;

@@ -1,0 +1,29 @@
+.info {
+  justify-self: start;
+  align-self: start;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  padding-bottom: 5px;
+}
+
+.status {
+  padding-bottom: 25px;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.location {
+  margin-bottom: 20px;
+}
+
+.city span,
+.country span {
+  margin-right: 10px;
+  font-weight: bold;
+}

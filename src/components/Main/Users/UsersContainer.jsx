@@ -1,18 +1,18 @@
-import Users from './Users';
 import { connect } from 'react-redux';
+import { toggleFollowAC, setUsersAC } from '../../../redux/actionCreators';
+import Users from './Users';
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     users: state.usersPage.usersList,
-    getFullName: (id) => {
-      return state.usersPage.getFullName(id);
-    }
+    getAvatar: (id) => state.usersPage.getAvatar(id),
   }
 }
   
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-  
+    toggleFollow: id => dispatch(toggleFollowAC(id)),
+    setUsers: users => dispatch(setUsersAC(users)),
   }
 }
 
