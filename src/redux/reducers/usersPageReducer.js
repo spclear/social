@@ -26,13 +26,11 @@ let initialState = {
 
 let usersPageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TOGGLE_FOLLOW: 
-      console.log('works');
+    case TOGGLE_FOLLOW:
       return {
         ...state,
         usersList: state.usersList.map(item => {
           if (item.id === action.id) {
-            console.log(item.id, action.id)
             return { ...item, followed: !item.followed }
           }
           return item
