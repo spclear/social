@@ -4,7 +4,7 @@
   margin-left: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
 }
@@ -18,14 +18,4 @@
   font-style: italic;
   font-weight: normal;
   font-size: 1rem;
-}
-
-.location {
-  margin-bottom: 20px;
-}
-
-.city span,
-.country span {
-  margin-right: 10px;
-  font-weight: bold;
 }

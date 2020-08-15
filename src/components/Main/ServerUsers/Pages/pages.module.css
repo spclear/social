@@ -1,0 +1,32 @@
+.pagesBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 30px;
+  margin: 25px 0;
+  position: absolute;
+  bottom: 0;
+  right: 25px;
+  margin-left: auto;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.pageNumber {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  font-size: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform .5s;
+  font-weight: bold;
+}
+
+.pageNumber:not(.picked):hover {
+  transform: translateY(-3px);
+}
+.picked {
+  color: #6a6a6a;
+}

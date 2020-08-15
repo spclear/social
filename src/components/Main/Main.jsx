@@ -7,6 +7,7 @@ import Music from './Music/Music';
 import News from './News/News';
 import Settings from './Settings/Settings';
 import UsersContainer from './Users/UsersContainer';
+import ServerUsersContainer from './ServerUsers/ServerUsersContainer';
 
 const Main = () => {
   return (
@@ -22,6 +23,10 @@ const Main = () => {
       <Route
         path='/users'
         render={() => <UsersContainer />} 
+      />
+      <Route
+        path='/serverusers'
+        render={() => <ServerUsersContainer />} 
       />
       <Route
         path='/news'
