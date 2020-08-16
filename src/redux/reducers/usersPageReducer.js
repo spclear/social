@@ -12,7 +12,7 @@ let initialState = {
   usersList: usersList,
   friendsShown: 4,
   serverUsersList: [],
-  usersShownNumber: 10,
+  usersShownNumber: 6,
   usersTotal: 0,
   currentPage: 1,
   getName(id) {
