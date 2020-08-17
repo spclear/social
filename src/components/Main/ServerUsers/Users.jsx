@@ -3,8 +3,10 @@ import UserItem from './UserItem/UserItem';
 import styles from './users.module.css';
 import UserDefault from '../../../assets/images/UserDefault.png';
 import Pages from './Pages/Pages'
+import Preloader from '../../common/Preloader/Preloader';
 
 const Users = (props) => {
+
   const users = props.users.map(item => {
       return (
         <UserItem
@@ -23,7 +25,7 @@ const Users = (props) => {
       <div className={styles.users}>
         <h2 className={styles.title}>users</h2>
         <div className={styles.usersList}>
-          {users}
+          {props.isLoading ? <Preloader /> : users}
         </div>
         <Pages
           currentPage={props.currentPage}

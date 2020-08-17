@@ -7,6 +7,7 @@ const ADD_USERS = "ADD-USERS";
 const SET_USERS_TOTAL = "SET-USERS-TOTAL";
 const SWITCH_PAGE = "SWITCH-PAGE";
 const TO_FIRST_PAGE = "TO-FIRST-PAGE";
+const SET_LOADING_STATUS = "SET-LOADING-STATUS";
 
 let initialState = { 
   usersList: usersList,
@@ -15,6 +16,7 @@ let initialState = {
   usersShownNumber: 6,
   usersTotal: 0,
   currentPage: 1,
+  isLoading: false,
   getName(id) {
     const users = this.usersList;
     const user = users.find(item => item.id === id);
@@ -78,6 +80,11 @@ let usersPageReducer = (state = initialState, action) => {
       return {
         ...state,
         currentPage: 1,
+      }
+    case SET_LOADING_STATUS: 
+      return {
+        ...state,
+        isLoading: action.value,
       }
     default:
       return state;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './postcreate.module.css';
-import Button from '../../../../Button/Button';
+import Button from '../../../../common/Button/Button';
 
 const PostCreate = (props) => {
   let postField = React.createRef();
@@ -9,7 +9,7 @@ const PostCreate = (props) => {
     props.addPost();
   }
   const update = () => {
-    props.update(postField.current.value);
+    props.updatePostInput(postField.current.value);
   }
 
   return (

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleFollowAC, setUsersAC } from '../../../redux/actionCreators';
+import { toggleFollow, setUsers } from '../../../redux/actionCreators';
 import Users from './Users';
 
 const mapStateToProps = (state) => {
@@ -8,14 +8,12 @@ const mapStateToProps = (state) => {
     getAvatar: (id) => state.usersPage.getAvatar(id),
   }
 }
-  
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleFollow: id => dispatch(toggleFollowAC(id)),
-    setUsers: users => dispatch(setUsersAC(users)),
-  }
+
+const actionCreators = {
+  toggleFollow,
+  setUsers,
 }
 
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
+const UsersContainer = connect(mapStateToProps, actionCreators)(Users);
 
 export default UsersContainer;
