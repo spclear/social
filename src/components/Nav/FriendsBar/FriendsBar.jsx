@@ -4,13 +4,8 @@ import FriendItem from './FriendItem/FriendItem';
 
 const FriendsBar = (props) => {
   const friendsList = props.friendsList;
-
-  const getName = (id) => {
-    return props.getName(id);
-  }
-  const getAvatar = (id) => {
-    return props.getAvatar(id);
-  }
+  const getName = (id) => props.getName(id);
+  const getAvatar = (id) => props.getAvatar(id);
 
   return (
     <div className={styles.friendsBar}>
@@ -19,6 +14,7 @@ const FriendsBar = (props) => {
         {
           friendsList.map(item => (
             <FriendItem
+              key={item.userId}
               name={getName(item.userId)}
               image={getAvatar(item.userId)}
             />

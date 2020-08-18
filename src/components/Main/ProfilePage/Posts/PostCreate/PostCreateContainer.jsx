@@ -1,28 +1,18 @@
-import React from 'react';
+import { connect } from 'react-redux';
 import PostCreate from './PostCreate';
-import { addPostActionCreator, updatePostInputActionCreator }
-  from '../../../../../redux/store';
+import { addPost, updatePostInput }
+  from '../../../../../redux/actionCreators';
 
-const PostCreateContainer = (props) => {
-  const state = props.store.getState();
-  const value = state.profilePage.currentPostField;
-
-  const update = (value) => {
-    props.store.dispatch(updatePostInputActionCreator(value));
-    console.log(value);
+const mapStateToProps = (state) => {
+  return {
+    value: state.profilePage.currentPostField,
   }
-  const addPost = () => {
-    console.log(value);
-    props.store.dispatch(addPostActionCreator());
-  }
-
-  return (
-    <PostCreate
-      value={value}
-      update={update}
-      addPost={addPost}
-    />
-  )
 }
+const actionCreators = {
+  updatePostInput,
+  addPost,
+}
+
+const PostCreateContainer = connect(mapStateToProps, actionCreators)(PostCreate);
 
 export default PostCreateContainer;

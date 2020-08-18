@@ -1,20 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import DialogsList from './DialogsList';
 
-const DialogsListContainer = (props) => {
-  const state = props.store.getState();
-  
-  const dialogs = state.messagesPage.usersDialogs;
-  const getName = props.store.getName.bind(props.store);
-  const getAvatar = props.store.getAvatar.bind(props.store);
-  
-  return (
-    <DialogsList
-      dialogs={dialogs}
-      getName={getName}
-      getAvatar={getAvatar}
-    />
-  )
+let mapStateToProps = (state) => {
+  return {
+    dialogs: state.messagesPage.usersDialogs,
+    getName: id => state.usersPage.getName(id),
+    getAvatar: id => state.usersPage.getAvatar(id),
+  }
 }
+
+const DialogsListContainer = connect(mapStateToProps)(DialogsList);
+
 
 export default DialogsListContainer;

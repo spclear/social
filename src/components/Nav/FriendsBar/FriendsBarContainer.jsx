@@ -1,20 +1,14 @@
-import React from 'react';
+import { connect } from 'react-redux';
 import FriendsBar from './FriendsBar';
 
-const FriendsBarContainer = (props) => {
-  const state = props.store.getState();
-  const friendsList = state.navBar.friends;
-
-  const getName = props.store.getName.bind(props.store);
-  const getAvatar = props.store.getAvatar.bind(props.store);
-
-  return (
-    <FriendsBar
-      friendsList={friendsList}
-      getName={getName}
-      getAvatar={getAvatar}
-    />
-  )
+let mapStateToProps = (state) => {
+  return {
+    friendsList: state.navBar.friends,
+    getName: id => state.usersPage.getName(id),
+    getAvatar: id => state.usersPage.getAvatar(id),
+  }
 }
+
+const FriendsBarContainer = connect(mapStateToProps)(FriendsBar);
 
 export default FriendsBarContainer;

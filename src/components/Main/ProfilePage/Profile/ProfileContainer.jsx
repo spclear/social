@@ -1,17 +1,15 @@
-import React from 'react';
+import { connect } from 'react-redux';
 import Profile from './Profile';
 
-const ProfileContainer = (props) => {
-  let currentUserId = "641006348";
-  let name = props.store.getFullName(currentUserId);
-  let avatar = props.store.getAvatar(currentUserId);
+let currentUserId = "641006348";
 
-  return (
-    <Profile
-      name={name}
-      avatar={avatar}
-    />
-  )
+let mapStateToProps = (state) => {
+  return {
+    name: state.usersPage.getFullName(currentUserId),
+    avatar: state.usersPage.getAvatar(currentUserId),
+  }
 }
+
+const ProfileContainer = connect(mapStateToProps)(Profile);
 
 export default ProfileContainer;

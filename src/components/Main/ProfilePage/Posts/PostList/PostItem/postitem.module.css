@@ -32,5 +32,8 @@
   font-weight: 400;
   text-align: justify;
   line-height: 1.7rem;
+  overflow-wrap: break-word;
   word-wrap: break-word;
+  word-break: break-word;
+  -ms-word-break: break-all;
 }

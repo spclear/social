@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './createmessage.module.css';
-import Button from '../../../../Button/Button';
+import Button from '../../../../common/Button/Button';
 
 
 const CreateMessage = (props) => {

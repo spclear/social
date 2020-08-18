@@ -1,0 +1,24 @@
+.users {
+  padding: 25px;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-variant: small-caps;
+}
+
+.title:after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 15px auto 55px;
+  width: 30%;
+  background-color: #eaeaea;
+}
+
+.usersList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

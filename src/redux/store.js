@@ -36,39 +36,27 @@ const store = {
 
   getAvatar(id) {
     const users = this._state.profilePage.usersList;
-    for (let i = 0; i < users.length; i++) {
-      if (id === users[i].ID) {
-        return users[i].avatar;
-      }
-    }
-  },  
+    const user = users.find(item => item.id == id);
+    return user.avatar;
+  },
 
   getName(id) {
     const users = this._state.profilePage.usersList;
-    for (let i = 0; i < users.length; i++) {
-      if (id === users[i].ID) {
-        return users[i].firstName;
-      }
-    }
-  },  
+    const user = users.find(item => item.id == id);
+    return user.firstName;
+  },
 
   getFullName(id) {
     const users = this._state.profilePage.usersList;
-    for (let i = 0; i < users.length; i++) {
-      if (id === users[i].ID) {
-        return `${users[i].firstName} ${users[i].lastName}`;
-      }
-    }
-  },  
+    const user = users.find(item => item.id == id);
+    return `${user.firstName} ${user.lastName}`
+  },
 
   getDialog(id) {
     const dialogs = this._state.messagesPage.usersDialogs;
-    for (let i = 0; i < dialogs.length; i++) {
-      if (id === dialogs[i].userId) {
-        return dialogs[i];
-      }
-    }
-  },  
+    const dialog = dialogs.find(item => item.userId == id);
+    return dialog;
+  },
   
   _callSubscriber() {
     console.log('There are no subscribers (observers) for now.')

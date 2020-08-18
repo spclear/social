@@ -12,7 +12,6 @@
 }
 
 .message {
-  max-width: 400px;
   width: 60%;
   display: flex;
   align-items: center;
@@ -24,7 +23,10 @@
   font-size: .9rem;
   border-radius: 5px;
   background-color: #dadada;
-  word-wrap: break-word;
   margin: .5rem .8rem;
   align-self: start;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-word-break: break-all;
 }

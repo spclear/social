@@ -5,16 +5,16 @@ const SEND_MESSAGE = "SEND-MESSAGE";
 const UPDATE_CURRENT_MESSAGE_INPUT = "UPDATE-CURRENT-MESSAGE-INPUT";
 
 let initialState = {
-  usersList: usersList,
+  // usersList: usersList,
   usersDialogs: usersDialogs,
   currentMessageField: '',
 };
 
 let messagesPageReducer = (state = initialState, action) => {
-  let newState = state;
-
   switch (action.type) {
     case SEND_MESSAGE: 
+      let newState = Object.assign({}, state);
+
       let newMessage = {};
       let dialogs = newState.usersDialogs;
 
@@ -23,7 +23,7 @@ let messagesPageReducer = (state = initialState, action) => {
       
       for (let i = 0; i < dialogs.length; i++) {
         if (action.userId === dialogs[i].userId) {
-          newMessage.time = dialogs[i].length + 1;
+          newMessage.time = dialogs[i].messagesHistory.length + 1;
           dialogs[i].messagesHistory.push(newMessage);
           break;
         }
@@ -31,8 +31,10 @@ let messagesPageReducer = (state = initialState, action) => {
       newState.currentMessageField = '';
       return newState;
     case UPDATE_CURRENT_MESSAGE_INPUT:
-      newState.currentMessageField = action.text;
-      return newState;
+      return {
+        ...state,
+        currentMessageField: action.text,
+      }
     default:
       return state;
   }

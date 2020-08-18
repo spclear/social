@@ -1,0 +1,27 @@
+.followButton {
+  width: 140px;
+  height: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: .8rem;
+  color: #fff;
+  background-color: rgba(75, 123, 236, .85);
+  border-radius: 3px;
+  transition: background-color .5s;
+  margin-top: auto;
+  margin-bottom: 5px;
+}
+
+.followButton:hover {
+  color: #fff;
+  background-color: rgba(53, 59, 72, .85);
+}
+
+.followButton:not(.followed):hover {
+  color: #fff;
+  background-color: rgba(75, 123, 236, 1);
+}
+
+.followed {
+  background-color: rgba(53, 59, 72, .2);
+}

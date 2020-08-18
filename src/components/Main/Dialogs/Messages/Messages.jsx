@@ -4,8 +4,7 @@ import MessagesBodyContainer from './MessagesBody/MessagesBodyContainer';
 import CreateMessageContainer from './CreateMessage/CreateMessageContainer';
 
 const Messages = (props) => {
-  const userId = '084926135';
-  const userName = props.store.getName(userId);
+  const userName = props.userName;
 
   return (
     <div className={styles.messages}>
@@ -13,12 +12,10 @@ const Messages = (props) => {
         {userName}
       </h4>
       <MessagesBodyContainer
-        store={props.store}
-        userId={userId}
+        userId={props.userId}
       />
       <CreateMessageContainer
-        store={props.store}
-        userId={userId}
+        userId={props.userId}
       />
     </div>
   );

@@ -4,7 +4,6 @@ import PostItem from "./PostItem/PostItem";
 
 const PostList = (props) => {
   const posts = [...props.posts].reverse();
-
   const postsList = posts.map((post) => (
     <PostItem
       key={post.postId}

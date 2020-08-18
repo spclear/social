@@ -1,9 +1,13 @@
-let navBarReducer = {};
+import friends from '../Data/friendsData';
 
-const headerReducer = (state = initialState, action) => {
-  let newState = state;
+let initialState = {
+  friends: friends,
+};
 
-  return newState;
+const navBarReducer = (state = initialState, action) => {
+  const newState = Object.assign({}, state);
+
+  return state;
 }
 
 export default navBarReducer;
