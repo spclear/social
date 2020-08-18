@@ -5,7 +5,7 @@ let mapStateToProps = (state) => {
   return {
     dialogs: state.messagesPage.usersDialogs,
     currentDialog: state.messagesPage.currentDialog,
-    idSelf: state.usersPage.currentUser,
+    idSelf: state.profilePage.currentUser,
     getAvatar: id => state.usersPage.getAvatar(id),
     getDialog: id => state.messagesPage.getDialog(id),
   }

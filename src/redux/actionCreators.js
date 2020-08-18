@@ -11,6 +11,7 @@ const SWITCH_PAGE = "SWITCH-PAGE";
 const TO_FIRST_PAGE = "TO-FIRST-PAGE";
 const SET_LOADING_STATUS = "SET-LOADING-STATUS";
 const SET_CURRENT_DIALOG_ID = "SET-CURRENT-DIALOG-ID";
+const SET_CURRENT_USER = "SET-CURRENT-USER";
 
 export const updatePostInput = (text) => {
   return {
@@ -86,6 +87,12 @@ export const setLoadingStatus = (value) => {
 export const setCurrentDialogId = (id) => {
   return {
     type: SET_CURRENT_DIALOG_ID,
+    id,
+  }
+}
+export const setCurrentUser = (id) => {
+  return {
+    type: SET_CURRENT_USER,
     id,
   }
 }

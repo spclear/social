@@ -10,13 +10,27 @@ const InfoItem = (props) => {
   )
 }
 
-const ProfileInfo = () => {
+const checkIfGiven = data => data || 'no information given';
+
+const ProfileInfo = (props) => {
   return (
     <ul className={profileInfo.infoList}>
-      <InfoItem info='Date of birth: ' data='April 11th' />
-      <InfoItem info='City: ' data='Kherson' />
-      <InfoItem info='Education: ' data='no information given' />
-      <InfoItem info='Web Site: ' data='no information given' />
+      <InfoItem
+        info='About me:'
+        data={checkIfGiven(props.info.aboutMe)}
+      />
+      <InfoItem
+        info='Location: '
+        data={`${checkIfGiven(props.info.location.countryName)}, ${checkIfGiven(props.info.location.cityName)}`}
+      />
+      <InfoItem
+        info='Date of birth: '
+        data={checkIfGiven(props.info.birthDate)}
+      />
+      <InfoItem
+        info='Website: '
+        data={checkIfGiven(props.info.contacts.website)}
+      />
     </ul>
   )
 }

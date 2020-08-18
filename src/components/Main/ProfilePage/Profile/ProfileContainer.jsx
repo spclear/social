@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import Profile from './Profile';
 
-let currentUserId = "641006348";
 
 let mapStateToProps = (state) => {
   return {
-    name: state.usersPage.getFullName(currentUserId),
-    avatar: state.usersPage.getAvatar(currentUserId),
+    currentUser: state.profilePage.currentUser,
+    getFullName: id => state.usersPage.getFullName(id),
+    getAvatar: id => state.usersPage.getAvatar(id),
+    getInfo: id => state.usersPage.getInfo(id),
   }
 }
 

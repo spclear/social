@@ -1,10 +1,16 @@
 .infoList {
   margin-top: 50px;
+  
 }
 
 .item {
   padding: 5px 0;
   font-weight: bold;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-word-break: break-all;
+  max-width: 90%;
 }
 
 .data {

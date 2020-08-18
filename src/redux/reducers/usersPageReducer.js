@@ -11,7 +11,6 @@ const SET_LOADING_STATUS = "SET-LOADING-STATUS";
 
 let initialState = { 
   usersList: usersList,
-  currentUser: "641006348",
   friendsShown: 4,
   serverUsersList: [],
   usersShownNumber: 6,
@@ -26,13 +25,25 @@ let initialState = {
   getAvatar(id) {
     const users = this.usersList;
     const user = users.find(item => item.id === id);
-    return user.avatar;
+    return user.photos.large;
   },
   getFullName(id) {
     const users = this.usersList;
     const user = users.find(item => item.id === id);
-    return `${user.firstName} ${user.lastName}`;
+    return user.fullName;
   },
+  getInfo(id) {
+    const users = this.usersList;
+    const user = users.find(item => item.id === id);
+    return {
+      status: user.status,
+      location: {...user.location},
+      contacts: { ...user.contacts},
+      aboutMe: user.aboutMe,
+      lookingForAJob: user.lookingForAJob,
+      lookingForAJobDescription: user.lookingForAJobDescription,
+    }
+  }
 }
 
 let usersPageReducer = (state = initialState, action) => {
