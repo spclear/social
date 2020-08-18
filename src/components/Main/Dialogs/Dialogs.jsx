@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import styles from './dialogs.module.css'
 import DialogsListContainer from './DialogsList/DialogsListContainer';
-import MessagesContainer from './Messages/MessagesBody/MessagesContainer';
+import MessagesContainer from './Messages/MessagesContainer';
 
 const Dialogs = () => {
   return (

@@ -23,6 +23,7 @@ const CreateMessage = (props) => {
         placeholder='Type your message...'
       />
       <Button
+        isDisabled={props.value === ''}
         onClick={sendMessage}
         addClass={styles.button}
         buttonName='Send'

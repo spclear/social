@@ -24,6 +24,10 @@ const Users = (props) => {
   return (
       <div className={styles.users}>
         <h2 className={styles.title}>users</h2>
+        <Pages
+          currentPage={props.currentPage}
+          switchPage={(number) => props.onPageChanged(number)}
+        />
         <div className={styles.usersList}>
           {props.isLoading ? <Preloader /> : users}
         </div>

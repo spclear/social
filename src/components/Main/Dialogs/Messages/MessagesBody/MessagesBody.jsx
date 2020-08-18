@@ -4,8 +4,8 @@ import MessageItem from './MessageItem/MessageItem';
 import ScrollToBottom from 'react-scroll-to-bottom';
 
 const MessagesBody = (props) => {
-  const dialog = props.dialogs[1];
-  const messagesHistory = [...dialog.messagesHistory].reverse();
+  const dialog = props.getDialog(props.currentDialog);
+  const messagesHistory = [...dialog].reverse();
 
   const isSelfMessage = (id, idSelf) => (id === idSelf) ? styles.selfMessage : false;
 

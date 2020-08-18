@@ -23,4 +23,5 @@
   width: 100px;
   font-weight: bold;
   margin-top: .3rem;
+  box-shadow: none !important;
 }

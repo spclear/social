@@ -11,6 +11,7 @@ const SET_LOADING_STATUS = "SET-LOADING-STATUS";
 
 let initialState = { 
   usersList: usersList,
+  currentUser: "641006348",
   friendsShown: 4,
   serverUsersList: [],
   usersShownNumber: 6,

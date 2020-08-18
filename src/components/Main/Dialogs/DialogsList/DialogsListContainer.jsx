@@ -1,6 +1,7 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import DialogsList from './DialogsList';
+import { setCurrentDialogId } from '../../../../redux/actionCreators'
+
 
 let mapStateToProps = (state) => {
   return {
@@ -10,7 +11,11 @@ let mapStateToProps = (state) => {
   }
 }
 
-const DialogsListContainer = connect(mapStateToProps)(DialogsList);
+const actionCreators = {
+  setCurrentDialogId,
+}
+
+const DialogsListContainer = connect(mapStateToProps, actionCreators)(DialogsList);
 
 
 export default DialogsListContainer;

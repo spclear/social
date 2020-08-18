@@ -1,12 +1,10 @@
 import { connect } from 'react-redux';
-import Messages from '../Messages';
-
-const userId = '084926135';
+import Messages from './Messages';
 
 let mapStateToProps = (state) => {
   return {
-    userName: state.usersPage.getName(userId),
-    userId: userId,
+    getName: id => state.usersPage.getName(id),
+    currentDialog: state.messagesPage.currentDialog,
   }
 }
 

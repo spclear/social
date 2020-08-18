@@ -8,6 +8,7 @@ const DialogsItem = (props) => {
       to={`/dialogs/messages/id=${props.userId}`}
       activeClassName={styles.active}
       className={styles.item}
+      onClick={() => props.onClick(props.userId)}
     >
       <div className={styles.user}>
         <img
