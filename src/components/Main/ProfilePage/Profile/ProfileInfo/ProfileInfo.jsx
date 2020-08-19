@@ -1,20 +1,12 @@
 import React from 'react';
-import profileInfo from './profileinfo.module.css'
-
-const InfoItem = (props) => {
-  return (
-    <li className={profileInfo.item}>
-      {props.info}
-      <span className={profileInfo.data}>{props.data}</span>
-    </li>
-  )
-}
+import styles from './profileinfo.module.css';
+import InfoItem from '../../../../common/InfoItem/InfoItem';
 
 const checkIfGiven = data => data || 'no information given';
 
 const ProfileInfo = (props) => {
   return (
-    <ul className={profileInfo.infoList}>
+    <ul className={styles.infoList}>
       <InfoItem
         info='About me:'
         data={checkIfGiven(props.info.aboutMe)}

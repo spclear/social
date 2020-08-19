@@ -17,7 +17,7 @@ const Main = () => {
         render={() => <ProfilePage />}
       />
       <Route
-        path='/dialogs'
+        path='/dialogs/'
         render={() => <Dialogs />} 
       />
       <Route

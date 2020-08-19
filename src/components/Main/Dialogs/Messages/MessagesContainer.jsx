@@ -3,8 +3,8 @@ import Messages from './Messages';
 
 let mapStateToProps = (state) => {
   return {
-    getName: id => state.usersPage.getName(id),
     currentDialog: state.messagesPage.currentDialog,
+    getName: id => state.usersPage.getName(id),
   }
 }
 

@@ -18,7 +18,6 @@ const renderApp = () => {
   )
 }
 
-window.store = store;
 renderApp();
 store.subscribe(renderApp);
 

@@ -2,13 +2,14 @@ import React from 'react';
 import styles from './messages.module.css';
 import MessagesBodyContainer from './MessagesBody/MessagesBodyContainer';
 import CreateMessageContainer from './CreateMessage/CreateMessageContainer';
+import Preloader from '../../../common/Preloader/Preloader';
 
 const Messages = (props) => {
-  let userName
-  (props.currentDialog)
-    ? userName = props.getName(props.currentDialog)
-    : userName = '';
-  if (userName !== '') {
+  let userName = (props.currentDialog)
+    ? props.getName(props.currentDialog)
+    : '';
+  
+  if (userName) {
     return (
       <div className={styles.messages}>
         <h4 className={styles.title}>
@@ -18,8 +19,16 @@ const Messages = (props) => {
         <CreateMessageContainer />
       </div>
     );
+  } else {
+    return (
+      <div className={styles.noDialog}>
+        <h4 className={styles.noDialogTitle}>
+          Choose a dialog to start...
+        </h4>
+        <Preloader extraClass={styles.preloader} />
+      </div>
+    )
   }
-  return <div></div>
 }
 
 export default Messages;

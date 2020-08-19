@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './header.module.css';
 
-
-const Header = (props) => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <a href='/index.html' className={styles.logo}></a>

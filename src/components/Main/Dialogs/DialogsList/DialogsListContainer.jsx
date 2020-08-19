@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import DialogsList from './DialogsList';
 import { setCurrentDialogId } from '../../../../redux/actionCreators'
 
-
 let mapStateToProps = (state) => {
   return {
     dialogs: state.messagesPage.usersDialogs,

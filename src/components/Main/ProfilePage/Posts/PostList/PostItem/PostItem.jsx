@@ -9,8 +9,12 @@ const PostItem = (props) => {
           <img className="avatar" src={props.authorAvatar} alt="user avatar" />
         </div>
         <div className={styles.details}>
-          <h3 className={styles.name}>{props.authorName}</h3>
-          <p className={styles.time}>{props.time}</p>
+          <h3 className={styles.name}>
+            {props.authorName}
+          </h3>
+          <p className={styles.time}>
+            {props.time}
+          </p>
         </div>
       </div>
       <div className={styles.body}>

@@ -25,7 +25,9 @@ const DialogsList = (props) => {
 
   return (
     <div className={styles.dialogs}>
-      <h3 className={styles.title}>Recent dialogs</h3>
+      <h3 className={styles.title}>
+        Recent dialogs
+      </h3>
       {dialogs}
     </div>
   )

@@ -9,7 +9,7 @@ const Dialogs = () => {
     <div className={styles.dialogs}>
       <DialogsListContainer />
       <Route
-        path="/dialogs/messages"
+        path="/dialogs/messages/"
         render={() => <MessagesContainer />}
       />
     </div>

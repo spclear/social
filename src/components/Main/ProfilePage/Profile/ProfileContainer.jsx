@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from './Profile';
 
-
 let mapStateToProps = (state) => {
   return {
     currentUser: state.profilePage.currentUser,

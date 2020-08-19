@@ -8,7 +8,7 @@ const Nav = () => {
     <nav className={styles.nav}>
       <ul className={styles.list}>
         <NavItem to="/profile" linkname="Profile" />
-        <NavItem to="/dialogs" linkname="Messages" />
+        <NavItem to="/dialogs/" linkname="Messages" />
         <NavItem to="/users" linkname="Users" />
         <NavItem to="/serverusers" linkname="Server Users" />
         <NavItem to="/news" linkname="News" />
