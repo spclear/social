@@ -33,3 +33,7 @@
   flex-grow: 1;
   color: #353b48;
 }
+
+.preloader {
+  height: 420px;
+}

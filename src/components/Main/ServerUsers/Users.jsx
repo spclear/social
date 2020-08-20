@@ -29,7 +29,11 @@ const Users = (props) => {
           switchPage={(number) => props.onPageChanged(number)}
         />
         <div className={styles.usersList}>
-          {props.isLoading ? <Preloader /> : users}
+          {
+            props.isLoading
+            ? <Preloader extraClass={styles.preloader} />
+            : users
+          }
         </div>
         <Pages
           currentPage={props.currentPage}

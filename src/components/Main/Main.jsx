@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <main className={styles.main}>
       <Route
-        path='/profile'
+        path='/profile/:userId?'
         render={() => <ProfilePage />}
       />
       <Route

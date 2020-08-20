@@ -12,6 +12,7 @@ const TO_FIRST_PAGE = "TO-FIRST-PAGE";
 const SET_LOADING_STATUS = "SET-LOADING-STATUS";
 const SET_CURRENT_DIALOG_ID = "SET-CURRENT-DIALOG-ID";
 const SET_CURRENT_USER = "SET-CURRENT-USER";
+const SET_CURRENT_USER_INFO = "SET-CURRENT-USER-INFO";
 
 export const updatePostInput = (text) => {
   return {
@@ -94,5 +95,11 @@ export const setCurrentUser = (id) => {
   return {
     type: SET_CURRENT_USER,
     id,
+  }
+}
+export const setCurrentUserInfo = (user) => {
+  return {
+    type: SET_CURRENT_USER_INFO,
+    user,
   }
 }

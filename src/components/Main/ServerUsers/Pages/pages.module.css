@@ -33,5 +33,16 @@
   transform: translateY(-3px);
 }
 .picked {
+  position: relative;
   color: #6a6a6a;
+}
+.picked::after {
+  content: '';
+  background-color: #6a6a6a;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  margin-top: 1px;
+  right: -70%;
+  border-radius: 50%;
 }
