@@ -5,7 +5,7 @@ import styles from './dialogsitem.module.css';
 const DialogsItem = (props) => {
   return (
     <NavLink
-      to={`/dialogs/messages/id=${props.userId}`}
+      to={`/dialogs/id=${props.userId}`}
       activeClassName={styles.active}
       className={styles.item}
       onClick={() => props.onClick(props.userId)}

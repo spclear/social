@@ -21,12 +21,8 @@ const Messages = (props) => {
     );
   } else {
     return (
-      <div className={styles.noDialog}>
-        <h4 className={styles.noDialogTitle}>
-          Choose a dialog to start...
-        </h4>
-        <Preloader extraClass={styles.preloader} />
-      </div>
+      <>
+      </>
     )
   }
 }
