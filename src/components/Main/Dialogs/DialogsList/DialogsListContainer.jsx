@@ -8,7 +8,7 @@ class DialogsListContainer extends Component {
   componentWillUnmount() {
     this.props.setCurrentDialogId(null);
   }
-  componentWillMount() {
+  componentDidMount() {
     this.props.setCurrentDialogId(null);
   }
 

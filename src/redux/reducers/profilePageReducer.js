@@ -9,7 +9,7 @@ const UPDATE_CURRENT_POST_INPUT = "UPDATE-CURRENT-POST-INPUT";
 
 let initialState = {
   loggedUser: "641006348",
-  currentShownUser: 2,
+  currentShownUser: null,
   currentUserInfo: null,
   friends: friends,
   postsList: postsList,
@@ -37,9 +37,10 @@ let profilePageReducer = (state = initialState, action) => {
         currentPostField: action.text,
       }
     case SET_CURRENT_USER: 
+      console.log('sdfa', action.id)
       return {
         ...state,
-        currentUser: action.id,
+        currentShownUser: action.id,
       }
     case SET_CURRENT_USER_INFO: 
       return {

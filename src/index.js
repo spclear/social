@@ -17,6 +17,7 @@ const renderApp = () => {
     document.getElementById('root')
   )
 }
+window.store = store;
 
 renderApp();
 store.subscribe(renderApp);

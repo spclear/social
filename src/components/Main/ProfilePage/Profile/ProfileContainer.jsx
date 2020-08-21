@@ -7,21 +7,20 @@ import { setCurrentUserInfo, setLoadingStatus }
   from '../../../../redux/actionCreators';
 
 class ProfileContainer extends Component {
-  componentWillMount() {
+  componentDidMount() {
     const userToShow = this.props.match.params.userId || this.props.currentUser;    
     this.props.setLoadingStatus(true);
 
     Axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userToShow}`)
       .then(response => {
         this.props.setLoadingStatus(false);
-        this.props.setCurrentUserInfo(response.data);  
-        console.log(response);
+        this.props.setCurrentUserInfo(response.data);
       })
   }
 
   render() {
     return (
-      <Profile {...this.props} />
+      <Profile {...this.props}/>
     )
   }
 }
