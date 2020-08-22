@@ -1,5 +1,4 @@
 import React from 'react';
-import Axios from 'axios';
 import { connect } from 'react-redux';
 import Users from './Users';
 import {
@@ -11,18 +10,17 @@ import {
   setLoadingStatus,
 }
   from '../../../redux/actionCreators';
+import { usersAPI, followAPI } from '../../../api/api';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.toFirstPage();
     this.props.setLoadingStatus(true);
-    Axios
-      .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.usersShownNumber}&page=1`, {
-        withCredentials: true,
-      })
-      .then(response => {
-        this.props.setUsersTotal(response.data.totalCount);
-        this.props.setUsers(response.data.items);
+
+    usersAPI.getUsers(this.props.usersShownNumber, 1)
+      .then(data => {
+        this.props.setUsersTotal(data.totalCount);
+        this.props.setUsers(data.items);
         this.props.setLoadingStatus(false);
       })
   }
@@ -30,38 +28,23 @@ class UsersContainer extends React.Component {
   onPageChanged = (pageNumber) => {
     this.props.switchPage(pageNumber);
     this.props.setLoadingStatus(true);
-    Axios
-      .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.usersShownNumber}&page=${pageNumber}`, {
-        withCredentials: true, 
-      })
-      .then(response => {
-        this.props.setUsers(response.data.items);
+    usersAPI.getUsers(this.props.usersShownNumber, pageNumber)
+      .then(data => {
+        this.props.setUsers(data.items);
         this.props.setLoadingStatus(false);
       })
   }
 
   toggleFollow = (isFollowed, id) => {
     if (!isFollowed) {
-      Axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {}, {
-        withCredentials: true,
-        headers: {
-          "API-KEY": "83ee89dc-1391-4de4-9c05-ed1d5e1459ce",
-        },
-      }).then(response => {
-        console.log(response);
-        if (response.data.resultCode === 0) {
+      followAPI.follow(id).then(data => {
+        if (data.resultCode === 0) {
           this.props.toggleFollowTwo(id);
         }
       })
     } else {
-      Axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {
-        withCredentials: true,
-        headers: {
-          "API-KEY": "83ee89dc-1391-4de4-9c05-ed1d5e1459ce",
-        },
-      }).then(response => {
-        console.log(response);
-        if (response.data.resultCode === 0) {
+      followAPI.unfollow(id).then(data => {
+        if (data.resultCode === 0) {
           this.props.toggleFollowTwo(id);
         }
       })
