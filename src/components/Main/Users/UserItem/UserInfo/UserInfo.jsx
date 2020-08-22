@@ -8,7 +8,7 @@ const UserInfo = (props) => {
     <div className={styles.info}>
       <h3 className={styles.name}>{props.fullName}</h3>
       <p className={styles.status}>{props.status}</p>
-      <p className={styles.location}>
+      <div className={styles.location}>
         <div className={styles.country}>
           <span>Country: </span>
           {props.country}
@@ -17,7 +17,7 @@ const UserInfo = (props) => {
           <span>City: </span>
           {props.city}
         </div>
-      </p>
+      </div>
       <FollowButton
         isFollowed={props.followed}
         onClick={props.onClick}

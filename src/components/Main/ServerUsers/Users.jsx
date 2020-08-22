@@ -16,7 +16,7 @@ const Users = (props) => {
           avatar={item.photos.large || UserDefault}
           followed={item.followed}
           status={item.status || 'No current status'}
-          toggleFollow={() => props.toggleFollow(item.id)}
+          toggleFollow={() => props.toggleFollow(item.followed, item.id)}
         />
       )
   })

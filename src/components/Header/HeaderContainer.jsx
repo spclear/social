@@ -12,7 +12,6 @@ class HeaderContainer extends Component {
       withCredentials: true,
     })
       .then(response => {
-        console.log(response);
         if (response.data.resultCode === 0) {
           this.props.setLoggedStatus(true);
           this.props.setCurrentUser(response.data.data.id);

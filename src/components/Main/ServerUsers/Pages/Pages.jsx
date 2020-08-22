@@ -20,6 +20,7 @@ const Pages = (props) => {
       {items.map(item => {
         return (
           <span
+            key={item}
             className={`${styles.pageNumber}${isPicked(item)}`}
             onClick={() => props.switchPage(item)}
           >

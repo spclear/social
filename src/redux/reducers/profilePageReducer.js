@@ -37,7 +37,6 @@ let profilePageReducer = (state = initialState, action) => {
         currentPostField: action.text,
       }
     case SET_CURRENT_USER: 
-      console.log('sdfa', action.id)
       return {
         ...state,
         currentShownUser: action.id,
