@@ -5,5 +5,12 @@
   text-align: center;
   margin-left: auto;
   text-transform: uppercase;
-  color: #353b48;
+  color: #57606f;
+  transition: background-color, box-shadow, color, .6s;
+  box-shadow: 0 3px 8px -6px rgba(0,0,0, .7)
+}
+
+.createButton:disabled {
+  box-shadow: none;
+  color: #acacac;
 }

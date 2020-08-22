@@ -8,3 +8,16 @@
   grid-gap: 20px;
 }
 
+.noDialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #b6b6b6;
+  height: 70vh;
+  font-size: 1.5rem;
+}
+
+.preloader {
+  height: auto !important;
+}

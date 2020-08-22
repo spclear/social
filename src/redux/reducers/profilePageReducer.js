@@ -1,10 +1,16 @@
 import friends from '../Data/friendsData';
 import postsList from '../Data/usersPosts';
 
+const SET_CURRENT_USER = "SET-CURRENT-USER";
+const SET_CURRENT_USER_INFO = "SET-CURRENT-USER-INFO";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_CURRENT_POST_INPUT = "UPDATE-CURRENT-POST-INPUT";
 
 let initialState = {
+  loggedUser: "641006348",
+  currentShownUser: null,
+  currentUserInfo: null,
   friends: friends,
   postsList: postsList,
   currentPostField: '',
@@ -29,6 +35,16 @@ let profilePageReducer = (state = initialState, action) => {
       return {
         ...state,
         currentPostField: action.text,
+      }
+    case SET_CURRENT_USER: 
+      return {
+        ...state,
+        currentShownUser: action.id,
+      }
+    case SET_CURRENT_USER_INFO: 
+      return {
+        ...state,
+        currentUserInfo: action.user,
       }
     default:
       return state;

@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from './userinfo.module.css';
 import FollowButton from '../FollowButton/FollowButton';
-
+import { NavLink } from 'react-router-dom';
 
 const UserInfo = (props) => {
   return (
     <div className={styles.info}>
-      <h3 className={styles.name}>{props.fullName}</h3>
+      <NavLink
+        to={`/profile/${props.id}`}
+        className={styles.name}
+      >
+        {props.fullName}
+      </NavLink>
       <p className={styles.status}>{props.status}</p>
       <FollowButton
         isFollowed={props.followed}

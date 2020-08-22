@@ -1,16 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Component } from 'react';
 import DialogsList from './DialogsList';
+import { setCurrentDialogId } from '../../../../redux/actionCreators'
 
-let mapStateToProps = (state) => {
+class DialogsListContainer extends Component {
+  componentWillUnmount() {
+    this.props.setCurrentDialogId(null);
+  }
+  componentDidMount() {
+    this.props.setCurrentDialogId(null);
+  }
+
+  render() {
+    return (
+      <DialogsList {...this.props} />
+    )
+  }
+}
+
+const mapStateToProps = (state) => {
   return {
     dialogs: state.messagesPage.usersDialogs,
     getName: id => state.usersPage.getName(id),
     getAvatar: id => state.usersPage.getAvatar(id),
   }
 }
+const actionCreators = {
+  setCurrentDialogId,
+}
 
-const DialogsListContainer = connect(mapStateToProps)(DialogsList);
-
-
-export default DialogsListContainer;
+export default connect(mapStateToProps, actionCreators)(DialogsListContainer);

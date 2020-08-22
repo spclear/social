@@ -8,7 +8,7 @@ const Pages = (props) => {
   const firstPage = (props.currentPage < 10) ? 1 : props.currentPage - 5;
   
   const isPicked = number => {
-    return (props.currentPage == number) ? ' ' + styles.picked : '';
+    return (props.currentPage === number) ? ' ' + styles.picked : '';
   }
 
   for (let i = firstPage; i < firstPage + pagesToShow; i++) {
@@ -20,6 +20,7 @@ const Pages = (props) => {
       {items.map(item => {
         return (
           <span
+            key={item}
             className={`${styles.pageNumber}${isPicked(item)}`}
             onClick={() => props.switchPage(item)}
           >

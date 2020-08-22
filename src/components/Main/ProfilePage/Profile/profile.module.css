@@ -1,23 +1,15 @@
 .profile {
-  padding: 25px;
+  padding: 50px;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.profile:after {
-  content: '';
-  display: block;
-  height: 2px;
-  margin: 80px auto 55px;
-  width: 50%;
-  background-color: #eaeaea;
+  margin-bottom: 80px;
 }
 
 .avatar {
+  flex-shrink: 0;
   display: block;
   width: 220px;
   height: 220px;
-  margin-right: 25px;
+  margin-right: 30px;
   margin-top: 5px;
   border-radius: 5px;
   border: 3px solid #fff;
@@ -25,7 +17,12 @@
 }
 
 .userName {
-  margin: 10px 0 30px;
+  margin-bottom: 5px;
+}
+
+.status {
+  font-style: italic;
+  color: rgb(105, 105, 105);
 }
 
 .userName > a {
@@ -35,4 +32,8 @@
 .details {
   flex-grow: 1;
   color: #353b48;
+}
+
+.preloader {
+  height: 420px;
 }

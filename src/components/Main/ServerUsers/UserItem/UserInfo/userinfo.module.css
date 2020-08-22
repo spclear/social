@@ -11,6 +11,11 @@
 
 .name {
   padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.name::first-letter {
+  text-transform: uppercase;
 }
 
 .status {

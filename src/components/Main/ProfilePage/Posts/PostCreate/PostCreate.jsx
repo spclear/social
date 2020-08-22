@@ -23,6 +23,7 @@ const PostCreate = (props) => {
         value={props.value}
       />
       <Button
+        isDisabled={(props.value === '')}
         addClass={styles.button}
         onClick={addNewPost}
         buttonName='Post'

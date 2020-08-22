@@ -1,15 +1,41 @@
+import React, { Component }  from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Axios from 'axios';
 import Profile from './Profile';
+import { setCurrentUserInfo, setLoadingStatus }
+  from '../../../../redux/actionCreators';
 
-let currentUserId = "641006348";
+class ProfileContainer extends Component {
+  componentDidMount() {
+    const userToShow = this.props.match.params.userId || this.props.currentUser;    
+    this.props.setLoadingStatus(true);
 
-let mapStateToProps = (state) => {
-  return {
-    name: state.usersPage.getFullName(currentUserId),
-    avatar: state.usersPage.getAvatar(currentUserId),
+    Axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userToShow}`)
+      .then(response => {
+        this.props.setLoadingStatus(false);
+        this.props.setCurrentUserInfo(response.data);
+      })
+  }
+
+  render() {
+    return (
+      <Profile {...this.props}/>
+    )
   }
 }
 
-const ProfileContainer = connect(mapStateToProps)(Profile);
+let mapStateToProps = (state) => {
+  return {
+    currentUser: state.profilePage.currentShownUser,
+    currentUserInfo: state.profilePage.currentUserInfo,
+    isLoading: state.usersPage.isLoading,
+  }
+}
 
-export default ProfileContainer;
+const actionCreators = {
+  setCurrentUserInfo,
+  setLoadingStatus,
+}
+
+export default connect(mapStateToProps, actionCreators)(withRouter(ProfileContainer));

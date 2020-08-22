@@ -1,13 +1,15 @@
 import usersList from '../Data/usersList';
 
+const SET_USERS = "SET-USERS";
+const SET_USERS_TOTAL = "SET-USERS-TOTAL";
+const SET_LOADING_STATUS = "SET-LOADING-STATUS";
+
 const TOGGLE_FOLLOW = "TOGGLE-FOLLOW";
 const TOGGLE_FOLLOW_TWO = "TOGGLE-FOLLOW-TWO";
-const SET_USERS = "SET-USERS";
+
 const ADD_USERS = "ADD-USERS";
-const SET_USERS_TOTAL = "SET-USERS-TOTAL";
 const SWITCH_PAGE = "SWITCH-PAGE";
 const TO_FIRST_PAGE = "TO-FIRST-PAGE";
-const SET_LOADING_STATUS = "SET-LOADING-STATUS";
 
 let initialState = { 
   usersList: usersList,
@@ -25,13 +27,30 @@ let initialState = {
   getAvatar(id) {
     const users = this.usersList;
     const user = users.find(item => item.id === id);
-    return user.avatar;
+    return user.photos.large;
   },
   getFullName(id) {
     const users = this.usersList;
     const user = users.find(item => item.id === id);
-    return `${user.firstName} ${user.lastName}`;
+    return user.fullName;
   },
+  getUser(id) {
+    const users = this.usersList;
+    const user = users.find(item => item.id === id);
+    return user;
+  },
+  getInfo(id) {
+    const users = this.usersList;
+    const user = users.find(item => item.id === id);
+    return {
+      status: user.status,
+      location: {...user.location},
+      contacts: { ...user.contacts},
+      aboutMe: user.aboutMe,
+      lookingForAJob: user.lookingForAJob,
+      lookingForAJobDescription: user.lookingForAJobDescription,
+    }
+  }
 }
 
 let usersPageReducer = (state = initialState, action) => {

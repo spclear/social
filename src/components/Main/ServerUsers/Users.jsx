@@ -16,7 +16,7 @@ const Users = (props) => {
           avatar={item.photos.large || UserDefault}
           followed={item.followed}
           status={item.status || 'No current status'}
-          toggleFollow={() => props.toggleFollow(item.id)}
+          toggleFollow={() => props.toggleFollow(item.followed, item.id)}
         />
       )
   })
@@ -24,8 +24,16 @@ const Users = (props) => {
   return (
       <div className={styles.users}>
         <h2 className={styles.title}>users</h2>
+        <Pages
+          currentPage={props.currentPage}
+          switchPage={(number) => props.onPageChanged(number)}
+        />
         <div className={styles.usersList}>
-          {props.isLoading ? <Preloader /> : users}
+          {
+            props.isLoading
+            ? <Preloader extraClass={styles.preloader} />
+            : users
+          }
         </div>
         <Pages
           currentPage={props.currentPage}

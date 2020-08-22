@@ -1,6 +1,5 @@
 .users {
   padding: 25px;
-  padding-bottom: 60px;
 }
 
 .title {
@@ -22,4 +21,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.preloader {
+  height: 100vh;
 }

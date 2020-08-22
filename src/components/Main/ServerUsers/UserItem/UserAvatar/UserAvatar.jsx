@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './useravatar.module.css';
+import { NavLink } from 'react-router-dom';
 
 const UserAvatar = (props) => {
   return (
-    <div className={styles.avatar}>
+    <NavLink
+      to={`/profile/${props.id}`}
+      className={styles.avatar}
+    >
       <img src={props.avatar} alt="avatar" />
-    </div>
+    </NavLink>
   )
 }
 

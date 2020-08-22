@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './messageitem.module.css';
+import { NavLink } from 'react-router-dom';
 
 const MessageItem = (props) => {
   let messageItem = React.createRef(); 
@@ -7,9 +8,9 @@ const MessageItem = (props) => {
   return (
     <div ref={messageItem} className={`${styles.message} ${props.isSelfMessage}`}>
       <div className={styles.avatar}>
-        <a href='#'>
+        <NavLink to='/profile'>
           <img src={props.avatar} alt='' />
-        </a>
+        </NavLink>
       </div>
       <p className={styles.item}>{props.text}</p>
     </div>

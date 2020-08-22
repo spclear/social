@@ -10,6 +10,11 @@ const SET_USERS_TOTAL = "SET-USERS-TOTAL";
 const SWITCH_PAGE = "SWITCH-PAGE";
 const TO_FIRST_PAGE = "TO-FIRST-PAGE";
 const SET_LOADING_STATUS = "SET-LOADING-STATUS";
+const SET_CURRENT_DIALOG_ID = "SET-CURRENT-DIALOG-ID";
+const SET_CURRENT_USER = "SET-CURRENT-USER";
+const SET_CURRENT_USER_INFO = "SET-CURRENT-USER-INFO";
+const SET_LOGGED_STATUS = "SET-LOGGED-STATUS";
+const SET_LOGGED_USER_DETAILS = "SET-LOGGED-USER-DETAILS";
 
 export const updatePostInput = (text) => {
   return {
@@ -80,5 +85,35 @@ export const setLoadingStatus = (value) => {
   return {
     type: SET_LOADING_STATUS,
     value,
+  }
+}
+export const setCurrentDialogId = (id) => {
+  return {
+    type: SET_CURRENT_DIALOG_ID,
+    id,
+  }
+}
+export const setCurrentUser = (id) => {
+  return {
+    type: SET_CURRENT_USER,
+    id,
+  }
+}
+export const setCurrentUserInfo = (user) => {
+  return {
+    type: SET_CURRENT_USER_INFO,
+    user,
+  }
+}
+export const setLoggedStatus = (isLoggedIn) => {
+  return {
+    type: SET_LOGGED_STATUS,
+    isLoggedIn,
+  }
+}
+export const setLoggedUserDetails = (data) => {
+  return {
+    type: SET_LOGGED_USER_DETAILS,
+    data,
   }
 }
