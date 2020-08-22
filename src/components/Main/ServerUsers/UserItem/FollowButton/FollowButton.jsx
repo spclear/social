@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './followbutton.module.css';
+import ButtonLoading from '../../../../common/ButtonLoading/ButtonLoading';
 
 const FollowButton = (props) => {
   const followedClass = (isFollowed) => {
@@ -14,8 +15,13 @@ const FollowButton = (props) => {
     <button
       className={`${styles.followButton}${followedClass(props.isFollowed)}`}
       onClick={props.onClick}
+      disabled={props.disabled}
     >
-      {buttonName(props.isFollowed)}
+      {
+        (props.disabled)
+          ? <ButtonLoading backgroundColor='#353b48'/>
+          : buttonName(props.isFollowed)
+      }
     </button>
   )
 }

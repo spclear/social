@@ -16,6 +16,7 @@ const UserItem = (props) => {
         status={props.status}
         followed={props.followed}
         onClick={props.toggleFollow}
+        inFollowingProgress={props.inFollowingProgress}
       />
     </div>
   )

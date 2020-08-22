@@ -14,6 +14,7 @@ const UserInfo = (props) => {
       </NavLink>
       <p className={styles.status}>{props.status}</p>
       <FollowButton
+        disabled={props.inFollowingProgress.includes(props.id)}
         isFollowed={props.followed}
         onClick={props.onClick}
       />

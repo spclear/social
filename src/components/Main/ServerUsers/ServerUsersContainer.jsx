@@ -8,6 +8,7 @@ import {
   switchPage,
   toFirstPage,
   setLoadingStatus,
+  setFollowingProgressStatus,
 }
   from '../../../redux/actionCreators';
 import { usersAPI, followAPI } from '../../../api/api';
@@ -36,16 +37,19 @@ class UsersContainer extends React.Component {
   }
 
   toggleFollow = (isFollowed, id) => {
+    this.props.setFollowingProgressStatus(id, true);
     if (!isFollowed) {
       followAPI.follow(id).then(data => {
         if (data.resultCode === 0) {
           this.props.toggleFollowTwo(id);
+          this.props.setFollowingProgressStatus(id, false);
         }
       })
     } else {
       followAPI.unfollow(id).then(data => {
         if (data.resultCode === 0) {
           this.props.toggleFollowTwo(id);
+          this.props.setFollowingProgressStatus(id, false);
         }
       })
     }
@@ -61,6 +65,7 @@ class UsersContainer extends React.Component {
         usersTotal={this.props.usersTotal}
         usersShownNumber={this.props.usersShownNumber}
         isLoading={this.props.isLoading}
+        inFollowingProgress={this.props.inFollowingProgress}
       />
     )
   }
@@ -73,6 +78,7 @@ const mapStateToProps = (state) => {
     usersTotal: state.usersPage.usersTotal,
     currentPage: state.usersPage.currentPage,
     isLoading: state.usersPage.isLoading,
+    inFollowingProgress: state.usersPage.inFollowingProgress,
   }
 }
   
@@ -83,6 +89,7 @@ const actionCreators = {
   switchPage,
   setLoadingStatus,
   toFirstPage,
+  setFollowingProgressStatus,
 }
 
 

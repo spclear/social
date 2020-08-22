@@ -3,6 +3,7 @@ import usersList from '../Data/usersList';
 const SET_USERS = "SET-USERS";
 const SET_USERS_TOTAL = "SET-USERS-TOTAL";
 const SET_LOADING_STATUS = "SET-LOADING-STATUS";
+const SET_FOLLOWING_PROGRESS_STATUS = "SET-FOLLOWING-PROGRESS-STATUS";
 
 const TOGGLE_FOLLOW = "TOGGLE-FOLLOW";
 const TOGGLE_FOLLOW_TWO = "TOGGLE-FOLLOW-TWO";
@@ -19,6 +20,7 @@ let initialState = {
   usersTotal: 0,
   currentPage: 1,
   isLoading: false,
+  inFollowingProgress: [],
   getName(id) {
     const users = this.usersList;
     const user = users.find(item => item.id === id);
@@ -104,6 +106,13 @@ let usersPageReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: action.value,
+      }
+    case SET_FOLLOWING_PROGRESS_STATUS: 
+      return {
+        ...state,
+        inFollowingProgress: action.value
+          ? [...state.inFollowingProgress, action.id]
+          : state.inFollowingProgress.filter(id => id !== action.id)
       }
     default:
       return state;
