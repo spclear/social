@@ -60,7 +60,7 @@ export const checkIfAuth = () => {
   }
 }
 
-export const showUser = (userId, currentUserId) => {
+export const getUserProfile = (userId, currentUserId) => {
   return (dispatch) => {
     let userToShow = userId || currentUserId;
     dispatch(actionCreators.setLoadingStatus(true));

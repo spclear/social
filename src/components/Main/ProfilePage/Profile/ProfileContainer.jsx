@@ -2,12 +2,12 @@ import React, { Component }  from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Profile from './Profile';
-import { showUser } from '../../../../redux/thunkCreators';
+import { getUserProfile } from '../../../../redux/thunkCreators';
 
 class ProfileContainer extends Component {
   componentDidMount() {
     const urlId = this.props.match.params.userId;
-    this.props.showUser(urlId, this.props.currentUser);
+    this.props.getUserProfile(urlId, this.props.currentUser);
   }
   render() {
     return (
@@ -23,6 +23,6 @@ const mapStateToProps = (state) => {
     isLoading: state.usersPage.isLoading,
   }
 }
-const actionCreators = { showUser, }
+const actionCreators = { getUserProfile, }
 
 export default connect(mapStateToProps, actionCreators)(withRouter(ProfileContainer));
