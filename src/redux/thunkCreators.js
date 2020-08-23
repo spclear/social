@@ -29,6 +29,7 @@ export const changePage = (pageNumber, usersNumberToShow) => {
     usersAPI.getUsers(usersNumberToShow, pageNumber)
       .then(data => {
         dispatch(actionCreators.setUsers(data.items));
+        dispatch(actionCreators.setLoadingStatus(false));
       })
   }
 }

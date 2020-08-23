@@ -6,23 +6,18 @@ import { toggleFollow, changePage, getUsers }
 
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.getUsers(this.props.usersShownNumber);
+    this.props.getUsers(this.props.stateInfo.usersShownNumber);
   }
 
   onPageChanged = (pageNumber) => {
-    this.props.changePage(pageNumber, this.props.usersShownNumber);
+    this.props.changePage(pageNumber, this.props.stateInfo.usersShownNumber);
   }
 
   render() {
     return (
       <Users
-        users={this.props.users}
+        {...this.props.stateInfo}
         toggleFollow={this.props.toggleFollow}
-        currentPage={this.props.currentPage}
-        usersTotal={this.props.usersTotal}
-        usersShownNumber={this.props.usersShownNumber}
-        isLoading={this.props.isLoading}
-        inFollowingProgress={this.props.inFollowingProgress}
         onPageChanged={this.onPageChanged}
       />
     )
@@ -31,12 +26,14 @@ class UsersContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.usersPage.serverUsersList,
-    usersShownNumber: state.usersPage.usersShownNumber,
-    usersTotal: state.usersPage.usersTotal,
-    currentPage: state.usersPage.currentPage,
-    isLoading: state.usersPage.isLoading,
-    inFollowingProgress: state.usersPage.inFollowingProgress,
+    stateInfo: {
+      users: state.usersPage.serverUsersList,
+      usersShownNumber: state.usersPage.usersShownNumber,
+      usersTotal: state.usersPage.usersTotal,
+      currentPage: state.usersPage.currentPage,
+      isLoading: state.usersPage.isLoading,
+      inFollowingProgress: state.usersPage.inFollowingProgress,
+    },
   }
 }
 const actionCreators = {
