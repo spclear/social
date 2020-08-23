@@ -8,7 +8,7 @@ const FollowButton = (props) => {
   }
 
   const buttonName = (isFollowed) => {
-    return (isFollowed) ? 'unfollow' : 'follow'
+    return (isFollowed) ? 'unfollow' : 'follow';
   }
 
   return (

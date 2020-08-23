@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import navBarReducer from './reducers/navBarReducer';
 import profilePageReducer from './reducers/profilePageReducer';
 import messagesPageReducer from './reducers/messagesPageReducer';
@@ -17,6 +18,6 @@ let reducers = combineReducers({
   musicPage: musicPageReducer,
 });
 
-let store = createStore(reducers);
+let store = createStore(reducers, applyMiddleware(thunk));
 
 export default store;

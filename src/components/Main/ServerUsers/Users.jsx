@@ -6,7 +6,6 @@ import Pages from './Pages/Pages'
 import Preloader from '../../common/Preloader/Preloader';
 
 const Users = (props) => {
-
   const users = props.users.map(item => {
     return (
       <UserItem
