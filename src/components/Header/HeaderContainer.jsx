@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { checkIfAuth } from '../../redux/thunkCreators';
+import { authUser } from '../../redux/thunkCreators';
 import Header from './Header';
 
 class HeaderContainer extends Component {
-  componentDidMount() {
-    this.props.checkIfAuth();
-  }
   render() {
     return (
       <Header
@@ -23,6 +20,5 @@ const mapStateToProps = (state) => {
     userDetails: state.auth.currentUserDetails,
   }
 }
-const actionCreators = { checkIfAuth, }
 
-export default connect(mapStateToProps, actionCreators)(HeaderContainer);
+export default connect(mapStateToProps)(HeaderContainer);

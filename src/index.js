@@ -1,17 +1,17 @@
+import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import * as serviceWorker from './serviceWorker';
-import App from './App';
+import { Provider } from 'react-redux';
 import './index.css';
 import store from './redux/redux-store';
-import { Provider } from 'react-redux';
+import AppWrapper from './AppWrapper';
 
 const renderApp = () => {
   ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
-        <App/>
+        <AppWrapper/>
       </Provider>
     </BrowserRouter>,
     document.getElementById('root')

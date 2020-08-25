@@ -48,7 +48,7 @@ export const getUsers = (numberToShow) => {
   }
 }
 
-export const checkIfAuth = () => {
+export const authUser = () => {
   return (dispatch) => {
     usersAPI.isAuth().then(data => {
       if (data.resultCode === 0) {
