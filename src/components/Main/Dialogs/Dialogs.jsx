@@ -17,7 +17,7 @@ const ChooseDialog = () => {
 }
 
 const Dialogs = (props) => {
-  if (!props.isAuth) {
+  if (!props.isLoggedIn) {
     return <Redirect to='/login' />
   }
 

@@ -22,3 +22,7 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+.preloader {
+  height: 100vh;
+}

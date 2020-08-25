@@ -1,10 +1,5 @@
-import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import  ProfilePage from './ProfilePage';
 
-const mapStateToProps = (state) => {
-  return {
-    isAuth: state.auth.isAuth,
-  }
-}
-
-export default connect(mapStateToProps)(ProfilePage);
+export default compose(withAuthRedirect)(ProfilePage)

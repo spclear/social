@@ -25,3 +25,10 @@
 .followed {
   background-color: rgba(53, 59, 72, .2);
 }
+
+.followButton:disabled,
+.followButton:disabled:hover {
+  background-color: #aeaeae;
+  opacity: .3;
+  cursor: not-allowed;
+}

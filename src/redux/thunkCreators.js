@@ -7,14 +7,14 @@ export const toggleFollow = (isFollowed, id) => {
     if (!isFollowed) {
       followAPI.follow(id).then(data => {
         if (data.resultCode === 0) {
-          dispatch(actionCreators.toggleFollowTwo(id));
+          dispatch(actionCreators.toggleFollow(id));
           dispatch(actionCreators.setFollowingProgressStatus(id, false));
         }
       })
     } else {
       followAPI.unfollow(id).then(data => {
         if (data.resultCode === 0) {
-          dispatch(actionCreators.toggleFollowTwo(id));
+          dispatch(actionCreators.toggleFollow(id));
           dispatch(actionCreators.setFollowingProgressStatus(id, false));
         }
       })

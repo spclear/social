@@ -3,7 +3,6 @@ const UPDATE_CURRENT_MESSAGE_INPUT = "UPDATE-CURRENT-MESSAGE-INPUT";
 const ADD_POST = "ADD-POST";
 const SEND_MESSAGE = "SEND-MESSAGE";
 const TOGGLE_FOLLOW = "TOGGLE-FOLLOW";
-const TOGGLE_FOLLOW_TWO = "TOGGLE-FOLLOW-TWO";
 const SET_USERS = "SET-USERS";
 const ADD_USERS = "ADD-USERS";
 const SET_USERS_TOTAL = "SET-USERS-TOTAL";
@@ -44,12 +43,6 @@ export const sendMessage = (id, idSelf) => {
 export const toggleFollow = (id) => {
   return {
     type: TOGGLE_FOLLOW,
-    id,
-  }
-}
-export const toggleFollowTwo = (id) => {
-  return {
-    type: TOGGLE_FOLLOW_TWO,
     id,
   }
 }

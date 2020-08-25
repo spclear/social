@@ -6,7 +6,6 @@ const SET_LOADING_STATUS = "SET-LOADING-STATUS";
 const SET_FOLLOWING_PROGRESS_STATUS = "SET-FOLLOWING-PROGRESS-STATUS";
 
 const TOGGLE_FOLLOW = "TOGGLE-FOLLOW";
-const TOGGLE_FOLLOW_TWO = "TOGGLE-FOLLOW-TWO";
 
 const ADD_USERS = "ADD-USERS";
 const SWITCH_PAGE = "SWITCH-PAGE";
@@ -16,7 +15,7 @@ let initialState = {
   usersList: usersList,
   friendsShown: 4,
   serverUsersList: [],
-  usersShownNumber: 6,
+  usersShownNumber: 10,
   usersTotal: 0,
   currentPage: 1,
   isLoading: false,
@@ -58,16 +57,6 @@ let initialState = {
 let usersPageReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_FOLLOW:
-      return {
-        ...state,
-        usersList: state.usersList.map(item => {
-          if (item.id === action.id) {
-            return { ...item, followed: !item.followed }
-          }
-          return item
-        })
-      }
-    case TOGGLE_FOLLOW_TWO:
       return {
         ...state,
         serverUsersList: state.serverUsersList.map(item => {
