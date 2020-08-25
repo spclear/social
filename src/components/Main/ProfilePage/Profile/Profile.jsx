@@ -3,6 +3,7 @@ import styles from './profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import Preloader from '../../../common/Preloader/Preloader';
 import UserDefault from '../../../../assets/images/UserDefault.png'
+import ProfileStatus from './ProfileStatus/ProfileStatus';
 
 const Profile = (props) => {
   const info = props.currentUserInfo;
@@ -24,6 +25,7 @@ const Profile = (props) => {
         <h3 className={styles.userName}>
           <a href="/">{info.fullName}</a>
         </h3>
+        <ProfileStatus status='hi there' />
         <ProfileInfo info={info}/>
       </div>
     </div>

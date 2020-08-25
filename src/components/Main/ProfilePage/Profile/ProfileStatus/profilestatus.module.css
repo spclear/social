@@ -1,0 +1,10 @@
+.status {
+  height: 50px;
+}
+.statusText {
+  overflow: hidden;
+  line-height: 30px;  
+  font-weight: normal;
+  font-size: 1rem;
+  color: #353b48;
+}

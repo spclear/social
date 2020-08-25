@@ -1,0 +1,23 @@
+.statusEdit {
+  height: 50px;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  border-radius: 5px;
+  width: 400px;
+  background-color: #dcdde1;
+  overflow: hidden;
+  box-shadow: 0 7px 5px -5px rgba(0, 0, 0, .4);
+}
+
+.statusInput, .statusInput:focus {
+  width: 100%;
+  padding: 5px;
+  background-color: #f4f4f4;
+  font-weight: normal;
+  font-size: 1rem;
+  color: #353b48;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+}

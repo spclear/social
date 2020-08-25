@@ -51,6 +51,7 @@ export const getUsers = (numberToShow) => {
 export const authUser = () => {
   return (dispatch) => {
     usersAPI.isAuth().then(data => {
+      console.log('dfs', data);
       if (data.resultCode === 0) {
         dispatch(actionCreators.setLoggedStatus(true));
         dispatch(actionCreators.setCurrentUser(data.data.id));

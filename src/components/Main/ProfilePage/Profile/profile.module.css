@@ -2,6 +2,7 @@
   padding: 50px;
   display: flex;
   margin-bottom: 80px;
+  position: relative;
 }
 
 .avatar {
@@ -31,6 +32,9 @@
 
 .details {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: #353b48;
 }
 

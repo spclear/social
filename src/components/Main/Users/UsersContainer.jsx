@@ -49,5 +49,3 @@ export default compose(
   withAuthRedirect,
 )(UsersContainer)
 
-// export default connect(mapStateToProps, actionCreators)(UsersContainer);
-

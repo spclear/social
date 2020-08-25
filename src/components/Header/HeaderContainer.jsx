@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { authUser } from '../../redux/thunkCreators';
 import Header from './Header';
 
 class HeaderContainer extends Component {
