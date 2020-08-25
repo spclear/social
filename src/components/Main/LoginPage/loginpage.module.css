@@ -1,0 +1,100 @@
+.login, .login>* {
+  box-sizing: border-box;
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.loginOverlay {
+  background-color: rgba(0, 0, 0, .6);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.show {
+  display: flex;
+}
+
+.loginForm {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  margin: 50px auto;
+  background-color: #eaeaea;
+  border-radius: 5px;
+  box-shadow: 0 20px 30px -20px rgba(0,0,0, .4);
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0 50px;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.inputItem {
+  width: 80%;
+  position: relative;
+  margin: 20px 0;
+  padding-top: 20px;
+}
+.input, input:focus {
+  width: 100%;
+  padding: 15px 30px;
+  font-size: 1.8rem;
+  color: #57606f;
+  background-color: #dcdde1;
+  border: none;
+  border-bottom: 3px solid #57606f;
+  outline: none;
+}
+
+.input::placeholder {
+  font-size: 1.2rem;
+  opacity: .5;
+  font-weight: normal;
+}
+
+.label {
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 10px;
+  font-size: 1rem;
+  justify-content: flex-start;
+  text-transform: uppercase;
+}
+
+.button {
+  width: 320px;
+  height: 60px;
+  margin: 30px 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.loginButton {
+  width: 420px;
+  height: 120px;
+  margin: 100px auto;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 35px 40px -30px rgba(0, 0, 0, .6);
+}

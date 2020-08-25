@@ -1,20 +1,25 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 import styles from './main.module.css';
-import ProfilePage from './ProfilePage/ProfilePage';
+import ProfilePageContainer from './ProfilePage/ProfilePageContainer';
 import Music from './Music/Music';
 import News from './News/News';
 import Settings from './Settings/Settings';
 import UsersContainer from './Users/UsersContainer';
 import ServerUsersContainer from './ServerUsers/ServerUsersContainer';
 import DialogsContainer from './Dialogs/DialogsContainer';
+import LoginPage from './LoginPage/LoginPage';
 
 const Main = () => {
   return (
     <main className={styles.main}>
       <Route
+        path='/login'
+        render={() => <LoginPage />}
+      />
+      <Route
         path='/profile/:userId?'
-        render={() => <ProfilePage />}
+        render={() => <ProfilePageContainer />}
       />
       <Route
         path='/dialogs/'

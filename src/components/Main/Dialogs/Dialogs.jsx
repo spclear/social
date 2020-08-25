@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import styles from './dialogs.module.css'
 import DialogsListContainer from './DialogsList/DialogsListContainer';
 import MessagesContainer from './Messages/MessagesContainer';
@@ -17,6 +17,10 @@ const ChooseDialog = () => {
 }
 
 const Dialogs = (props) => {
+  if (!props.isAuth) {
+    return <Redirect to='/login' />
+  }
+
   return (
     <div className={styles.dialogs}>
       <DialogsListContainer />
