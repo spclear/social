@@ -25,7 +25,10 @@ const Profile = (props) => {
         <h3 className={styles.userName}>
           <a href="/">{info.fullName}</a>
         </h3>
-        <ProfileStatus status='hi there' />
+        <ProfileStatus
+          status={props.currentUserStatus}
+          updateStatus={props.updateUserStatus}
+        />
         <ProfileInfo info={info}/>
       </div>
     </div>

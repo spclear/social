@@ -15,6 +15,7 @@ const SET_CURRENT_USER_INFO = "SET-CURRENT-USER-INFO";
 const SET_LOGGED_STATUS = "SET-LOGGED-STATUS";
 const SET_LOGGED_USER_DETAILS = "SET-LOGGED-USER-DETAILS";
 const SET_FOLLOWING_PROGRESS_STATUS = "SET-FOLLOWING-PROGRESS-STATUS";
+const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
 
 export const updatePostInput = (text) => {
   return {
@@ -116,5 +117,11 @@ export const setFollowingProgressStatus = (id, value) => {
     type: SET_FOLLOWING_PROGRESS_STATUS,
     id,
     value,
+  }
+}
+export const setCurrentUserStatus = (status) => {
+  return {
+    type: SET_CURRENT_USER_STATUS,
+    status,
   }
 }

@@ -5,7 +5,7 @@ import DialogsList from './DialogsList';
 import { setCurrentDialogId } from '../../../../redux/actionCreators'
 
 class DialogsListContainer extends Component {
-  componentDidUnmount() {
+  componentWillUnmount() {
     this.props.setCurrentDialogId(null);
   }
   componentDidMount() {

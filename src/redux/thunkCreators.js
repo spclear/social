@@ -51,7 +51,6 @@ export const getUsers = (numberToShow) => {
 export const authUser = () => {
   return (dispatch) => {
     usersAPI.isAuth().then(data => {
-      console.log('dfs', data);
       if (data.resultCode === 0) {
         dispatch(actionCreators.setLoggedStatus(true));
         dispatch(actionCreators.setCurrentUser(data.data.id));
@@ -85,5 +84,25 @@ export const getUserProfile = (userId, currentUserId) => {
         dispatch(actionCreators.setCurrentUserInfo(data));
       })
     }
+  }
+}
+
+export const getUserStatus = (userId) => {
+  return (dispatch) => {
+    usersAPI.getStatus(userId)
+      .then(response => {
+        dispatch(actionCreators.setCurrentUserStatus(response.data));
+      })
+  }
+}
+
+export const updateUserStatus = (status) => {
+  return (dispatch) => {
+    usersAPI.updateStatus(status)
+      .then(response => {
+        if (response.data.resultCode === 0) {
+          dispatch(actionCreators.setCurrentUserStatus(status));
+        }
+      })
   }
 }

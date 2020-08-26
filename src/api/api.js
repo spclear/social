@@ -21,6 +21,16 @@ export const usersAPI = {
         .then(response => response.data)
     )
   },
+  getStatus(id) {
+    return (
+      instance.get(`profile/status/${id}`)
+    )
+  },
+  updateStatus(status) {
+    return (
+      instance.put(`profile/status`, { status: status })
+    )
+  },
   isAuth() {
     return (
       instance.get(`auth/me`)

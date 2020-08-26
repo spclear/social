@@ -14,6 +14,9 @@ class ProfileStatus extends React.Component {
     this.setState({
       editMode: !this.state.editMode,
     })
+    if (this.state.editMode) {
+      this.props.updateStatus(this.state.currentStatus);
+    }
   }
   updateCurrentStatus = (value) => {
     this.setState({
@@ -25,7 +28,7 @@ class ProfileStatus extends React.Component {
     if (!this.state.editMode) return (
       <div className={styles.status} onClick={this.toggleEditMode}>
         <p className={styles.statusText}>
-          {this.state.currentStatus}
+          {this.props.status || 'This user has no status yet...'}
         </p>
       </div>
     )
