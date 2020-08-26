@@ -27,7 +27,7 @@ const Profile = (props) => {
         </h3>
         <ProfileStatus
           status={props.currentUserStatus}
-          updateStatus={props.updateUserStatus}
+          updateStatus={props.updateCurrentUserStatus}
         />
         <ProfileInfo info={info}/>
       </div>

@@ -87,7 +87,7 @@ export const getUserProfile = (userId, currentUserId) => {
   }
 }
 
-export const getUserStatus = (userId) => {
+export const getCurrentUserStatus = (userId) => {
   return (dispatch) => {
     usersAPI.getStatus(userId)
       .then(response => {
@@ -96,7 +96,7 @@ export const getUserStatus = (userId) => {
   }
 }
 
-export const updateUserStatus = (status) => {
+export const updateCurrentUserStatus = (status) => {
   return (dispatch) => {
     usersAPI.updateStatus(status)
       .then(response => {

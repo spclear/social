@@ -10,6 +10,15 @@ class ProfileStatus extends React.Component {
       currentStatus: this.props.status
     }
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.status !== this.props.status) {
+      this.setState({
+        currentStatus: this.props.status,
+      })
+    }
+  }
+
   toggleEditMode = () => {
     this.setState({
       editMode: !this.state.editMode,
