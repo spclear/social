@@ -31,6 +31,11 @@ export const usersAPI = {
       instance.put(`profile/status`, { status: status })
     )
   },
+  login(userInfo) {
+    return (
+      instance.post(`auth/login`, {...userInfo })
+    )
+  },
   isAuth() {
     return (
       instance.get(`auth/me`)

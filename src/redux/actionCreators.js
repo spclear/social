@@ -16,6 +16,7 @@ const SET_LOGGED_STATUS = "SET-LOGGED-STATUS";
 const SET_LOGGED_USER_DETAILS = "SET-LOGGED-USER-DETAILS";
 const SET_FOLLOWING_PROGRESS_STATUS = "SET-FOLLOWING-PROGRESS-STATUS";
 const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
+const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
 
 export const updatePostInput = (text) => {
   return {
@@ -104,6 +105,12 @@ export const setLoggedStatus = (isLoggedIn) => {
   return {
     type: SET_LOGGED_STATUS,
     isLoggedIn,
+  }
+}
+export const setLoginProcessStatus = (isInProcess) => {
+  return {
+    type: SET_LOGGIN_PROCESS_STATUS,
+    isInProcess,
   }
 }
 export const setLoggedUserDetails = (data) => {

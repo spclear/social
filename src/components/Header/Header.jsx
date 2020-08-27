@@ -9,7 +9,7 @@ const Header = (props) => {
         <a href='/profile' className={styles.logo}></a>
         <a href='/profile' className={styles.name}>Socia.L</a>
       </div>
-      {props.isLoggedIn ? `${props.userDetails.login}` : <LoginButton />}
+      {(props.isLoggedIn && props.userDetails.login) ? `${props.userDetails.login}` : <LoginButton />}
     </header>
   )
 }

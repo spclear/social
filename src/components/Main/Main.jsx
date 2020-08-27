@@ -7,14 +7,14 @@ import News from './News/News';
 import Settings from './Settings/Settings';
 import UsersContainer from './Users/UsersContainer';
 import DialogsContainer from './Dialogs/DialogsContainer';
-import LoginPage from './LoginPage/LoginPage';
+import LoginPageContainer from './LoginPage/LoginPageContainer';
 
 const Main = () => {
   return (
     <main className={styles.main}>
       <Route
         path='/login'
-        render={() => <LoginPage />}
+        render={() => <LoginPageContainer />}
       />
       <Route
         path='/profile/:userId?'

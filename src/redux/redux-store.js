@@ -7,6 +7,8 @@ import newsPageReducer from './reducers/newsPageReducer';
 import musicPageReducer from './reducers/musicPageReducer';
 import usersPageReducer from './reducers/usersPageReducer';
 import authReducer from './reducers/authReducer';
+import { reducer as formReducer } from 'redux-form';
+
 
 let reducers = combineReducers({
   auth: authReducer,
@@ -16,6 +18,7 @@ let reducers = combineReducers({
   usersPage: usersPageReducer,
   newsPage: newsPageReducer,
   musicPage: musicPageReducer,
+  form: formReducer,
 });
 
 let store = createStore(reducers, applyMiddleware(thunk));

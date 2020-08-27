@@ -87,12 +87,29 @@ export const getUserProfile = (userId, currentUserId) => {
   }
 }
 
-export const getCurrentUserStatus = (userId) => {
+export const getCurrentUserStatus = (userId, currentUserId) => {
   return (dispatch) => {
-    usersAPI.getStatus(userId)
-      .then(response => {
-        dispatch(actionCreators.setCurrentUserStatus(response.data));
-      })
+    let user = userId || currentUserId;
+
+    if (!user) {
+      usersAPI.isAuth()
+        .then(data => {
+          if (data.resultCode === 0) {
+            return data.data.id;
+          }
+        })
+        .then(id => {
+          usersAPI.getStatus(id)
+            .then(response => {
+              dispatch(actionCreators.setCurrentUserStatus(response.data));
+            })
+        })
+    } else {
+      usersAPI.getStatus(user)
+        .then(response => {
+          dispatch(actionCreators.setCurrentUserStatus(response.data));
+        })
+    }
   }
 }
 
@@ -103,6 +120,28 @@ export const updateCurrentUserStatus = (status) => {
         if (response.data.resultCode === 0) {
           dispatch(actionCreators.setCurrentUserStatus(status));
         }
+      })
+  }
+}
+
+export const loginUser = (loginInfo) => {
+  return (dispatch) => {
+    dispatch(actionCreators.setLoginProcessStatus(true));
+
+    usersAPI.login(loginInfo)
+      .then(response => {
+        if (response.data.resultCode === 0) {
+          dispatch(actionCreators.setCurrentUser(response.data.data.userId));
+          dispatch(actionCreators.setLoggedStatus(true));
+
+          usersAPI.isAuth().then(data => {
+            if (data.resultCode === 0) {
+              dispatch(actionCreators.setLoggedUserDetails(data.data));
+            }
+          })
+        }
+
+        dispatch(actionCreators.setLoginProcessStatus(false));
       })
   }
 }
