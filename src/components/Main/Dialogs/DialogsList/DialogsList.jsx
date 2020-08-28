@@ -4,6 +4,7 @@ import DialogsItem from './DialogsItem/DialogsItem';
 
 function returnLastMessage(array) {
   let lastMessage = array[array.length - 1].text;
+  // debugger
   return (lastMessage.length > 30)
     ? lastMessage.slice(0, 30) + '...'
     : lastMessage;
@@ -11,15 +12,14 @@ function returnLastMessage(array) {
 
 const DialogsList = (props) => {
   let dialogsList = props.dialogs;
-  
-  let dialogs = dialogsList.map(dialog => (
+  let dialogs = dialogsList.map(item => (
     <DialogsItem
       onClick={props.setCurrentDialogId}
-      key={dialog.userId}
-      userId={dialog.userId}
-      name={props.getName(dialog.userId)}
-      avatar={props.getAvatar(dialog.userId)}
-      lastMessage={returnLastMessage(dialog.messagesHistory)}
+      key={item.userId}
+      userId={item.userId}
+      name={props.getName(item.userId)}
+      avatar={props.getAvatar(item.userId)}
+      lastMessage={returnLastMessage(item.messagesHistory)}
     />
   ))
 

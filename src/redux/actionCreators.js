@@ -22,11 +22,9 @@ export const addPost = (postText) => {
     postText,
   }
 }
-export const sendMessage = (id, idSelf, message) => {
+export const sendMessage = (message) => {
   return {
     type: SEND_MESSAGE,
-    userId: id,
-    myId: idSelf,
     message,
   }
 }

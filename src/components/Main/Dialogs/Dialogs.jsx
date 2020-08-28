@@ -17,10 +17,6 @@ const ChooseDialog = () => {
 }
 
 const Dialogs = (props) => {
-  if (!props.isLoggedIn) {
-    return <Redirect to='/login' />
-  }
-
   return (
     <div className={styles.dialogs}>
       <DialogsListContainer />

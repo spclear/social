@@ -6,7 +6,6 @@ import Dialogs from './Dialogs';
 const mapStateToProps = (state) => {
   return {
     currentDialogId: state.messagesPage.currentDialog,
-    isLoggedIn: state.auth.isLoggedIn,
   }
 }
 
