@@ -1,33 +1,18 @@
 import React from 'react';
 import styles from './createmessage.module.css';
-import Button from '../../../../common/Button/Button';
+import { reduxForm } from 'redux-form';
+import NewMessageForm from './NewMessageForm';
 
+const SendMessageForm = reduxForm({ form: 'sendMessageForm' })(NewMessageForm);
 
-const CreateMessage = (props) => {
-  let newMessage = React.createRef();
-  
-  let sendMessage = () => {
-    props.sendMessage();
-  }
-  const update = () => {
-    props.update(newMessage.current.value);
+const CreateMessage = (props) => {  
+  let sendMessage = (formData) => {
+    props.sendMessage(formData.messageText);
   }
 
   return (
     <div className={styles.newMessage}>
-      <textarea
-        className={styles.typeMessage}
-        ref={newMessage}
-        value={props.value}
-        onChange={update}
-        placeholder='Type your message...'
-      />
-      <Button
-        isDisabled={props.value === ''}
-        onClick={sendMessage}
-        addClass={styles.button}
-        buttonName='Send'
-      />
+      <SendMessageForm onSubmit={sendMessage}/>
     </div>
   )
 };

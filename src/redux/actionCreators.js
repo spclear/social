@@ -1,5 +1,3 @@
-const UPDATE_CURRENT_POST_INPUT = "UPDATE-CURRENT-POST-INPUT";
-const UPDATE_CURRENT_MESSAGE_INPUT = "UPDATE-CURRENT-MESSAGE-INPUT";
 const ADD_POST = "ADD-POST";
 const SEND_MESSAGE = "SEND-MESSAGE";
 const TOGGLE_FOLLOW = "TOGGLE-FOLLOW";
@@ -18,28 +16,18 @@ const SET_FOLLOWING_PROGRESS_STATUS = "SET-FOLLOWING-PROGRESS-STATUS";
 const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
 const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
 
-export const updatePostInput = (text) => {
-  return {
-    type: UPDATE_CURRENT_POST_INPUT,
-    text,
-  }
-}
-export const updateMessageInput = (text) => {
-  return {
-    type: UPDATE_CURRENT_MESSAGE_INPUT,
-    text,
-  }
-}
-export const addPost = () => {
+export const addPost = (postText) => {
   return {
     type: ADD_POST,
+    postText,
   }
 }
-export const sendMessage = (id, idSelf) => {
+export const sendMessage = (id, idSelf, message) => {
   return {
     type: SEND_MESSAGE,
     userId: id,
     myId: idSelf,
+    message,
   }
 }
 export const toggleFollow = (id) => {

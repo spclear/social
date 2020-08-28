@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PostCreate from './PostCreate';
-import { addPost, updatePostInput }
+import { addPost }
   from '../../../../../redux/actionCreators';
 
 const mapStateToProps = (state) => {
@@ -8,11 +8,5 @@ const mapStateToProps = (state) => {
     value: state.profilePage.currentPostField,
   }
 }
-const actionCreators = {
-  updatePostInput,
-  addPost,
-}
 
-const PostCreateContainer = connect(mapStateToProps, actionCreators)(PostCreate);
-
-export default PostCreateContainer;
+export default connect(mapStateToProps, { addPost })(PostCreate);

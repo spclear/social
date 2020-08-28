@@ -7,12 +7,14 @@
   border-top: 1px solid #eaeaea;
 }
 
-.typeMessage, .typeMessage:focus {
+.messageField,
+.messageField:focus {
   font-size: 1rem;
   background-color: #eaeaea;
   padding: 15px 20px;
   height: 100px;
   overflow: auto;
+  width: 100%;
   border-radius: 5px;
   resize: none;
 }
@@ -23,5 +25,6 @@
   width: 100px;
   font-weight: bold;
   margin-top: .3rem;
+  margin-left: auto;
   box-shadow: none !important;
 }

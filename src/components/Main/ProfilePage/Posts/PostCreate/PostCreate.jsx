@@ -1,33 +1,19 @@
 import React from 'react';
 import styles from './postcreate.module.css';
-import Button from '../../../../common/Button/Button';
+import { reduxForm } from 'redux-form';
+import PostForm from './PostForm';
+
+const AddPostForm = reduxForm({ form: 'addPostForm' })(PostForm);
 
 const PostCreate = (props) => {
-  let postField = React.createRef();
-  
-  const addNewPost = () => {
-    props.addPost();
-  }
-  const update = () => {
-    props.updatePostInput(postField.current.value);
+  const addNewPost = (formData) => {
+    props.addPost(formData.postText);
   }
 
   return (
     <div className={styles.createPost}>
       <h2 className={styles.title}>What's new?</h2>
-      <textarea
-        placeholder='Share what you want...'
-        ref={postField}
-        className={styles.newText}
-        onChange={update}
-        value={props.value}
-      />
-      <Button
-        isDisabled={(props.value === '')}
-        addClass={styles.button}
-        onClick={addNewPost}
-        buttonName='Post'
-      />
+      <AddPostForm onSubmit={addNewPost}/>
     </div>
   )
 }
