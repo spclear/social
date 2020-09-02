@@ -145,3 +145,19 @@ export const loginUser = (loginInfo) => {
       })
   }
 }
+
+export const logoutUser = () => {
+  return (dispatch) => {
+    dispatch(actionCreators.setLoginProcessStatus(true));
+
+    usersAPI.logout()
+      .then(response => {
+        if (response.data.resultCode === 0) {
+          dispatch(actionCreators.setCurrentUser(null));
+          dispatch(actionCreators.setLoggedStatus(false));
+          dispatch(actionCreators.setLoggedUserDetails(null));
+        }
+        dispatch(actionCreators.setLoginProcessStatus(false));
+      })
+  }
+}

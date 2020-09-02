@@ -1,0 +1,5 @@
+.button,
+.button:focus {
+  font-weight: bold;
+  outline: none;
+}

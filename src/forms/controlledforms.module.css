@@ -1,0 +1,52 @@
+.inputItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input {
+  height: 60px;
+  padding: 20px;
+  border: none;
+  font-size: 1.4rem;
+  color: #353b48;
+  border: 2px solid transparent;
+  box-shadow: inset 0px 0px 10px -1px rgba(0, 0, 0, .3);
+}
+
+.input::placeholder {
+  font-size: 1.2rem;
+  opacity: .5;
+  font-weight: normal;
+}
+
+.inputLabel {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ED4C67;
+}
+
+.errorInput {
+  border: 2px solid #ED4C67;
+}
+
+.errorLabel {
+  color: #ED4C67;
+}
+.errorLabel::after {
+  content: '*';
+}

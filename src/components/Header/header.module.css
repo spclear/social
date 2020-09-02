@@ -33,3 +33,42 @@
   margin-left: 8px;
   margin-top: 5px;
 }
+
+.button,
+.button:focus {
+  border: 1px solid #aeaeae;
+  color: #747d8c;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: #f1f2f6;
+  transition: color .3s, border-color .3s, background-color .3s;
+  position: relative;
+  z-index: 2;
+}
+
+.button::before {
+  content: '';
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  background-color: #747d8c;
+  transform-origin: 0;
+  transition: .3s;
+  z-index: -1;
+}
+
+.button:hover {
+  color: #f1f2f6;
+  border-color: #747d8c;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+} 
+.username {
+  padding-right: 10px;
+}

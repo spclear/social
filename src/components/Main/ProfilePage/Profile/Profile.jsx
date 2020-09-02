@@ -14,16 +14,16 @@ const Profile = (props) => {
   }
   return (
     <div className={styles.profile}>
-      <a className={styles.avatar} href="/">
+      <div className={styles.avatar} href="/">
         <img
           src={info.photos.large || UserDefault}
           className="avatar"
           alt='avatar'
         />
-      </a>
+      </div>
       <div className={styles.details}>
         <h3 className={styles.userName}>
-          <a href="/">{info.fullName}</a>
+          {info.fullName}
         </h3>
         <ProfileStatus
           status={props.currentUserStatus}

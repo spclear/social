@@ -36,6 +36,11 @@ export const usersAPI = {
       instance.post(`auth/login`, {...userInfo })
     )
   },
+  logout() {
+    return (
+      instance.delete(`auth/login`)
+    )
+  },
   isAuth() {
     return (
       instance.get(`auth/me`)
