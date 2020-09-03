@@ -9,9 +9,13 @@ const LoginPage = (props) => {
   const onSubmit = (formData) => {
     props.loginUser(formData);
   }
+
   return (
     <div className={styles.loginPage}>
-      <LoginReduxForm onSubmit={onSubmit} />
+      <LoginReduxForm
+        onSubmit={onSubmit}
+        inSubmit={props.inSubmit}
+      />
     </div>
   )
 }

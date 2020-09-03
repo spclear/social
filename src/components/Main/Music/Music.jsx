@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './music.module.css';
-import LogButton from '../../common/LogButton/LogButton';
 
 const Music = () => {
   return (

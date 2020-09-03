@@ -15,6 +15,9 @@ const LoginForm = (props) => {
     <form className={styles.loginForm} onSubmit={props.handleSubmit}>
       <h2 className={styles.title}>Login</h2>
       <Separator />
+      <div className={styles.formError}>
+        {props.error ? props.error + '!' : ''}
+      </div>
       <Field
         placeholder="Enter your email"
         component={ControlledInput}
@@ -41,12 +44,20 @@ const LoginForm = (props) => {
           component="input"
           type="checkBox"
         />
-        <label className={styles.inputLabel} htmlFor="rememberMe">Remember Me</label>
+        
+        <label
+          className={styles.inputLabel}
+          htmlFor="rememberMe"
+        >
+          Remember Me
+        </label>
       </div>
+
       <Button
         type="submit"
         addClass={styles.submitButton}
         buttonName="Submit"
+        disabled={props.inSubmit}
       />
     </form>
   )

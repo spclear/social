@@ -1,5 +1,6 @@
 import * as actionCreators from './actionCreators';
 import { followAPI, usersAPI } from '../api/api';
+import { stopSubmit } from 'redux-form';
 
 export const toggleFollow = (isFollowed, id) => {
   return (dispatch) => {
@@ -127,20 +128,15 @@ export const updateCurrentUserStatus = (status) => {
 export const loginUser = (loginInfo) => {
   return (dispatch) => {
     dispatch(actionCreators.setLoginProcessStatus(true));
-
     usersAPI.login(loginInfo)
       .then(response => {
         if (response.data.resultCode === 0) {
-          dispatch(actionCreators.setCurrentUser(response.data.data.userId));
-          dispatch(actionCreators.setLoggedStatus(true));
-
-          usersAPI.isAuth().then(data => {
-            if (data.resultCode === 0) {
-              dispatch(actionCreators.setLoggedUserDetails(data.data));
-            }
-          })
+          dispatch(authUser());
+        } 
+        else {
+          console.log(response.data.messages);
+          dispatch(stopSubmit("loginForm", {_error: response.data.messages[0] }));
         }
-
         dispatch(actionCreators.setLoginProcessStatus(false));
       })
   }
@@ -148,8 +144,6 @@ export const loginUser = (loginInfo) => {
 
 export const logoutUser = () => {
   return (dispatch) => {
-    dispatch(actionCreators.setLoginProcessStatus(true));
-
     usersAPI.logout()
       .then(response => {
         if (response.data.resultCode === 0) {
@@ -157,7 +151,6 @@ export const logoutUser = () => {
           dispatch(actionCreators.setLoggedStatus(false));
           dispatch(actionCreators.setLoggedUserDetails(null));
         }
-        dispatch(actionCreators.setLoginProcessStatus(false));
       })
   }
 }

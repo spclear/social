@@ -5,18 +5,17 @@ import { Component } from "react";
 import { loginUser } from "../../../redux/thunkCreators"
 import { compose } from "redux";
 import { Redirect } from 'react-router-dom';
-import Preloader from '../../common/Preloader/Preloader';
-import styles from './loginpage.module.css';
 
 class LoginPageContainer extends Component {
   render() {
-    if (this.props.loginProcessStatus) {
-      return <Preloader extraClass={styles.preloader}/>
-    } else if (this.props.isLoggedIn) {
+    if (this.props.isLoggedIn) {
       return <Redirect to='/profile' />
     }
     return (
-      <LoginPage loginUser={this.props.loginUser} />
+      <LoginPage
+        loginUser={this.props.loginUser}
+        inSubmit={this.props.loginProcessStatus}
+      />
     )
   }
 }

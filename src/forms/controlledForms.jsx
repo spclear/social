@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './controlledforms.module.css';
 
 export const ControlledInput = ({ input, meta, ...props }) => {
-
-  console.log(input, meta)
+  
   const hasError = (meta.error && meta.touched);
   const errorMessage = hasError ? `${meta.error}` : '';
   
