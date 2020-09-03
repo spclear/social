@@ -26,6 +26,8 @@ const Profile = (props) => {
           {info.fullName}
         </h3>
         <ProfileStatus
+          authorizedUser={props.authorizedUser}
+          shownUser={props.shownUser}
           status={props.currentUserStatus}
           updateStatus={props.updateCurrentUserStatus}
         />

@@ -19,20 +19,33 @@ class ProfileStatus extends React.Component {
     }
   }
 
+  statusEditable = () => {
+    if (this.props.authorizedUser === this.props.shownUser) {
+      return true;
+    }
+    return false;
+  }
+
   toggleEditMode = () => {
-    this.setState({
-      editMode: !this.state.editMode,
-    })
-    if (this.state.editMode) {
-      this.props.updateStatus(this.state.currentStatus);
+    let statusEditable = this.statusEditable();
+
+    if (statusEditable) {
+      this.setState({
+        editMode: !this.state.editMode,
+      })
+
+      if (this.state.editMode) {
+        this.props.updateStatus(this.state.currentStatus);
+      }
     }
   }
+
   updateCurrentStatus = (value) => {
     this.setState({
       currentStatus: value,
     })
   }
-
+  
   render() {
     if (!this.state.editMode) return (
       <div className={styles.status} onClick={this.toggleEditMode}>

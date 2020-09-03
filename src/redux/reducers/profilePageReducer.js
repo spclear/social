@@ -8,8 +8,9 @@ const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
 const ADD_POST = "ADD-POST";
 
 let initialState = {
-  loggedUser: "641006348",
-  currentShownUser: null,
+  loggedUser: "641006348", // for fake data
+  authorizedUser: null,
+  shownUser: null,
   currentUserInfo: null,
   currentUserStatus: "",
   friends: friends,
@@ -33,11 +34,12 @@ let profilePageReducer = (state = initialState, action) => {
     case SET_CURRENT_USER:
       return {
         ...state,
-        currentShownUser: action.id,
+        authorizedUser: action.id,
       }
     case SET_CURRENT_USER_INFO:
       return {
         ...state,
+        shownUser: action.user.userId,
         currentUserInfo: action.user,
       }
     case SET_CURRENT_USER_STATUS:

@@ -10,20 +10,24 @@ import { getUserProfile, getCurrentUserStatus, updateCurrentUserStatus, authUser
 class ProfileContainer extends Component {
   componentDidMount() {
     const urlId = this.props.match.params.userId;
-    this.props.getUserProfile(urlId, this.props.currentUser);
-    this.props.getCurrentUserStatus(urlId || this.props.currentUser);
+    this.props.getUserProfile(urlId, this.props.authorizedUser);
+    this.props.getCurrentUserStatus(urlId || this.props.authorizedUser);
   }
 
   render() {
     return (
-      <Profile {...this.props}/>
+      <Profile
+        {...this.props}
+        shownUser={this.props.shownUser}
+      />
     )
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.profilePage.currentShownUser,
+    authorizedUser: state.profilePage.authorizedUser,
+    shownUser: state.profilePage.shownUser,
     currentUserInfo: state.profilePage.currentUserInfo,
     currentUserStatus: state.profilePage.currentUserStatus,
     isLoading: state.usersPage.isLoading,
