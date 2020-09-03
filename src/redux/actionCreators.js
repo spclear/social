@@ -15,6 +15,7 @@ const SET_LOGGED_USER_DETAILS = "SET-LOGGED-USER-DETAILS";
 const SET_FOLLOWING_PROGRESS_STATUS = "SET-FOLLOWING-PROGRESS-STATUS";
 const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
 const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
+const SET_INITIALIZATION_STATUS = "SET-INITIALIZATION-STATUS";
 
 export const addPost = (postText) => {
   return {
@@ -116,5 +117,11 @@ export const setCurrentUserStatus = (status) => {
   return {
     type: SET_CURRENT_USER_STATUS,
     status,
+  }
+}
+
+export const setInitializationStatus = () => {
+  return {
+    type: SET_INITIALIZATION_STATUS,
   }
 }

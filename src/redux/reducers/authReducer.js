@@ -2,6 +2,7 @@ const SET_LOGGED_STATUS = "SET-LOGGED-STATUS";
 const SET_LOGGED_USER_DETAILS = "SET-LOGGED-USER-DETAILS";
 const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
 
+
 const initialState = {
   isLoggedIn: false,
   loginProcessStatus: false,

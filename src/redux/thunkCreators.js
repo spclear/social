@@ -1,5 +1,5 @@
 import * as actionCreators from './actionCreators';
-import { followAPI, usersAPI } from '../api/api';
+import { followAPI, usersAPI, authAPI } from '../api/api';
 import { stopSubmit } from 'redux-form';
 
 export const toggleFollow = (isFollowed, id) => {
@@ -49,16 +49,14 @@ export const getUsers = (numberToShow) => {
   }
 }
 
-export const authUser = () => {
-  return (dispatch) => {
-    usersAPI.isAuth().then(data => {
+export const authUser = () => (dispatch) => {
+    return authAPI.isAuth().then(data => {
       if (data.resultCode === 0) {
         dispatch(actionCreators.setLoggedStatus(true));
         dispatch(actionCreators.setCurrentUser(data.data.id));
         dispatch(actionCreators.setLoggedUserDetails(data.data));
       }
     })
-  }
 }
 
 export const getUserProfile = (userId, currentUserId) => {
@@ -67,7 +65,7 @@ export const getUserProfile = (userId, currentUserId) => {
     dispatch(actionCreators.setLoadingStatus(true));
 
     if (!userToShow) {
-      usersAPI.isAuth()
+      authAPI.isAuth()
         .then(data => {
           if (data.resultCode === 0) {
             return data.data.id;
@@ -93,7 +91,7 @@ export const getCurrentUserStatus = (userId, currentUserId) => {
     let user = userId || currentUserId;
 
     if (!user) {
-      usersAPI.isAuth()
+      authAPI.isAuth()
         .then(data => {
           if (data.resultCode === 0) {
             return data.data.id;
@@ -128,7 +126,7 @@ export const updateCurrentUserStatus = (status) => {
 export const loginUser = (loginInfo) => {
   return (dispatch) => {
     dispatch(actionCreators.setLoginProcessStatus(true));
-    usersAPI.login(loginInfo)
+    authAPI.login(loginInfo)
       .then(response => {
         if (response.data.resultCode === 0) {
           dispatch(authUser());
@@ -144,7 +142,7 @@ export const loginUser = (loginInfo) => {
 
 export const logoutUser = () => {
   return (dispatch) => {
-    usersAPI.logout()
+    authAPI.logout()
       .then(response => {
         if (response.data.resultCode === 0) {
           dispatch(actionCreators.setCurrentUser(null));
@@ -152,5 +150,15 @@ export const logoutUser = () => {
           dispatch(actionCreators.setLoggedUserDetails(null));
         }
       })
+  }
+}
+
+export const initializeApp = () => {
+  return (dispatch) => {
+    const authPromise = dispatch(authUser());
+
+    Promise.all([authPromise]).then(() => {
+      dispatch(actionCreators.setInitializationStatus());
+    })
   }
 }

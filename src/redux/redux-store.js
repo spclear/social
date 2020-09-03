@@ -7,10 +7,12 @@ import newsPageReducer from './reducers/newsPageReducer';
 import musicPageReducer from './reducers/musicPageReducer';
 import usersPageReducer from './reducers/usersPageReducer';
 import authReducer from './reducers/authReducer';
+import appReducer from './reducers/appReducer';
 import { reducer as formReducer } from 'redux-form';
 
 
 let reducers = combineReducers({
+  app: appReducer,
   auth: authReducer,
   navBar: navBarReducer,
   profilePage: profilePageReducer,

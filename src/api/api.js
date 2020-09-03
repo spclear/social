@@ -31,9 +31,14 @@ export const usersAPI = {
       instance.put(`profile/status`, { status: status })
     )
   },
+}
+
+export const authAPI = {
   login(userInfo) {
     return (
-      instance.post(`auth/login`, {...userInfo })
+      instance.post(`auth/login`, {
+        ...userInfo
+      })
     )
   },
   logout() {
@@ -44,9 +49,9 @@ export const usersAPI = {
   isAuth() {
     return (
       instance.get(`auth/me`)
-        .then(response => response.data)
+      .then(response => response.data)
     )
-  }
+  },
 }
 
 export const followAPI = {
