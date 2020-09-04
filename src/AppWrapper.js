@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { initializeApp } from './redux/thunkCreators';
 import AppLoader from './components/common/AppLoader/AppLoader';
 import { compose } from 'redux';
+import * as selectors from './redux/selectors';
 
 class AppWrapper extends React.Component {
   componentDidMount() {
@@ -19,7 +20,7 @@ class AppWrapper extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    isInitialized: state.app.isInitialized,
+    isInitialized: selectors.getIsInitialized(state),
   }
 }
 

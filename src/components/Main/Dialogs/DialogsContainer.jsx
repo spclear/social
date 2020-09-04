@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import Dialogs from './Dialogs';
+import * as selectors from '../../../redux/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    currentDialogId: state.messagesPage.currentDialog,
+    currentDialogId: selectors.getCurrentDialogId(state),
   }
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import * as selectors from '../../redux/selectors';
 
 export const withAuthRedirect = (Component) => {
   class ContainerComponent extends React.Component {
@@ -11,7 +12,7 @@ export const withAuthRedirect = (Component) => {
       return <Component {...this.props} />
     }
   }
-  const mapStateToProps = (state) => ({isLoggedIn: state.auth.isLoggedIn})
+  const mapStateToProps = (state) => ({isLoggedIn: selectors.getIsLoggedIn(state)})
   
   return connect(mapStateToProps)(ContainerComponent)
 }

@@ -5,6 +5,7 @@ import { Component } from "react";
 import { loginUser } from "../../../redux/thunkCreators"
 import { compose } from "redux";
 import { Redirect } from 'react-router-dom';
+import * as selectors from '../../../redux/selectors';
 
 class LoginPageContainer extends Component {
   render() {
@@ -22,8 +23,8 @@ class LoginPageContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isLoggedIn: state.auth.isLoggedIn,
-    loginProcessStatus: state.auth.loginProcessStatus,
+    isLoggedIn: selectors.getIsLoggedIn(state),
+    loginProcessStatus: selectors.getLoginProcessStatus(state),
   }
 }
 

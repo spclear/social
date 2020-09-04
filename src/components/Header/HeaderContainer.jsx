@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Header from './Header';
-import {logoutUser} from '../../redux/thunkCreators'
+import { logoutUser } from '../../redux/thunkCreators';
+import * as selectors from '../../redux/selectors';
 
 class HeaderContainer extends Component {
   logout = () => {
@@ -22,8 +23,8 @@ class HeaderContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isLoggedIn: state.auth.isLoggedIn,
-    userDetails: state.auth.currentUserDetails,
+    isLoggedIn: selectors.getIsLoggedIn(state),
+    userDetails: selectors.getCurrentUserDetails(state),
   }
 }
 

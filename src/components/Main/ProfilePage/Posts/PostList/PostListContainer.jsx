@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
 import PostList from "./PostList";
+import * as selectors from "../../../../../redux/selectors";
 
 let mapStateToProps = (state) => {
   return {
-    posts: state.profilePage.postsList,
-    getName: id => state.usersPage.getName(id),
-    getAvatar: id => state.usersPage.getAvatar(id),
+    posts: selectors.getPostsList(state),
+    getName: selectors.getNameGetter(state),
+    getAvatar: selectors.getAvatarGetter(state),
   }
 }
 

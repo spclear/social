@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 import styles from './main.module.css';
+import LoginPageContainer from './LoginPage/LoginPageContainer';
 import ProfilePageContainer from './ProfilePage/ProfilePageContainer';
 import Music from './Music/Music';
 import News from './News/News';
 import Settings from './Settings/Settings';
 import UsersContainer from './Users/UsersContainer';
 import DialogsContainer from './Dialogs/DialogsContainer';
-import LoginPageContainer from './LoginPage/LoginPageContainer';
 
 const Main = () => {
   return (

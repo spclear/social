@@ -5,6 +5,7 @@ import { toggleFollow, changePage, getUsers }
   from '../../../redux/thunkCreators';
 import { compose } from 'redux';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import * as selectors from '../../../redux/selectors';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -29,12 +30,12 @@ class UsersContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     stateInfo: {
-      users: state.usersPage.serverUsersList,
-      usersShownNumber: state.usersPage.usersShownNumber,
-      usersTotal: state.usersPage.usersTotal,
-      currentPage: state.usersPage.currentPage,
-      isLoading: state.usersPage.isLoading,
-      inFollowingProgress: state.usersPage.inFollowingProgress,
+      users: selectors.getServerUsersList(state),
+      usersShownNumber: selectors.getUsersShownNumber(state),
+      usersTotal: selectors.getUsersTotal(state),
+      currentPage: selectors.getCurrentPage(state),
+      isLoading: selectors.getIsLoading(state),
+      inFollowingProgress: selectors.getInFollowingProgress(state),
     },
   }
 }

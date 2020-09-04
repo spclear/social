@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Component } from 'react';
 import DialogsList from './DialogsList';
 import { setCurrentDialogId } from '../../../../redux/actionCreators'
+import { compose } from 'redux';
+import * as selectors from '../../../../redux/selectors';
 
 class DialogsListContainer extends Component {
   componentWillUnmount() {
@@ -21,13 +23,15 @@ class DialogsListContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    dialogs: state.messagesPage.usersDialogs,
-    getName: id => state.usersPage.getName(id),
-    getAvatar: id => state.usersPage.getAvatar(id),
+    dialogs: selectors.getUsersDialogs(state),
+    getName: selectors.getNameGetter(state),
+    getAvatar: selectors.getAvatarGetter(state),
   }
 }
 const actionCreators = {
   setCurrentDialogId,
 }
 
-export default connect(mapStateToProps, actionCreators)(DialogsListContainer);
+export default compose(
+  connect(mapStateToProps, actionCreators)
+)(DialogsListContainer);

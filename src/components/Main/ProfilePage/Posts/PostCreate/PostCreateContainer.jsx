@@ -4,9 +4,7 @@ import { addPost }
   from '../../../../../redux/actionCreators';
 
 const mapStateToProps = (state) => {
-  return {
-    value: state.profilePage.currentPostField,
-  }
+  return {}
 }
 
 export default connect(mapStateToProps, { addPost })(PostCreate);

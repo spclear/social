@@ -5,6 +5,7 @@ import Profile from './Profile';
 import { compose } from 'redux';
 import { getUserProfile, getCurrentUserStatus, updateCurrentUserStatus, authUser, }
   from '../../../../redux/thunkCreators';
+import * as selectors from '../../../../redux/selectors';
 
 
 class ProfileContainer extends Component {
@@ -26,11 +27,11 @@ class ProfileContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    authorizedUser: state.profilePage.authorizedUser,
-    shownUser: state.profilePage.shownUser,
-    currentUserInfo: state.profilePage.currentUserInfo,
-    currentUserStatus: state.profilePage.currentUserStatus,
-    isLoading: state.usersPage.isLoading,
+    authorizedUser: selectors.getAuthorizedUser(state),
+    shownUser: selectors.getShownUser(state),
+    currentUserInfo: selectors.getCurrentUserInfo(state),
+    currentUserStatus: selectors.getCurrentUserStatus(state),
+    isLoading: selectors.getIsLoading(state),
   }
 }
 const actionCreators = {

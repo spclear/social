@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import MessagesBody from './MessagesBody';
+import * as selectors from '../../../../../redux/selectors';
 
 let mapStateToProps = (state) => {
   return {
-    dialogs: state.messagesPage.usersDialogs,
-    currentDialog: state.messagesPage.currentDialog,
-    idSelf: state.profilePage.loggedUser,
-    getAvatar: id => state.usersPage.getAvatar(id),
-    getDialog: id => state.messagesPage.getDialog(id),
+    dialogs: selectors.getUsersDialogs(state),
+    currentDialog: selectors.getCurrentDialogId(state),
+    idSelf: selectors.getLoggedUser(state),
+    getAvatar: selectors.getAvatarGetter(state),
+    getDialog: selectors.getDialogGetter(state),
   }
 }
 
