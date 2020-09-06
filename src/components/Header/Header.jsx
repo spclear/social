@@ -28,7 +28,6 @@ const HeaderSignIn = () => {
 }
 
 const Header = (props) => {
-  console.log('header')
   return (
     <header className={styles.header}>
       <div className={styles.title}>

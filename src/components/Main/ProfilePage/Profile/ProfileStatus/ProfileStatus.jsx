@@ -1,67 +1,40 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './profilestatus.module.css';
 import StatusEdit from './StatusEdit/StatusEdit';
 
-class ProfileStatus extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editMode: false,
-      currentStatus: this.props.status
-    }
-  }
+const ProfileStatus = (props) => {
+  let [editMode, setEditMode] = useState(false);
+  let [currentStatus, setCurrentStatus] = useState(props.status);
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.status !== this.props.status) {
-      this.setState({
-        currentStatus: this.props.status,
-      })
-    }
-  }
+  useEffect(() => {
+    setCurrentStatus(props.status);
+  }, [props.status])
 
-  statusEditable = () => {
-    if (this.props.authorizedUser === this.props.shownUser) {
-      return true;
-    }
-    return false;
-  }
-
-  toggleEditMode = () => {
-    let statusEditable = this.statusEditable();
-
-    if (statusEditable) {
-      this.setState({
-        editMode: !this.state.editMode,
-      })
-
-      if (this.state.editMode) {
-        this.props.updateStatus(this.state.currentStatus);
+  const toggleEditMode = () => {
+    if (props.authorizedUser === props.shownUser) {
+      if (editMode) {
+        props.updateStatus(currentStatus);
       }
+      setEditMode(prev => !prev);
     }
   }
 
-  updateCurrentStatus = (value) => {
-    this.setState({
-      currentStatus: value,
-    })
-  }
-  
-  render() {
-    if (!this.state.editMode) return (
-      <div className={styles.status} onClick={this.toggleEditMode}>
+  if (!editMode) {
+    return (
+      <div className={styles.status} onClick={toggleEditMode}>
         <p className={styles.statusText}>
-          {this.props.status || 'This user has no status yet...'}
+          {props.status || 'This user has no status yet...'}
         </p>
       </div>
     )
-    return (
-      <StatusEdit
-        status={this.state.currentStatus}
-        onBlur={this.toggleEditMode}
-        onChange={(value) => this.updateCurrentStatus(value)}
-      />
-    )
   }
+  return (
+    <StatusEdit
+      status={currentStatus}
+      onBlur={toggleEditMode}
+      onChange={(value) => setCurrentStatus(value)}
+    />
+  )
 }
 
 export default ProfileStatus;

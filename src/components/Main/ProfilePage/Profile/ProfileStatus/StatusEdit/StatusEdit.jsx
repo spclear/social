@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './statusedit.module.css';
 
 const StatusEdit = (props) => {
-  const input = React.createRef();
   const changeInputValue = (e) => {
     props.onChange(e.currentTarget.value);
   }
