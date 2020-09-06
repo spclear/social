@@ -1,6 +1,12 @@
+.statusBox {
+  height: 50px;
+  position: relative;
+}
+
 .status {
   height: 50px;
 }
+
 .statusText {
   overflow: hidden;
   line-height: 30px;  

@@ -18,22 +18,29 @@ const ProfileStatus = (props) => {
       setEditMode(prev => !prev);
     }
   }
-
-  if (!editMode) {
-    return (
-      <div className={styles.status} onClick={toggleEditMode}>
-        <p className={styles.statusText}>
-          {props.status || 'This user has no status yet...'}
-        </p>
-      </div>
-    )
+  const undoStatusChanges = () => {
+    setCurrentStatus(props.status);
+    setEditMode(false);
   }
+
   return (
-    <StatusEdit
-      status={currentStatus}
-      onBlur={toggleEditMode}
-      onChange={(value) => setCurrentStatus(value)}
-    />
+    <div className={styles.statusBox} >
+      {editMode
+        ?
+        <StatusEdit
+          status={currentStatus}
+          onClickAway={undoStatusChanges}
+          onClick={toggleEditMode}
+          onChange={(value) => setCurrentStatus(value)}
+        />
+        :
+        <div className={styles.status} onClick={toggleEditMode}>
+          <p className={styles.statusText}>
+            {props.status || 'This user has no status yet...'}
+          </p>
+        </div>
+      }
+    </div>
   )
 }
 

@@ -1,23 +1,40 @@
 .statusEdit {
-  height: 50px;
   display: flex;
-  padding: 15px;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 15px;
   border-radius: 5px;
   width: 400px;
-  background-color: #dcdde1;
   overflow: hidden;
-  box-shadow: 0 7px 5px -5px rgba(0, 0, 0, .4);
+  box-shadow: 0 0px 5px rgba(0, 0, 0, .4);
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background-color: #fff;
 }
 
 .statusInput, .statusInput:focus {
   width: 100%;
   padding: 5px;
-  background-color: #f4f4f4;
   font-weight: normal;
   font-size: 1rem;
   color: #353b48;
   outline: none;
-  border: none;
+  border: 1px solid #edeef0;
   border-radius: 2px;
+}
+.statusInput::placeholder {
+  color: #aeaeae;
+}
+
+.button {
+  box-shadow: none;
+  text-transform: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  align-self: flex-end;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #403F3F;
 }
