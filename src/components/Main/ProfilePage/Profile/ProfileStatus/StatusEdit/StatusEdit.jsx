@@ -1,12 +1,14 @@
-import React, {useEffect} from 'react';
+import React, {useRef, useEffect} from 'react';
 import styles from './statusedit.module.css';
 import Button from '../../../../../common/Button/Button';
 
 const StatusEdit = (props) => {
-  const statusDiv = React.createRef();
+  const statusDiv = useRef(null);
+
   const changeInputValue = (e) => {
     props.onChange(e.currentTarget.value);
   }
+  
   const handleClickAway = (e) => {
     if (!statusDiv.current.contains(e.target)) {
       props.onClickAway();

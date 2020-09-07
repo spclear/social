@@ -15,6 +15,14 @@ class ProfileContainer extends Component {
     this.props.getCurrentUserStatus(urlId || this.props.authorizedUser);
   }
 
+  componentDidUpdate(prevProps) {
+    const urlId = this.props.match.params.userId;
+    if (prevProps.match.params.userId !== urlId && !urlId) {
+      this.props.getUserProfile(null, this.props.authorizedUser);
+      this.props.getCurrentUserStatus(this.props.authorizedUser);
+    }
+  }
+
   render() {
     return (
       <Profile
