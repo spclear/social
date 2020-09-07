@@ -8,6 +8,7 @@ const SendMessageForm = reduxForm({ form: 'sendMessageForm' })(NewMessageForm);
 const CreateMessage = (props) => {  
   let sendMessage = (formData) => {
     props.sendMessage(formData.messageText);
+    props.reset('sendMessageForm');
   }
 
   return (

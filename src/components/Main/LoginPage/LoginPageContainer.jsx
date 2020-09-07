@@ -1,10 +1,10 @@
-import React from 'react';
-import { connect } from "react-redux";
-import LoginPage from "./LoginPage";
-import { Component } from "react";
-import { loginUser } from "../../../redux/thunkCreators"
+import React, { Component }  from 'react';
 import { compose } from "redux";
 import { Redirect } from 'react-router-dom';
+import { connect } from "react-redux";
+import { reset } from 'redux-form';
+import LoginPage from "./LoginPage";
+import { loginUser } from "../../../redux/thunkCreators"
 import * as selectors from '../../../redux/selectors';
 
 class LoginPageContainer extends Component {
@@ -14,6 +14,7 @@ class LoginPageContainer extends Component {
     }
     return (
       <LoginPage
+        reset={this.props.reset}
         loginUser={this.props.loginUser}
         inSubmit={this.props.loginProcessStatus}
       />
@@ -29,5 +30,5 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-  connect(mapStateToProps, {loginUser})
+  connect(mapStateToProps, {loginUser, reset})
 )(LoginPageContainer)
