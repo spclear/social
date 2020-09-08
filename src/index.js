@@ -1,7 +1,7 @@
 import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './index.css';
 import store from './redux/redux-store';
@@ -9,11 +9,11 @@ import AppWrapper from './AppWrapper';
 
 const renderApp = () => {
   ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter basename={process.env.PUBLIC_URL} >
       <Provider store={store}>
         <AppWrapper/>
       </Provider>
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('root')
   )
 }
