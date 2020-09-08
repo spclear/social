@@ -26,6 +26,7 @@ export const getLoggedUser = (state) => state.profilePage.loggedUser;
 export const getCurrentUserInfo = (state) => state.profilePage.currentUserInfo;
 export const getCurrentUserStatus = (state) => state.profilePage.currentUserStatus;
 export const getPostsList = (state) => state.profilePage.postsList;
+export const getIsPhotoUploading = (state) => state.profilePage.isPhotoUploading;
 
 // messagesPage reducer
 export const getCurrentDialogId = (state) => state.messagesPage.currentDialog;

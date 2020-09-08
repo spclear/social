@@ -11,7 +11,7 @@ const ProfileStatus = (props) => {
   }, [props.status])
 
   const toggleEditMode = () => {
-    if (props.authorizedUser === props.shownUser) {
+    if (props.isOwner) {
       if (editMode) {
         props.updateStatus(currentStatus);
       }

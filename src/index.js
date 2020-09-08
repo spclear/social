@@ -9,7 +9,7 @@ import AppWrapper from './AppWrapper';
 
 const renderApp = () => {
   ReactDOM.render(
-    <HashRouter basename={process.env.PUBLIC_URL} >
+    <HashRouter>
       <Provider store={store}>
         <AppWrapper/>
       </Provider>

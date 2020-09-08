@@ -4,6 +4,8 @@ import postsList from '../Data/usersPosts';
 const SET_CURRENT_USER = "SET-CURRENT-USER";
 const SET_CURRENT_USER_INFO = "SET-CURRENT-USER-INFO";
 const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
+const SET_CURRENT_USER_PHOTOS = "SET-CURRENT-USER-PHOTOS";
+const SET_IS_PHOTO_UPLOADING = "SET-IS-PHOTO-UPLOADING";
 
 const ADD_POST = "ADD-POST";
 
@@ -15,6 +17,7 @@ let initialState = {
   currentUserStatus: "",
   friends: friends,
   postsList: postsList,
+  isPhotoUploading: false,
 };
 
 let profilePageReducer = (state = initialState, action) => {
@@ -46,6 +49,19 @@ let profilePageReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUserStatus: action.status,
+      }
+    case SET_CURRENT_USER_PHOTOS: 
+      return {
+        ...state,
+        currentUserInfo: {
+          ...state.currentUserInfo,
+          photos: action.photos
+        }
+      }
+    case SET_IS_PHOTO_UPLOADING: 
+      return {
+        ...state,
+        isPhotoUploading: action.isUploading,
       }
     default:
       return state;

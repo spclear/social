@@ -121,6 +121,19 @@ export const logoutUser = () => {
   }
 }
 
+export const uploadPhoto = (photo) => {
+  return async (dispatch) => {
+    dispatch(actionCreators.setIsPhotoUploading(true));
+    const response = await usersAPI.uploadPhoto(photo);
+
+    if (response.resultCode === 0) {
+      dispatch(actionCreators.setCurrentUserPhotos(response.data));
+    }
+
+    dispatch(actionCreators.setIsPhotoUploading(false));
+  }
+}
+
 export const initializeApp = () => {
   return (dispatch) => {
     const authPromise = dispatch(authUser());

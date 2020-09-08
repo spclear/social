@@ -1,0 +1,82 @@
+.settings {
+  padding: 25px;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-variant: small-caps;
+}
+
+.title:after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 15px auto 55px;
+  width: 30%;
+  background-color: #eaeaea;
+}
+
+.label, .upload {
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  /* border: 1px solid #333; */
+  border-radius: 3px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.label {
+  margin-right: 30px;
+}
+
+.uploadPhoto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.preloader {
+  height: 300px;
+}
+
+.choosePhoto {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+.options {
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.preview {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photoPreview {
+  width: 100%;
+}
+
+.sectionTitle {
+  margin-left: 20px;
+}
+
+.settingsSection {
+  border-radius: 5px;
+  padding: 20px 10px;
+  background-color: #dfe4ea;
+}

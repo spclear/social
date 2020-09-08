@@ -16,6 +16,9 @@ const SET_FOLLOWING_PROGRESS_STATUS = "SET-FOLLOWING-PROGRESS-STATUS";
 const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
 const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
 const SET_INITIALIZATION_STATUS = "SET-INITIALIZATION-STATUS";
+const SET_CURRENT_USER_PHOTOS = "SET-CURRENT-USER-PHOTOS";
+const SET_IS_PHOTO_UPLOADING = "SET-IS-PHOTO-UPLOADING";
+
 
 export const addPost = (postText) => {
   return {
@@ -117,6 +120,18 @@ export const setCurrentUserStatus = (status) => {
   return {
     type: SET_CURRENT_USER_STATUS,
     status,
+  }
+}
+export const setCurrentUserPhotos = (photos) => {
+  return {
+    type: SET_CURRENT_USER_PHOTOS,
+    photos,
+  }
+}
+export const setIsPhotoUploading = (isUploading) => {
+  return {
+    type: SET_IS_PHOTO_UPLOADING,
+    isUploading,
   }
 }
 
