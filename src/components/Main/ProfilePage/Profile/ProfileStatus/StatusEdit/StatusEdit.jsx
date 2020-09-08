@@ -8,7 +8,7 @@ const StatusEdit = (props) => {
   const changeInputValue = (e) => {
     props.onChange(e.currentTarget.value);
   }
-  
+
   const handleClickAway = (e) => {
     if (!statusDiv.current.contains(e.target)) {
       props.onClickAway();

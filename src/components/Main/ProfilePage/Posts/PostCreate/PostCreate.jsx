@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './postcreate.module.css';
-import { reduxForm, reset } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import PostForm from './PostForm';
 
 const AddPostForm = reduxForm({ form: 'addPostForm' })(PostForm);
