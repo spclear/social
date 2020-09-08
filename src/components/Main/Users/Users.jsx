@@ -1,9 +1,9 @@
 import React from 'react';
-import UserItem from './UserItem/UserItem';
 import styles from './users.module.css';
-import UserDefault from '../../../assets/images/UserDefault.png';
-import Pages from './Pages/Pages'
+import UserItem from './UserItem/UserItem';
 import Preloader from '../../common/Preloader/Preloader';
+import Pages from '../../common/Pages/Pages';
+import UserDefault from '../../../assets/images/UserDefault.png';
 
 const Users = (props) => {
   const users = props.users.map(item => {
@@ -27,6 +27,8 @@ const Users = (props) => {
       <Pages
         currentPage={props.currentPage}
         switchPage={(number) => props.onPageChanged(number)}
+        usersTotal={props.usersTotal}
+        shownUsersNumber={props.shownUsersNumber}
       />
       <div className={styles.usersList}>
         {
@@ -35,10 +37,6 @@ const Users = (props) => {
           : users
         }
       </div>
-      <Pages
-        currentPage={props.currentPage}
-        switchPage={(number) => props.onPageChanged(number)}
-      />
     </div>
   )
 }

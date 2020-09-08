@@ -1,0 +1,53 @@
+.pagesBar {
+  width: 80%;
+  height: 30px;
+  bottom: 0;
+  right: 25px;
+  margin: 0 auto 20px;
+  padding: 5px 15px;
+}
+
+.pages {
+  width: 80%;
+  display: flex;
+}
+
+.pages,
+.pagesBar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pageNumber {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  font-size: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform .5s;
+  font-weight: bold;
+}
+
+.pageNumber:not(.picked):hover {
+  transform: translateY(-3px);
+}
+.picked {
+  position: relative;
+  color: #858585;
+}
+
+.button {
+  padding: 5px 15px;
+  border: 1px solid #cecece;
+  border-radius: 2px;
+  font-weight: bold;
+  color: #353b48;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  border-color: #eaeaea;
+  color: #cacaca;
+}

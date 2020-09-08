@@ -15,7 +15,7 @@ let initialState = {
   usersList: usersList,
   friendsShown: 4,
   serverUsersList: [],
-  usersShownNumber: 10,
+  shownUsersNumber: 10,
   usersTotal: 0,
   currentPage: 1,
   isLoading: false,

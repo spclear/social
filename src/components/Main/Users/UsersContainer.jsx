@@ -9,11 +9,11 @@ import * as selectors from '../../../redux/selectors';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.getUsers(this.props.stateInfo.usersShownNumber);
+    this.props.getUsers(this.props.stateInfo.shownUsersNumber);
   }
 
   onPageChanged = (pageNumber) => {
-    this.props.changePage(pageNumber, this.props.stateInfo.usersShownNumber);
+    this.props.changePage(pageNumber, this.props.stateInfo.shownUsersNumber);
   }
 
   render() {
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
   return {
     stateInfo: {
       users: selectors.getServerUsersList(state),
-      usersShownNumber: selectors.getUsersShownNumber(state),
+      shownUsersNumber: selectors.getShownUsersNumber(state),
       usersTotal: selectors.getUsersTotal(state),
       currentPage: selectors.getCurrentPage(state),
       isLoading: selectors.getIsLoading(state),

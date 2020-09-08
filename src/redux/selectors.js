@@ -13,7 +13,7 @@ export const getFriendsList = (state) => state.navBar.friends;
 export const getNameGetter = (state) => (id) => state.usersPage.getName(id);
 export const getAvatarGetter = (state) => (id) => state.usersPage.getAvatar(id);
 export const getServerUsersList = (state) => state.usersPage.serverUsersList;
-export const getUsersShownNumber = (state) => state.usersPage.usersShownNumber;
+export const getShownUsersNumber = (state) => state.usersPage.shownUsersNumber;
 export const getUsersTotal = (state) => state.usersPage.usersTotal;
 export const getCurrentPage = (state) => state.usersPage.currentPage;
 export const getInFollowingProgress = (state) => state.usersPage.inFollowingProgress;
