@@ -22,7 +22,7 @@
 }
 
 .userName {
-  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .status {
@@ -38,8 +38,10 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   color: #353b48;
+  max-width: 500px;
+  line-height: 1.5rem;
 }
 
 .preloader {

@@ -1,37 +1,21 @@
 import React from 'react';
 import styles from './profileinfo.module.css';
 import InfoItem from '../../../../common/InfoItem/InfoItem';
-
-const checkIfGiven = data => data || 'no information given';
+import Contacts from './Contacts';
 
 const ProfileInfo = (props) => {
-  const location = props.info.location
-    ? `${props.info.location.cityName}, ${props.info.location.countryName}`
-    : 'no information given';
-  
   return (
-    <ul className={styles.infoList}>
+    <div className={styles.infoList}>
       <InfoItem
         info='About me:'
-        data={checkIfGiven(props.info.aboutMe)}
+        data={props.info.aboutMe}
       />
       <InfoItem
-        info='Location: '
-        data={location}
+        info='Professional skills:'
+        data={props.info.lookingForAJobDescription}
       />
-      <InfoItem
-        info='Website: '
-        data={checkIfGiven(props.info.contacts.website)}
-      />
-      <InfoItem
-        info='VK: '
-        data={checkIfGiven(props.info.contacts.vk)}
-      />
-      <InfoItem
-        info='Twitter: '
-        data={checkIfGiven(props.info.contacts.twitter)}
-      />
-    </ul>
+      <Contacts contacts={props.info.contacts}/>
+    </div>
   )
 }
 

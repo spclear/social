@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './settings.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import { useState } from 'react';
+import UpdateProfileForm from './UpdateProfileForm/UpdateProfileForm';
 
 
 const UploadPhoto = (props) => {
@@ -36,6 +37,7 @@ const UploadPhoto = (props) => {
   )
 }
 
+
 const Settings = (props) => {
   const [photo, setPhoto] = useState(null); 
 
@@ -49,21 +51,27 @@ const Settings = (props) => {
     setPhoto(e.target.files[0])
   }
 
+  const submitProfile = (formData) => {
+    props.updateProfile(formData);
+  }
+
   return (
     <div className={styles.settings}>
       <h2 className={styles.title}>settings</h2>
+      <UpdateProfileForm
+        onSubmit={submitProfile}
+        initialValues={props.userInfo}
+        userInfo={props.userInfo}
+      />
       <div className={`${styles.photoUpdate} ${styles.settingsSection}`}>
-        <h3 className={styles.sectionTitle}>
+        <div className={styles.sectionTitle}>
           Upload Photo:
-        </h3>
-        {props.isUploading
-          ? <Preloader extraClass={styles.preloader}/>
-          : <UploadPhoto
-            onChange={setPreviewPhoto}
-            onClick={uploadPhoto}
-            photo={photo}
-          />
-        }
+        </div>
+        <UploadPhoto
+          onChange={setPreviewPhoto}
+          onClick={uploadPhoto}
+          photo={photo}
+        />
       </div>
     </div>
   )

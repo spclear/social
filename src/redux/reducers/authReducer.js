@@ -1,7 +1,7 @@
 const SET_LOGGED_STATUS = "SET-LOGGED-STATUS";
 const SET_LOGGED_USER_DETAILS = "SET-LOGGED-USER-DETAILS";
+const SET_LOGGED_USER_INFO = "SET-LOGGED-USER-INFO";
 const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
-
 
 const initialState = {
   isLoggedIn: false,
@@ -10,7 +10,8 @@ const initialState = {
     id: null,
     login: null,
     email: null,
-  }
+  },
+  currentUserInfo: null,
 }
 
 let authReducer = (state = initialState, action) => {
@@ -24,6 +25,11 @@ let authReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUserDetails: action.data,
+      }
+    case SET_LOGGED_USER_INFO:
+      return {
+        ...state,
+        currentUserInfo: action.data,
       }
     case SET_LOGGIN_PROCESS_STATUS: 
       return {

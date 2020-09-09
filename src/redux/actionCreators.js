@@ -12,6 +12,7 @@ const SET_CURRENT_USER = "SET-CURRENT-USER";
 const SET_CURRENT_USER_INFO = "SET-CURRENT-USER-INFO";
 const SET_LOGGED_STATUS = "SET-LOGGED-STATUS";
 const SET_LOGGED_USER_DETAILS = "SET-LOGGED-USER-DETAILS";
+const SET_LOGGED_USER_INFO = "SET-LOGGED-USER-INFO";
 const SET_FOLLOWING_PROGRESS_STATUS = "SET-FOLLOWING-PROGRESS-STATUS";
 const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
 const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
@@ -106,6 +107,12 @@ export const setLoginProcessStatus = (isInProcess) => {
 export const setLoggedUserDetails = (data) => {
   return {
     type: SET_LOGGED_USER_DETAILS,
+    data,
+  }
+}
+export const setLoggedUserInfo = (data) => {
+  return {
+    type: SET_LOGGED_USER_INFO,
     data,
   }
 }

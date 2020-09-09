@@ -1,6 +1,7 @@
 // auth reducer
 export const getIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const getCurrentUserDetails = (state) => state.auth.currentUserDetails;
+export const getLoggedUserInfo = (state) => state.auth.currentUserInfo;
 export const getLoginProcessStatus = (state) => state.auth.loginProcessStatus;
 
 // app reducer

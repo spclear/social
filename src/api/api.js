@@ -18,7 +18,6 @@ export const usersAPI = {
   getProfile(id) {
     return (
       instance.get(`profile/${id}`)
-        .then(response => response.data)
     )
   },
   getStatus(id) {
@@ -36,7 +35,12 @@ export const usersAPI = {
     formData.append("image", photo);
 
     return (
-       instance.put(`profile/photo`, formData)
+      instance.put(`profile/photo`, formData)
+    )
+  },
+  updateProfile(profile) {
+    return (
+      instance.put(`profile`, profile)
     )
   }
 }

@@ -1,0 +1,39 @@
+.inputItem, .textareaItem {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.inputTitle,
+.textareaTitle {
+  margin-bottom: 10px;
+}
+.input {
+  height: 50px;
+}
+
+.textarea {
+  height: 150px;
+  resize: none;
+  width: 100%;
+}
+
+.input, .textarea {
+  border: 1px solid #aeaeae;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  font-size: 1rem;
+}
+
+.checkboxItem {
+  padding: 20px;
+}
+
+.checkboxLabel {
+  margin-right: 20px;
+}

@@ -8,7 +8,6 @@ const ProfilePage = (props) => {
   return (
     <div className="profilepage">
       <ProfileContainer />
-      <Separator />
       <PostCreateContainer />  
       <PostListContainer />
     </div>

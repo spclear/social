@@ -21,7 +21,6 @@
   cursor: pointer;
   background-color: #333;
   color: #fff;
-  /* border: 1px solid #333; */
   border-radius: 3px;
   padding: 10px 15px;
   display: flex;
@@ -55,7 +54,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .preview {
@@ -78,5 +77,4 @@
 .settingsSection {
   border-radius: 5px;
   padding: 20px 10px;
-  background-color: #dfe4ea;
 }

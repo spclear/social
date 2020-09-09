@@ -14,9 +14,11 @@ body {
 }
 body,
 textarea,
-textarea:focus {
+textarea:focus,
+input,
+input:focus {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #353b48;
 }
 

@@ -48,6 +48,10 @@ export const authUser = () => async (dispatch) => {
     dispatch(actionCreators.setLoggedStatus(true));
     dispatch(actionCreators.setCurrentUser(data.data.id));
     dispatch(actionCreators.setLoggedUserDetails(data.data));
+
+    let response = await usersAPI.getProfile(data.data.id);
+    
+    dispatch(actionCreators.setLoggedUserInfo(response.data));
   }
 }
 
@@ -64,7 +68,7 @@ export const getUserProfile = (userId, currentUserId) => {
     }
 
     let response = await usersAPI.getProfile(userToShow);
-    dispatch(actionCreators.setCurrentUserInfo(response));
+    dispatch(actionCreators.setCurrentUserInfo(response.data));
     dispatch(actionCreators.setLoadingStatus(false));
   }
 }
@@ -131,6 +135,18 @@ export const uploadPhoto = (photo) => {
     }
 
     dispatch(actionCreators.setIsPhotoUploading(false));
+  }
+}
+
+export const updateProfile = (profile) => {
+  return async (dispatch) => {
+    const response = await usersAPI.updateProfile(profile);
+    
+    if (response.data.resultCode === 0) {
+      dispatch(authUser());
+    } else {
+      dispatch(stopSubmit("updateProfile", { _error: response.data.messages[0] }));
+    }
   }
 }
 
