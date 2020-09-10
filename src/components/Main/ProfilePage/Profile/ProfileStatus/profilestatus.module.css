@@ -5,10 +5,17 @@
 
 .status {
   height: 50px;
+  cursor: pointer;
+}
+
+.statusText:hover {
+  background-color: #eaeaea;
 }
 
 .statusText {
+  border-radius: 1px;
   overflow: hidden;
+  padding: 0 5px;
   line-height: 30px;  
   font-weight: normal;
   font-size: 1rem;

@@ -32,6 +32,15 @@
   cursor: pointer;
 }
 
+.contactItem > a {
+  text-decoration: underline;
+}
+
+.contactItem > a:hover {
+  text-decoration: none;
+}
+
+
 .contactItem::before {
   content: '\2022';
   margin-right: 5px;
