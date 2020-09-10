@@ -1,7 +1,8 @@
 const SET_LOGGED_STATUS = "SET-LOGGED-STATUS";
 const SET_LOGGED_USER_DETAILS = "SET-LOGGED-USER-DETAILS";
 const SET_LOGGED_USER_INFO = "SET-LOGGED-USER-INFO";
-const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
+const SET_LOGGIN_PROCESS_STATUS = "SET-LOGGIN-PROCESS-STATUS";
+const SET_CAPTCHA_URL = "SET-CAPTCHA-URL";
 
 const initialState = {
   isLoggedIn: false,
@@ -12,6 +13,7 @@ const initialState = {
     email: null,
   },
   currentUserInfo: null,
+  captchaUrl: null,
 }
 
 let authReducer = (state = initialState, action) => {
@@ -35,6 +37,11 @@ let authReducer = (state = initialState, action) => {
       return {
         ...state,
         loginProcessStatus: action.isInProcess,
+      }
+    case SET_CAPTCHA_URL: 
+      return {
+        ...state,
+        captchaUrl: action.captchaUrl,
       }
     default:
       return state;

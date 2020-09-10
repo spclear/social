@@ -30,7 +30,8 @@
   margin-bottom: 5px;
 }
 
-.errorMessage {
+.errorMessage,
+.captchaErrorMessage {
   display: flex;
   align-items: center;
   height: 35px;
@@ -49,4 +50,32 @@
 }
 .errorLabel::after {
   content: '*';
+}
+
+.captcha {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.captchaTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.captchaInput {
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #999;
+  width: 150px;
+}
+
+.captchaImage {
+  width: 150px;
+  height: 80px;
+}
+
+.captchaErrorMessage {
+  text-align: center;
 }

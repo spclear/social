@@ -3,12 +3,14 @@ import styles from './loginform.module.css';
 import { Field } from 'redux-form';
 import Button from '../../../common/Button/Button';
 import Separator from '../../../common/Separator/Separator';
-import { ControlledInput } from '../../../../forms/controlledForms';
+import { ControlledInput, Captcha } from '../../../../forms/controlledForms';
 import { required, minLength, emailContains } from '../../../../forms/validation';
 
 const minLength8 = minLength(8);
 const requiredPass = required("Enter your password!");
 const requiredEmail = required("Enter your email!");
+const requiredCaptcha = required("Enter the code!");
+
 
 const LoginForm = (props) => {
   return (
@@ -36,6 +38,14 @@ const LoginForm = (props) => {
         type="password"
         validate={[requiredPass, minLength8]}
       />
+      {props.captchaUrl &&
+        <Field
+          component={Captcha}
+          validate={[requiredCaptcha]}
+          name="captcha"
+          image={props.captchaUrl}
+        />
+      }
       <div className={styles.rememberMe}>
         <Field
           className={styles.input}

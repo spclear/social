@@ -42,16 +42,16 @@ export const getUsers = (numberToShow) => {
 }
 
 export const authUser = () => async (dispatch) => {
-  let data = await authAPI.isAuth();
+  let response = await authAPI.isAuth();
 
-  if (data.resultCode === 0) {
+  if (response.data.resultCode === 0) {
     dispatch(actionCreators.setLoggedStatus(true));
-    dispatch(actionCreators.setCurrentUser(data.data.id));
-    dispatch(actionCreators.setLoggedUserDetails(data.data));
+    dispatch(actionCreators.setCurrentUser(response.data.data.id));
+    dispatch(actionCreators.setLoggedUserDetails(response.data.data));
 
-    let response = await usersAPI.getProfile(data.data.id);
+    let data = await usersAPI.getProfile(response.data.data.id);
     
-    dispatch(actionCreators.setLoggedUserInfo(response.data));
+    dispatch(actionCreators.setLoggedUserInfo(data.data));
   }
 }
 
@@ -61,14 +61,14 @@ export const getUserProfile = (userId, currentUserId) => {
     dispatch(actionCreators.setLoadingStatus(true));
 
     if (!userToShow) {
-      let data = await authAPI.isAuth();
-      if (data.resultCode === 0) {
-        userToShow = data.data.id;
+      let response = await authAPI.isAuth();
+      if (response.data.resultCode === 0) {
+        userToShow = response.data.data.id;
       }
     }
 
-    let response = await usersAPI.getProfile(userToShow);
-    dispatch(actionCreators.setCurrentUserInfo(response.data));
+    let profileResponse = await usersAPI.getProfile(userToShow);
+    dispatch(actionCreators.setCurrentUserInfo(profileResponse.data));
     dispatch(actionCreators.setLoadingStatus(false));
   }
 }
@@ -78,9 +78,9 @@ export const getCurrentUserStatus = (userId, currentUserId) => {
     let user = userId || currentUserId;
 
     if (!user) {
-      let data = await authAPI.isAuth()
-      if (data.resultCode === 0) {
-        user = data.data.id;
+      let response = await authAPI.isAuth()
+      if (response.data.resultCode === 0) {
+        user = response.data.data.id;
       }
     }
     
@@ -105,6 +105,8 @@ export const loginUser = (loginInfo) => {
 
     if (response.data.resultCode === 0) {
       dispatch(authUser());
+    } else if (response.data.resultCode === 10) {
+      dispatch(getCaptcha());
     } else {
       dispatch(stopSubmit("loginForm", {_error: response.data.messages[0]}));
     }
@@ -150,6 +152,14 @@ export const updateProfile = (profile) => {
     }
     
     dispatch(actionCreators.setIsProfileUpdating(false));
+  }
+}
+
+export const getCaptcha = () => {
+  return async (dispatch) => {
+    const data = await authAPI.getCaptcha();
+
+    dispatch(actionCreators.setCaptchaUrl(data.data.url));
   }
 }
 

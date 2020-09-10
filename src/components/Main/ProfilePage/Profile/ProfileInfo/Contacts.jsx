@@ -22,6 +22,7 @@ const ContactsList = ({ contacts, visible }) => {
         </li>
       )
     }
+    return null;
   })
 
   return (

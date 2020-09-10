@@ -29,3 +29,25 @@ export const ControlledInput = ({ input, meta, ...props }) => {
     </div>
   )
 }
+
+export const Captcha = ({ input, meta, ...props }) => {
+
+  const hasError = (meta.error && meta.touched);
+  const errorMessage = hasError ? `${meta.error}` : '';
+
+  return (
+    <div className={styles.captcha}>
+      <div className={styles.captchaTitle}>Enter symbols from the image:</div>
+      <img className={styles.captchaImage} src={props.image} alt="captcha"/>
+      <input
+        {...input}
+        className={styles.captchaInput + (hasError ? ' ' + styles.errorInput : '')}
+        name={props.name}
+        type='text'
+      />
+      <div className={styles.captchaErrorMessage}>
+        {errorMessage}
+      </div>
+    </div>
+  )
+}

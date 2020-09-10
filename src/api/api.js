@@ -8,6 +8,31 @@ const instance = axios.create({
   },
 })
 
+export const authAPI = {
+  login(userInfo) {
+    return (
+      instance.post(`auth/login`, {
+        ...userInfo
+      })
+    )
+  },
+  logout() {
+    return (
+      instance.delete(`auth/login`)
+    )
+  },
+  isAuth() {
+    return (
+      instance.get(`auth/me`)
+    )
+  },
+  getCaptcha() {
+    return (
+      instance.get(`security/get-captcha-url`)
+    )
+  }
+}
+
 export const usersAPI = {
   getUsers(count, page) {
     return (
@@ -43,27 +68,6 @@ export const usersAPI = {
       instance.put(`profile`, profile)
     )
   }
-}
-
-export const authAPI = {
-  login(userInfo) {
-    return (
-      instance.post(`auth/login`, {
-        ...userInfo
-      })
-    )
-  },
-  logout() {
-    return (
-      instance.delete(`auth/login`)
-    )
-  },
-  isAuth() {
-    return (
-      instance.get(`auth/me`)
-      .then(response => response.data)
-    )
-  },
 }
 
 export const followAPI = {

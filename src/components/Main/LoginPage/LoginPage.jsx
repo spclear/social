@@ -8,12 +8,12 @@ const LoginReduxForm = reduxForm({ form: 'loginForm' })(LoginForm);
 const LoginPage = (props) => {
   const onSubmit = (formData) => {
     props.loginUser(formData);
-    props.reset('loginForm');
   }
 
   return (
     <div className={styles.loginPage}>
       <LoginReduxForm
+        captchaUrl={props.captchaUrl}
         onSubmit={onSubmit}
         inSubmit={props.inSubmit}
       />
