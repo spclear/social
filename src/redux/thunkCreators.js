@@ -130,8 +130,8 @@ export const uploadPhoto = (photo) => {
     dispatch(actionCreators.setIsPhotoUploading(true));
     const response = await usersAPI.uploadPhoto(photo);
 
-    if (response.resultCode === 0) {
-      dispatch(actionCreators.setCurrentUserPhotos(response.data));
+    if (response.data.resultCode === 0) {
+      dispatch(actionCreators.setLoggedUserInfo(response.data))
     }
 
     dispatch(actionCreators.setIsPhotoUploading(false));
@@ -140,6 +140,7 @@ export const uploadPhoto = (photo) => {
 
 export const updateProfile = (profile) => {
   return async (dispatch) => {
+    dispatch(actionCreators.setIsProfileUpdating(true));
     const response = await usersAPI.updateProfile(profile);
     
     if (response.data.resultCode === 0) {
@@ -147,6 +148,8 @@ export const updateProfile = (profile) => {
     } else {
       dispatch(stopSubmit("updateProfile", { _error: response.data.messages[0] }));
     }
+    
+    dispatch(actionCreators.setIsProfileUpdating(false));
   }
 }
 

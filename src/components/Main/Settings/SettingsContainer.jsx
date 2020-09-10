@@ -7,8 +7,9 @@ import * as selectors  from '../../../redux/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    isUploading: selectors.getIsPhotoUploading(state),
     userInfo: selectors.getLoggedUserInfo(state),
+    isPhotoUploading: selectors.getIsPhotoUploading(state),
+    isProfileUpdating: selectors.getIsProfileUpdating(state),
   }
 }
 export default compose(

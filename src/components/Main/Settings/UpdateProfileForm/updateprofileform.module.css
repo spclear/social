@@ -1,13 +1,24 @@
-.save {
+.save, .save:focus {
   cursor: pointer;
   background-color: #333;
   color: #fff;
+  border: 1px solid #333;
+  margin: 10px 20px 60px;
   border-radius: 3px;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: 150px;
-  margin: 20px;
   font-size: 1.2rem;
+  transition: background-color .1s, color .1s;
+}
+
+.save:not(:disabled):hover {
+  color: #333;
+  background-color: #fff;
+}
+
+.save:disabled {
+  cursor: not-allowed;
+  background: #eaeaea;
+  border: 1px solid #aeaeae;
 }

@@ -29,7 +29,7 @@ let authReducer = (state = initialState, action) => {
     case SET_LOGGED_USER_INFO:
       return {
         ...state,
-        currentUserInfo: action.data,
+        currentUserInfo: { ...state.currentUserInfo, ...action.data },
       }
     case SET_LOGGIN_PROCESS_STATUS: 
       return {

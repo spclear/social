@@ -5,8 +5,25 @@ import { UpdateProfileInput, UpdateProfileTextarea, UpdateProfileCheckbox }
   from '../../../../forms/UpdateProfileFields/UpdateProfileFields';
 import { required } from '../../../../forms/validation';
 import ContactsInfo from './ContactsInfo/ContactsInfo';
+import ButtonLoading from '../../../common/ButtonLoading/ButtonLoading';
 
-const nameIsRequired = required('name');
+const nameIsRequired = required('Enter your name!');
+const fieldIsRequired = required('This information is required!')
+
+const SaveButton = (props) => {
+  return (
+    <button
+      className={styles.save}
+      onClick={props.onClick}
+      disabled={props.isUpdating}
+    >
+      {props.isUpdating
+        ? <ButtonLoading backgroundColor="#333" />
+        : 'Save'
+      }
+    </button>
+  )
+}
 
 const UpdateProfile = (props) => {
   return (
@@ -24,12 +41,14 @@ const UpdateProfile = (props) => {
         component={UpdateProfileTextarea}
         name="aboutMe"
         areaName="About me:"
+        validate={[fieldIsRequired]}
       />
       <Field
         maxLength="200"
         component={UpdateProfileTextarea}
         name="lookingForAJobDescription"
         areaName="Professional skills:"
+        validate={[fieldIsRequired]}
       />
       <Field
         checked={props.userInfo.lookingForAJob}
@@ -38,13 +57,9 @@ const UpdateProfile = (props) => {
         id="lookingForAJob"
         label="Looking for a job:"
       />
-      <ContactsInfo contacts={props.userInfo.contacts}/>
-      <button
-        className={styles.save}
-        onClick={props.onClick}
-      >
-        Save
-      </button>
+      <SaveButton onClick={props.onClick} isUpdating={props.isUpdating}/>
+      <ContactsInfo contacts={props.userInfo.contacts} />
+      <SaveButton onClick={props.onClick} isUpdating={props.isUpdating} />
     </form>
   )
 }

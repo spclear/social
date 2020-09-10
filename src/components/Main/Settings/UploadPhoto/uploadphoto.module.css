@@ -1,0 +1,100 @@
+.uploadPhoto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.upload {
+  margin: 20px 5px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preview {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #999;
+}
+
+.preview:hover .label {
+  opacity: 1;
+}
+
+.photoPreview {
+  height: 100%;
+}
+
+.choosePhoto {
+  background-color: rgba(0, 0, 0, .5);
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.label,
+.uploadButton {
+  cursor: pointer;
+  padding: 10px 15px;
+  
+}
+
+.label {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label > input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.uploadButton,
+.uploadButton:focus {
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 50px;
+  color: #333;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid #999;
+  margin-top: 10px;
+  transition: color .1s, background-color .1s;  
+}
+
+.uploadButton:not(:disabled):hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.uploadButton:disabled {
+  cursor: not-allowed;
+  background-color: #dadada;
+  border: 1px solid #cfcfcf;
+}

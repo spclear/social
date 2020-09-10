@@ -19,6 +19,7 @@ const SET_LOGGIN_PROCESS_STATUS = " SET-LOGGIN-PROCESS-STATUS";
 const SET_INITIALIZATION_STATUS = "SET-INITIALIZATION-STATUS";
 const SET_CURRENT_USER_PHOTOS = "SET-CURRENT-USER-PHOTOS";
 const SET_IS_PHOTO_UPLOADING = "SET-IS-PHOTO-UPLOADING";
+const SET_IS_PROFILE_UPDATING = "SET-IS-PROFILE-UPDATING";
 
 
 export const addPost = (postText) => {
@@ -139,6 +140,12 @@ export const setIsPhotoUploading = (isUploading) => {
   return {
     type: SET_IS_PHOTO_UPLOADING,
     isUploading,
+  }
+}
+export const setIsProfileUpdating = (isUpdating) => {
+  return {
+    type: SET_IS_PROFILE_UPDATING,
+    isUpdating,
   }
 }
 

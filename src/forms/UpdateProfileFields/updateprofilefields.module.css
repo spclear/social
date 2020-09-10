@@ -8,9 +8,19 @@
 .inputTitle,
 .textareaTitle {
   margin-bottom: 10px;
+  font-weight: bold;
 }
 .input {
   height: 50px;
+}
+
+.errorInput {
+  border: 2px solid #ED4C67 !important;
+}
+
+.errorMessage {
+  margin-top: 10px;
+  color: #ED4C67;
 }
 
 .textarea {
@@ -22,7 +32,7 @@
 .input, .textarea {
   border: 1px solid #aeaeae;
   border-radius: 4px;
-  padding: 20px;
+  padding: 20px 12px;
 }
 
 .input::placeholder,
@@ -36,4 +46,5 @@
 
 .checkboxLabel {
   margin-right: 20px;
+  font-weight: bold;
 }

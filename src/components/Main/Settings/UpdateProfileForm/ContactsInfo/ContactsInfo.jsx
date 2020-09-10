@@ -2,6 +2,7 @@ import React from 'react';
 import { Field } from 'redux-form';
 import styles from './contactsinfo.module.css';
 import { UpdateProfileInput } from '../../../../../forms/UpdateProfileFields/UpdateProfileFields';
+import { isURL } from '../../../../../forms/validation';
 
 const ContactsInfo = ({contacts}) => {
   return (
@@ -16,7 +17,7 @@ const ContactsInfo = ({contacts}) => {
               name={'contacts.' + key}
               inputName={key}
               type="text"
-              validate={[]}
+              validate={[isURL]}
             />
           )
         })

@@ -25,16 +25,23 @@ export const UpdateProfileInput = ({ input, meta, ...props }) => {
 }
 
 export const UpdateProfileTextarea = ({ input, meta, ...props }) => {
+
+  const hasError = (meta.error && meta.touched);
+  const errorMessage = hasError ? `${meta.error}` : '';
+
   return (
     <div className={styles.textareaItem}>
       <div className={styles.textareaTitle}>{props.areaName}</div>
       <textarea
         maxLength={props.maxLength}
         {...input}
-        className={styles.textarea}
+        className={styles.textarea + (hasError ? ' ' + styles.errorInput : '')}
         placeholder={props.placeholder}
         name={props.name}
       />
+      <div className={styles.errorMessage}>
+        {errorMessage}
+      </div>
     </div>
   )
 }

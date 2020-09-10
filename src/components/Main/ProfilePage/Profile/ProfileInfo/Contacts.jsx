@@ -15,6 +15,7 @@ const ContactsList = ({ contacts, visible }) => {
             href={contacts[key]}
             className={styles.contactData}
             target="_blank"
+            rel="noopener noreferrer"
           >
             {contacts[key]}
           </a>

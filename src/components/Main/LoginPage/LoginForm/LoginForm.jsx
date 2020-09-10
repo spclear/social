@@ -7,8 +7,8 @@ import { ControlledInput } from '../../../../forms/controlledForms';
 import { required, minLength, emailContains } from '../../../../forms/validation';
 
 const minLength8 = minLength(8);
-const requiredPass = required("password");
-const requiredEmail = required("email");
+const requiredPass = required("Enter your password!");
+const requiredEmail = required("Enter your email!");
 
 const LoginForm = (props) => {
   return (

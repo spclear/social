@@ -6,7 +6,7 @@ const SET_CURRENT_USER_INFO = "SET-CURRENT-USER-INFO";
 const SET_CURRENT_USER_STATUS = "SET-CURRENT-USER-STATUS";
 const SET_CURRENT_USER_PHOTOS = "SET-CURRENT-USER-PHOTOS";
 const SET_IS_PHOTO_UPLOADING = "SET-IS-PHOTO-UPLOADING";
-const SET_IS_PROFILE_UPDATED = "SET-IS-PROFILE-UPDATED";
+const SET_IS_PROFILE_UPDATING = "SET-IS-PROFILE-UPDATING";
 
 const ADD_POST = "ADD-POST";
 
@@ -19,7 +19,7 @@ let initialState = {
   friends: friends,
   postsList: postsList,
   isPhotoUploading: false,
-  isProfileUpdated: false,
+  isProfileUpdating: false,
 };
 
 let profilePageReducer = (state = initialState, action) => {
@@ -65,10 +65,10 @@ let profilePageReducer = (state = initialState, action) => {
         ...state,
         isPhotoUploading: action.isUploading,
       }
-    case SET_IS_PROFILE_UPDATED:
+    case SET_IS_PROFILE_UPDATING:
       return {
         ...state,
-        isProfileUpdated: true
+        isProfileUpdating: action.isUpdating
       }
     default:
       return state;
