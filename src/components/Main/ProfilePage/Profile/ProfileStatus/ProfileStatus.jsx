@@ -35,7 +35,7 @@ const ProfileStatus = (props) => {
         />
         :
         <div className={styles.status} onClick={toggleEditMode}>
-          <p className={styles.statusText}>
+          <p className={`${styles.statusText} ${props.isOwner && styles.editable}`}>
             {props.status || 'This user has no status yet...'}
           </p>
         </div>

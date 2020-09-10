@@ -30,5 +30,5 @@
 .followButton:disabled:hover {
   background-color: #aeaeae;
   opacity: .3;
-  cursor: not-allowed;
+  cursor: wait;
 }

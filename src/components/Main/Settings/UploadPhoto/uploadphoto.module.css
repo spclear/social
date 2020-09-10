@@ -94,7 +94,7 @@
 }
 
 .uploadButton:disabled {
-  cursor: not-allowed;
+  cursor: wait;
   background-color: #dadada;
   border: 1px solid #cfcfcf;
 }

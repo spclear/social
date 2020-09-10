@@ -7,20 +7,15 @@ import './index.css';
 import store from './redux/redux-store';
 import AppWrapper from './AppWrapper';
 
-const renderApp = () => {
-  ReactDOM.render(
+ReactDOM.render(
     <HashRouter>
       <Provider store={store}>
         <AppWrapper/>
       </Provider>
     </HashRouter>,
-    document.getElementById('root')
-  )
-}
-window.store = store;
+  document.getElementById('root')
+)
 
-renderApp();
-store.subscribe(renderApp);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

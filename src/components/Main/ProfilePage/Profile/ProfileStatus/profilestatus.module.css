@@ -5,11 +5,12 @@
 
 .status {
   height: 50px;
-  cursor: pointer;
+  cursor: text;
 }
 
-.statusText:hover {
+.editable:hover {
   background-color: #eaeaea;
+  cursor: pointer;
 }
 
 .statusText {

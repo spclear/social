@@ -12,5 +12,5 @@
 .createButton:disabled {
   box-shadow: none;
   color: #acacac;
-  cursor: not-allowed;
+  cursor: wait;
 }

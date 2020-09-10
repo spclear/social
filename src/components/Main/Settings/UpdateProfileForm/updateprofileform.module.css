@@ -18,7 +18,7 @@
 }
 
 .save:disabled {
-  cursor: not-allowed;
+  cursor: wait;
   background: #eaeaea;
   border: 1px solid #aeaeae;
 }
