@@ -12,7 +12,7 @@ const ContactsList = ({ contacts, visible }) => {
         <li key={key} className={styles.contactItem}>
           {key}:
           <a
-            href={contacts[key]}
+            href={'https://' + contacts[key]}
             className={styles.contactData}
             target="_blank"
             rel="noopener noreferrer"

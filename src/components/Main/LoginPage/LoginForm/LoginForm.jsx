@@ -6,11 +6,10 @@ import Separator from '../../../common/Separator/Separator';
 import { ControlledInput, Captcha } from '../../../../forms/controlledForms';
 import { required, minLength, emailContains } from '../../../../forms/validation';
 
-const minLength8 = minLength(8);
+const minLength4 = minLength(4);
 const requiredPass = required("Enter your password!");
 const requiredEmail = required("Enter your email!");
 const requiredCaptcha = required("Enter the code!");
-
 
 const LoginForm = (props) => {
   return (
@@ -36,7 +35,7 @@ const LoginForm = (props) => {
         label="Password"
         id="password"
         type="password"
-        validate={[requiredPass, minLength8]}
+        validate={[requiredPass, minLength4]}
       />
       {props.captchaUrl &&
         <Field

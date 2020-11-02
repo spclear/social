@@ -10,8 +10,8 @@ const Nav = () => {
         <NavItem to="/profile" linkname="Profile" />
         <NavItem to="/dialogs" linkname="Messages" />
         <NavItem to="/users" linkname="Users" />
-        <NavItem to="/news" linkname="News" />
-        <NavItem to="/music" linkname="Music" />
+        {/* <NavItem to="/news" linkname="News" /> */}
+        {/* <NavItem to="/music" linkname="Music" /> */}
         <NavItem to="/settings" linkname="Settings" />
       </ul>
       <FriendsBarContainer />
